@@ -6,7 +6,7 @@ function RoutesManager() {
   return (
     <Routes>
       <Route path="/signin" element={<SignIn />} />
-      <Route path="/pepito" element={<SignUp />} />
+      <Route path="/signup" element={<SignUp />} />
     </Routes>
   )
 }

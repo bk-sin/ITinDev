@@ -21,9 +21,11 @@ const SignUp = (props) => {
     name: "",
     lastName: "",
     country: "",
+    edad: "",
     email: "",
-    url: "",
+    image: "",
     password: "",
+    gender:"",
   })
 
   const inputHandler = (e) => {
@@ -154,6 +156,34 @@ const SignUp = (props) => {
                 ))}
               </select>
             </div>
+            <div className="select-container">
+            <p>Genero:</p>
+            <select
+            name="gender"
+            id="gender-select"
+            onChange={inputHandler}
+            >
+              <option defaultValue value="Choose one">
+                Choose one
+              </option>
+              <option key="0" value="Femenino" >
+                    Femenino
+              </option>
+              <option key="1" value="Masculino" >
+                    Masculino
+              </option>
+              <option key="2" value="otro">
+                    Otro
+              </option>
+            </select>
+            </div>
+            <label htmlFor="edad">Edad:</label>
+            <input
+              type="number"
+              name="edad"
+              id="edad"
+              onChange={inputHandler}
+            />
             <label htmlFor="email">Email:</label>
             <input
               type="email"
