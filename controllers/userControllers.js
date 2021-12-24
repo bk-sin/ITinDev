@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken")
 
 const userControllers = {
   newUser: async (req, res) => {
-    let {name, lastName, country, email, password, gender, image, google} =
+    let {name, lastName, country, email,age, password, gender, image, google} =
       req.body
 
     try {
@@ -20,6 +20,7 @@ const userControllers = {
           lastName,
           country,
           email,
+          age,
           password,
           gender,
           image,
@@ -67,7 +68,7 @@ const userControllers = {
               email,
               image: userExists.image,
               name: userExists.name,
-              gender: userExists.gender,
+              
             },
             error: null,
           })
@@ -85,12 +86,11 @@ const userControllers = {
   },
   
 getUsers: async (req,res) => {
-  const {name,lastName,country,image} = req.body
-  console.log(image)
+  
     try {
         const usersList=await User.find()
-        
-        console.log(usersList)
+
+        console.log(usersList.name)
         res.json({success: true, respuesta:usersList})
     } catch(error) {
       console.log(error)
