@@ -40,9 +40,10 @@ const userControllers = {
   },
   logIn: async (req, res) => {
     const {email, password, google} = req.body
-
+    console.log("Aqui")
     try {
       const userExists = await User.findOne({email})
+      console.log(userExists)
       if (!userExists) {
         res.json({
           success: true,
