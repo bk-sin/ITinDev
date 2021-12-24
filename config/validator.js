@@ -27,7 +27,10 @@ const validator = (req, res, next) => {
             "string.empty": "Your Password  is a required field",
             "string.min": "Your Password  must have at least 4 characters",
         }),
-        urlImage:joi.string().required().trim().messages({
+        gender:joi.string().trim().min(2).max(15).required().pattern(new RegExp('[a-zA-Z]$')).messages({
+            "string.empty": "Your gender is a required field",
+        }),
+        image:joi.string().required().trim().messages({
             "string.empty": "Your must insert an image URL link ",
         }),
         google:joi.boolean(),

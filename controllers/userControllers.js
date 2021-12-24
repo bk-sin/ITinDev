@@ -1,4 +1,4 @@
-const User = require('../models/user')
+const User = require('../models/Persona')
 const bcryptjs = require('bcryptjs')
 const jwt = require("jsonwebtoken")
 
@@ -8,7 +8,7 @@ const userControllers = {
 
     newUser: async (req, res) => {
 
-        let { name, lastName, country, email, password, image, google } = req.body
+        let { name, lastName, country, email, password,gender, image, google } = req.body
 
         try {
 
@@ -25,6 +25,7 @@ const userControllers = {
                     country,
                     email,
                     password,
+                    gender,
                     image,
                     google
                 })
@@ -65,7 +66,8 @@ const userControllers = {
                         success: true, response: {
                             token, email,
                             image:userExists.image, 
-                            name:userExists.name
+                            name:userExists.name,
+                            gender:userExists.gender
                         }, error: null
                     })
                 } else {
