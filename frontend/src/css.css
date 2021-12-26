@@ -263,3 +263,115 @@ select::-webkit-scrollbar-thumb{
 
 
 }
+
+/* ESTILO COMPONENTE NAVBAR */
+.costumBg{
+  width: 100vw;
+  min-height: 10vh;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4962359943977591) 60%, rgba(0,0,0,0) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container{
+display: flex;
+flex: 0 1 auto;
+padding: 0px 2rem;
+}
+
+.logo-container img{
+width: 30px;
+}
+
+.dropdown-nav{
+
+padding: 0px 2rem;
+display: flex;
+flex: 0 1 auto
+}
+
+.links-nav{
+font-size: 2vh;
+display: flex;
+flex-flow: row nowrap;
+flex: 1 1 100%;
+}
+
+.link-nav{
+color: white !important;
+text-transform: uppercase;
+}
+
+
+.link-nav:hover{
+text-shadow: 0 0 8px white;
+transition: .3s;
+
+}
+
+
+.fa-user{
+font-size: 20px;
+color: white;
+
+}
+
+/* ESTILO COMPONENTE FOOTER */
+
+footer{
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 17vh;
+  background: rgb(7,7,7);
+}
+
+.icons-container{
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 25%;
+  justify-content: space-evenly;
+  }
+
+
+#telegram,
+#twitter,
+#github,
+#facebook {
+  font-size: 30px;
+  color: white;
+  border-radius: 3px;
+  animation: animate 3s linear infinite;
+  text-shadow: 0 0 15px #0072ff;
+}
+
+#twitter {
+  animation-delay: 0.3s;
+}
+
+#facebook {
+  animation-delay: 0.7s;
+}
+
+#github {
+  animation-delay: 0.1s;
+}
+
+@keyframes animate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
