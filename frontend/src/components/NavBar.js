@@ -9,13 +9,13 @@ function NavBar() {
     // const dispatch = useDispatch()
 
     return (
-        <div lassName="costumBg" variant="dark">
+        <div className="costumBg" variant="dark">
             <Link to="/" className="logo-container">
                 <img src="/assets/ItinDev_logo.png" alt="ItinDev_logo"></img>
             </Link>
             <div>
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
+                <Nav.Link className="link-nav" href="#home">Home</Nav.Link>
+                <Nav.Link className="link-nav" href="#link">Link</Nav.Link>
             </div>
             
                 <NavDropdown title={<i className="fas fa-user"></i>} className="link-nav" id="basic-nav-dropdown">
