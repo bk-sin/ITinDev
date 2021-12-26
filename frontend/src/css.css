@@ -307,6 +307,7 @@ flex: 1 1 100%;
 .link-nav{
 color: white !important;
 text-transform: uppercase;
+padding: 10px;
 }
 
 
@@ -333,7 +334,7 @@ footer{
   align-items: center;
   width: 100%;
   height: 17vh;
-  background: rgb(7,7,7);
+  background: #5575aa;
 }
 
 .icons-container{
@@ -374,4 +375,14 @@ footer{
   to {
     filter: hue-rotate(360deg);
   }
+}
+
+/* Estilos de componente main */
+
+.container_principal {
+  width: 100%;
+  height: 95vh;
+  background-color: #d12728;
+  background-image: linear-gradient(180deg, #d12728 6%, #5575aa 68%);
+
 }

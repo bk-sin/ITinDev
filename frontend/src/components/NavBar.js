@@ -10,19 +10,18 @@ function NavBar() {
 
     return (
         <div lassName="costumBg" variant="dark">
-            {/* <Link to="/" className="logo-container">
-                <img src="/logo-mt.png" alt="MyTinerary Logo"></img>
+            <Link to="/" className="logo-container">
+                <img src="/assets/ItinDev_logo.png" alt="ItinDev_logo"></img>
             </Link>
-            <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+            <div>
                 <Nav.Link href="#home">Home</Nav.Link>
                 <Nav.Link href="#link">Link</Nav.Link>
+            </div>
+            
                 <NavDropdown title={<i className="fas fa-user"></i>} className="link-nav" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Sign In</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Sing Up</NavDropdown.Item>
                 </NavDropdown>
-            </Nav>
-            </Navbar.Collapse> */}
         </div>
     )
 }
