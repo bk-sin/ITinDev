@@ -58,14 +58,12 @@ const authAction = {
         )
 
         if (response.data.success) {
-          localStorage.setItem("token", response.data.response[0].token)
-          toast.success(
-            "Welcome to MyTinerary " + response.data.response[0].name
-          )
+          localStorage.setItem("token", response.data.response.token)
+          toast.success("Welcome to MyTinerary " + response.data.response.name)
 
           dispatch({
             type: "USER",
-            payload: response.data.response[0],
+            payload: response.data.response,
           })
         } else {
           toast.error(response.data.error)
@@ -80,7 +78,7 @@ const authAction = {
       try {
         const token = localStorage.getItem("token")
         const response = await axios.get(
-          "http://localhost:4000/api/auth",
+          "http://localhost:4000/api/tokenVerification",
 
           {
             headers: {
@@ -89,7 +87,7 @@ const authAction = {
           }
         )
         dispatch({
-          type: "TOKEN",
+          type: "USER",
           payload: response.data,
         })
       } catch (error) {}

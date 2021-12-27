@@ -58,7 +58,6 @@ const userControllers = {
         )
         if (contraseñaCoincide) {
           const token = jwt.sign({...userExists}, process.env.SECRET_KEY)
-
           res.json({
             success: true,
             response: {
@@ -66,6 +65,7 @@ const userControllers = {
               email,
               image: userExists.image,
               name: userExists.name,
+              admin: userExists.admin,
             },
             error: null,
           })
@@ -86,7 +86,6 @@ const userControllers = {
     try {
       const usersList = await User.find()
 
-      console.log(usersList.name)
       res.json({success: true, respuesta: usersList})
     } catch (error) {
       console.log(error)
@@ -94,8 +93,12 @@ const userControllers = {
     }
   },
   tokenVerification: (req, res) => {
+    req.user.admin
+      ? console.log(`Verified Admin: ${req.user.name}`)
+      : console.log(`Verified User: ${req.user.name}`)
     res.json({
       name: req.user.name,
+      admin: req.user.admin,
       image: req.user.image,
       _id: req.user._id,
     })
