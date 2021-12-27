@@ -11,15 +11,12 @@ function NavBar() {
       </Link>
       <p className="brand">&#x2774; ItinDev &#x2775; </p>
       </div>
+      <div className="dropdown-nav">
       <div className="menu-options">
         <Nav.Link as={Link} className="link-nav" to="/">
           Home
         </Nav.Link>
-        <Nav.Link as={Link} className="link-nav" to="#link">
-          Matchs
-        </Nav.Link>
       </div>
-      <div className="dropdown-nav">
       <NavDropdown
         title={<i className="fas fa-user"></i>}
         className="link-nav"

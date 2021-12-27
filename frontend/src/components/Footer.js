@@ -9,13 +9,8 @@ function Footer() {
                 <div className="icons-container">
                     <Nav.Link href="/" className="link-social"><i className="fab fa-github" id="github"></i></Nav.Link>
                 </div>
+            <p>&copy; ItinDev | All Rights Reserved</p>
             </div>
-            <div className="links-nav">
-                <Nav.Link  as={Link} to={"/"}  className="link-nav">Home</Nav.Link>
-                <Nav.Link as={Link} to={"/"} className="link-nav">Sign In</Nav.Link>
-                <Nav.Link as={Link} to={"/"} className="link-nav">Sign Up</Nav.Link>
-            </div>
-            <p>&copy; ITindev | All Rights Reserved</p>
         </footer>
     )
 }
