@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken")
 
 const userControllers = {
   newUser: async (req, res) => {
-    let {name, lastName, country, email,age, password, gender, image, google} =
+    let {name, lastName, country, email, age, password, gender, image, google} =
       req.body
 
     try {
@@ -14,7 +14,7 @@ const userControllers = {
         res.json({success: false, error: "Email already exist", response: null})
       } else {
         password = bcryptjs.hashSync(password, 10)
-        
+
         const newUser = new User({
           name,
           lastName,
@@ -28,9 +28,9 @@ const userControllers = {
         })
 
         const token = jwt.sign({...newUser}, process.env.SECRET_KEY)
-        
+
         await newUser.save()
-        
+
         res.json({
           success: true,
           response: {token, newUser, image},
@@ -43,10 +43,8 @@ const userControllers = {
   },
   logIn: async (req, res) => {
     const {email, password, google} = req.body
-    console.log("Aqui")
     try {
       const userExists = await User.findOne({email})
-      console.log(userExists)
       if (!userExists) {
         res.json({
           success: true,
@@ -68,7 +66,6 @@ const userControllers = {
               email,
               image: userExists.image,
               name: userExists.name,
-              
             },
             error: null,
           })
@@ -84,19 +81,18 @@ const userControllers = {
       res.json({success: false, response: null, error: error})
     }
   },
-  
-getUsers: async (req,res) => {
-  
-    try {
-        const usersList=await User.find()
 
-        console.log(usersList.name)
-        res.json({success: true, respuesta:usersList})
-    } catch(error) {
+  getUsers: async (req, res) => {
+    try {
+      const usersList = await User.find()
+
+      console.log(usersList.name)
+      res.json({success: true, respuesta: usersList})
+    } catch (error) {
       console.log(error)
-        res.json({success: false, respuesta: 'Oops! error'})
+      res.json({success: false, respuesta: "Oops! error"})
     }
-},
+  },
   tokenVerification: (req, res) => {
     res.json({
       name: req.user.name,

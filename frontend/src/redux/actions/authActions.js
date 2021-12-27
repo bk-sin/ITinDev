@@ -3,13 +3,14 @@ import {toast} from "react-toastify"
 
 const authAction = {
   signupUser: (
-    email,
-    password,
     name,
-    lastname,
-    photo,
+    lastName,
     country,
+    email,
+    age,
+    password,
     gender,
+    image,
     google
   ) => {
     return async (dispatch, getState) => {
@@ -17,13 +18,14 @@ const authAction = {
         let response = await axios.post(
           "http://localhost:4000/api/auth/signup",
           {
-            email,
-            password,
             name,
-            lastname,
-            photo,
+            lastName,
             country,
+            email,
+            age,
+            password,
             gender,
+            image,
             google,
           }
         )
