@@ -326,16 +326,16 @@ select::-webkit-scrollbar-thumb{
 .costumBg{
   width: 100vw;
   min-height: 10vh;
-  background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4962359943977591) 60%, rgba(0,0,0,0) 100%);
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 4;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
+  background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4962359943977591) 60%, rgba(0,0,0,0) 100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4;
 }
 
 .logo-container{
@@ -363,8 +363,9 @@ flex: 1 1 100%;
 }
 
 .link-nav{
-color: white !important;
+color: rgb(0, 0, 0) !important;
 text-transform: uppercase;
+padding: 10px;
 }
 
 
@@ -377,7 +378,7 @@ transition: .3s;
 
 .fa-user{
 font-size: 20px;
-color: white;
+color: rgb(0, 0, 0);
 
 }
 
@@ -391,7 +392,7 @@ footer{
   align-items: center;
   width: 100%;
   height: 17vh;
-  background: rgb(7,7,7);
+  background: #5575aa;
 }
 
 .icons-container{
@@ -433,3 +434,58 @@ footer{
     filter: hue-rotate(360deg);
   }
 }
+
+/* Estilos de componente main */
+
+.container_principal {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 85vh;
+  background: url('../public/assets/clay-banks-pfThjuy_jUA-unsplash.jpg') center center/cover no-repeat;
+
+}
+
+.container_cuenta{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 15vh;
+  background-color: rgba(0, 0, 0, 0.159);
+  /* background-color: #d12728;
+  background-image: linear-gradient(180deg, #d12728 6%, #5575aa 68%); */
+}
+
+.titulo_principal{
+  font-family: ProximaNova;
+  color: #ffffff;
+  padding: 1rem;
+}
+
+.btn-grad {
+  background-image: linear-gradient(to right, #ebe8e5 0%, #FFFFFF  51%, #ECE9E6  100%)
+}
+
+.btn-grad {
+   margin: 10px 10rem;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: #355491;            
+   box-shadow: 0 0 20px #eee;
+   border-radius: 10px;
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center;
+   color: #fff;
+   text-decoration: none;
+ }
+

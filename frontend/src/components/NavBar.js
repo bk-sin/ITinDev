@@ -11,6 +11,7 @@ function NavBar() {
     return (
         <div className="costumBg" variant="dark">
             <Link to="/" className="logo-container">
+<<<<<<< HEAD
                 <img src="/logo-mt.png" alt="MyTinerary Logo"></img>
             </Link>
             <div className="links-nav">
@@ -23,12 +24,28 @@ function NavBar() {
             </NavDropdown>
             </div>
      
+=======
+                <img src="/assets/ItinDev_logo.png" alt="ItinDev_logo"></img>
+            </Link>
+            <p>ItinDev</p>
+            <div>
+                <Nav.Link className="link-nav" href="#home">Home</Nav.Link>
+                <Nav.Link className="link-nav" href="#link">Link</Nav.Link>
+            </div>
+            
+                <NavDropdown title={<i className="fas fa-user"></i>} className="link-nav" id="basic-nav-dropdown">
+                <NavDropdown.Item href="#action/3.1">Sign In</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Sing Up</NavDropdown.Item>
+                </NavDropdown>
+        </div>
+>>>>>>> 712b4452295b811633c2b4d37cc505d2a1b9dfc6
     )
 }
 
 export default NavBar
 
 
+<<<<<<< HEAD
 
 // { usuario.name ?
     // <div className='user-name-container'>
@@ -52,3 +69,5 @@ export default NavBar
     //         <NavDropdown.Item as={Link} to="/signUp">👤+ Sign Up </NavDropdown.Item>
     //     </NavDropdown>
     //     }
+=======
+>>>>>>> 712b4452295b811633c2b4d37cc505d2a1b9dfc6

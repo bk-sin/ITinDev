@@ -7,6 +7,7 @@ function SignUp(props) {
   localStorage.getItem("token") && !props.token && props.tokenDale()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   useEffect(() => {
     axios
       .get("https://restcountries.com/v2/all?fields=name")
@@ -31,6 +32,8 @@ function SignUp(props) {
       [e.target.name]: e.target.value,
     })
 =======
+=======
+>>>>>>> 712b4452295b811633c2b4d37cc505d2a1b9dfc6
   const responseGoogle = (res) => {
     props.signupUser(
       res.profileObj.email,
@@ -41,7 +44,10 @@ function SignUp(props) {
       "Argentina",
       true
     )
+<<<<<<< HEAD
 >>>>>>> 82e336f66c7ecf88b2f5759f696960dd679f5465
+=======
+>>>>>>> 712b4452295b811633c2b4d37cc505d2a1b9dfc6
   }
 
   const email = useRef()
@@ -79,6 +85,7 @@ function SignUp(props) {
   }
 
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
     <div className="cointainer-all">
       <div className="form-neon">
@@ -189,6 +196,8 @@ function SignUp(props) {
               </Link>
             </div>
 =======
+=======
+>>>>>>> 712b4452295b811633c2b4d37cc505d2a1b9dfc6
     <div className="signMain">
       <div className="signBody">
         <div className="signLine"></div>
@@ -310,7 +319,10 @@ function SignUp(props) {
                 cookiePolicy={"single_host_origin"}
               />
             </form>
+<<<<<<< HEAD
 >>>>>>> 82e336f66c7ecf88b2f5759f696960dd679f5465
+=======
+>>>>>>> 712b4452295b811633c2b4d37cc505d2a1b9dfc6
           </div>
         </div>
       </div>
