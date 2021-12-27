@@ -4,7 +4,7 @@ const passport = require("../config/passport")
 const validator = require("../config/validator")
 const userControllers = require("../controllers/userControllers")
 const matchsControllers=require("../controllers/matchsControllers")
-const{userMatchs}=matchsControllers
+const{userMatchs,matchsAndDismatchs}=matchsControllers
 const {Route} = require("express")
 const {newUser, logIn, tokenVerification,getUsers} = userControllers
 
@@ -19,6 +19,9 @@ Router.route("/tokenVerification").get(
   passport.authenticate("jwt", {session: false}),
   tokenVerification
 )
+Router.route("/match/:id")
+.put(passport.authenticate("jwt", {session: false}),matchsAndDismatchs),
+
 Router.route('/user/matchs/:id')
 .get(userMatchs)
 
