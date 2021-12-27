@@ -51,7 +51,7 @@ export default function Test(props) {
   return (
     <>
       <h1>Hola</h1>
-      <div>
+      <div className="contenedor">
         <link
           href="https://fonts.googleapis.com/css?family=Damion&display=swap"
           rel="stylesheet"
@@ -73,9 +73,10 @@ export default function Test(props) {
                 onCardLeftScreen={() => outOfFrame(character.name, index)}
               >
                 <div
-                  style={{backgroundImage: "url(" + character.image + ")"}}
-                  className="tarjeta"
+                  /*                   style={{backgroundImage: "url(" + character.image + ")"}}
+                   */ className="tarjeta"
                 >
+                  <img src={character.image} />
                   <h3>{character.name}</h3>
                 </div>
               </TinderCard>

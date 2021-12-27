@@ -15,6 +15,7 @@ function authReducer(state = initialState, action) {
         ...state,
         all: action.payload,
       }
+
     default:
       return state
   }

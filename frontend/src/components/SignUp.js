@@ -4,8 +4,6 @@ import authAction from "../redux/actions/authActions"
 import GoogleLogin from "react-google-login"
 
 function SignUp(props) {
-  localStorage.getItem("token") && !props.token && props.tokenDale()
-
   const responseGoogle = (res) => {
     props.signupUser(
       res.profileObj.email,
