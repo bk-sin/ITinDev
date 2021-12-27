@@ -1,0 +1,59 @@
+.tarjeta {
+  position: relative;
+  width: 600px;
+  padding: 20px;
+  max-width: 85vw;
+  height: 50vh;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: rgba(0, 0, 0, 0.3);
+}
+
+.tarjeta h2 {
+  position: absolute;
+  bottom: 10px;
+  color: white;
+}
+
+.tarjetasTinderContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+}
+
+.swipe {
+  position: absolute;
+}
+
+.botonesSwipe {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  bottom: 10vh;
+  justify-content: space-evenly;
+}
+
+.botonSwipe {
+  background-color: white;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  font-size: 2rem;
+  padding: 3vw;
+}
+
+.replay {
+  color: orange;
+}
+.close {
+  color: red;
+}
+.star {
+  color: blue;
+}
+.fav {
+  color: green;
+}
+.energy {
+  color: purple;
+}
