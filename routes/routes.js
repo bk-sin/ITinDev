@@ -4,7 +4,9 @@ const passport = require("../config/passport")
 const validator = require("../config/validator")
 const userControllers = require("../controllers/userControllers")
 const {Route} = require("express")
-const {newUser, logIn, tokenVerification} = userControllers
+const {newUser, logIn, tokenVerification, getUsers} = userControllers
+
+Router.route("/users").get(getUsers)
 
 Router.route("/auth/signUp").post(validator, newUser)
 
