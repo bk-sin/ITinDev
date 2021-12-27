@@ -8,8 +8,8 @@ function Main() {
         <div className='container_principal'>
             <div className='container_cuenta'>
                 <h1 className='titulo_principal'>¿Estás list@ para codear tu corazón?</h1>
-                <button className='btn-grad'>Crear cuenta de citas</button>
             </div>
+            <button className='btn-grad'>Crear cuenta de citas</button>
 
         </div>
         </>

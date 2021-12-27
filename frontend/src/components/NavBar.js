@@ -13,6 +13,7 @@ function NavBar() {
             <Link to="/" className="logo-container">
                 <img src="/assets/ItinDev_logo.png" alt="ItinDev_logo"></img>
             </Link>
+            <p>ItinDev</p>
             <div>
                 <Nav.Link className="link-nav" href="#home">Home</Nav.Link>
                 <Nav.Link className="link-nav" href="#link">Link</Nav.Link>
