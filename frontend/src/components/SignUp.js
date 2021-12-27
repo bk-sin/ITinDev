@@ -53,8 +53,8 @@ function SignUp(props) {
   }
 
   return (
-    <div className="signMain">
-      <div className="signBody">
+    <div className="cointainer-all">
+      <div className="form-neon">
         <div className="signLine"></div>
         <div className="backMyTinerary  su">
           <div className="backForm">
