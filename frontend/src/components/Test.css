@@ -1,29 +1,77 @@
-.tarjeta {
-  position: relative;
-  width: 600px;
-  padding: 20px;
-  max-width: 85vw;
-  height: 50vh;
-  border-radius: 20px;
-  background-size: cover;
-  background-position: center;
-  box-shadow: rgba(0, 0, 0, 0.3);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+.container-all{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: whitesmoke;
+  width: 100vw;
+  height: 90vh;
+  font-family: 'Roboto', sans-serif;
+  background-color: #070707;
+  transition: all .3s;
 }
 
-.tarjeta h2 {
-  position: absolute;
-  bottom: 10px;
-  color: white;
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.tarjetasTinder{
+  width: 40vw;
+  height: 60vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  color: whitesmoke;
 }
 
 .tarjetasTinderContainer {
   display: flex;
   justify-content: center;
-  margin-top: 5vh;
+  margin-top: 10vh;
+  overflow: hidden;
+  
+}
+
+.info-card{
+  background-color: whitesmoke;
+  border-radius: 5px;
+  width: 25vw;
+  height: 70vh;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.tarjeta {
+  margin-top: 5px;
+  width: 20vw;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  box-shadow: rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+}
+
+
+.info-card h2{
+  color: rgb(248,31,33);
+}
+
+.info-card h3{
+  color: #070707;
+  font-size: 1rem;
+}
+
+
+.infoText{
+  z-index: -10;
 }
 
 .swipe {
   position: absolute;
+  overflow: hidden !important;
 }
 
 .botonesSwipe {
@@ -56,4 +104,18 @@
 }
 .energy {
   color: purple;
+}
+
+.contenedor {
+  width: 100%;
+  height: 100vh;
+}
+.buttons {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 10vh;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
