@@ -14,6 +14,64 @@ img {
   width: 100vw;
 }
 
+/* ESTILO COMPONENTE HEADER */
+.costumBg{
+  width: 100vw;
+  min-height: 10vh;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4962359943977591) 60%, rgba(0,0,0,0) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-container{
+display: flex;
+flex: 0 1 auto;
+padding: 0px 2rem;
+}
+
+.logo-container img{
+width: 30px;
+}
+
+.dropdown-nav{
+
+padding: 0px 2rem;
+display: flex;
+flex: 0 1 auto
+}
+
+.links-nav{
+font-size: 2vh;
+display: flex;
+flex-flow: row nowrap;
+flex: 1 1 100%;
+}
+
+.link-nav{
+color: white !important;
+text-transform: uppercase;
+}
+
+
+.link-nav:hover{
+text-shadow: 0 0 8px white;
+transition: .3s;
+
+}
+
+
+.fa-user{
+font-size: 20px;
+color: white;
+
+}
 
 
 
