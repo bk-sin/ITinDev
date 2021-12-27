@@ -1,8 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
 *{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -15,6 +21,39 @@ img {
 }
 
 
+
+
+/* Estilos de componente main */
+
+.container_principal {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  background: url('../public/assets/clay-banks-pfThjuy_jUA-unsplash.jpg') center center/cover no-repeat;
+  background-color: #070707;
+}
+
+.container_cuenta{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  height: 10vh;
+  width: 100vw;
+  background-color: rgba(248, 31, 35, 0.377);
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.521);
+}
+
+.titulo_principal{
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: unset;
+}
 
 
 /* ESTILO FORM SIGN IN*/
@@ -246,9 +285,6 @@ select::-webkit-scrollbar-thumb{
     justify-content: unset;
   }
 
-  .nav-link{
-    padding: 0.5rem, 0.2rem !important
-  }
 
   .dropdown-nav{
     flex: 1 1 auto;
@@ -261,37 +297,51 @@ select::-webkit-scrollbar-thumb{
     padding: 0
   }
 
-
 }
 
 /* ESTILO COMPONENTE NAVBAR */
 .costumBg{
-  width: 100vw;
+  width: 100%;
   min-height: 10vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4962359943977591) 60%, rgba(0,0,0,0) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+.logo-container{
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4962359943977591) 60%, rgba(0,0,0,0) 100%);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 4;
-}
-
-.logo-container{
-display: flex;
-flex: 0 1 auto;
-padding: 0px 2rem;
+  width: 20%;
 }
 
 .logo-container img{
-width: 30px;
+  width: 45px;
+  margin-right: 1rem;
 }
 
-.dropdown-nav{
+.brand{
+  color: whitesmoke;
+  font-size: 2rem;
+  margin-bottom: unset;
+}
 
+.menu-options{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+
+.dropdown-nav{
 padding: 0px 2rem;
 display: flex;
 flex: 0 1 auto
@@ -301,13 +351,11 @@ flex: 0 1 auto
 font-size: 2vh;
 display: flex;
 flex-flow: row nowrap;
-flex: 1 1 100%;
 }
 
 .link-nav{
-color: rgb(0, 0, 0) !important;
+color: whitesmoke !important;
 text-transform: uppercase;
-padding: 10px;
 }
 
 
@@ -320,7 +368,7 @@ transition: .3s;
 
 .fa-user{
 font-size: 20px;
-color: rgb(0, 0, 0);
+color: whitesmoke;
 
 }
 
@@ -331,103 +379,111 @@ footer{
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
+  align-content: center;
   align-items: center;
   width: 100%;
-  height: 17vh;
-  background: #5575aa;
+  height: 10vh;
+  background-color: black;
+}
+
+footer p{
+  margin-bottom: unset;
 }
 
 .icons-container{
   display: flex;
-  flex-flow: row wrap;
-  min-width: 25%;
-  justify-content: space-evenly;
+  flex-flow: row nowrap;
+  justify-content: center;
   }
 
 
-#telegram,
-#twitter,
-#github,
-#facebook {
+#github {
   font-size: 30px;
   color: white;
   border-radius: 3px;
   animation: animate 3s linear infinite;
-  text-shadow: 0 0 15px #0072ff;
 }
 
-#twitter {
-  animation-delay: 0.3s;
-}
-
-#facebook {
-  animation-delay: 0.7s;
-}
 
 #github {
   animation-delay: 0.1s;
 }
 
 @keyframes animate {
-  from {
+  50% {
     filter: hue-rotate(0deg);
+    color: white;
+    text-shadow: 0 -5px 20px rgb(248,31,33);
   }
-  to {
-    filter: hue-rotate(360deg);
+  0%, 100% {
+    filter: hue-rotate(10deg);
+    color: rgb(248,31,33);
   }
 }
 
-/* Estilos de componente main */
 
-.container_principal {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  height: 85vh;
-  background: url('../public/assets/clay-banks-pfThjuy_jUA-unsplash.jpg') center center/cover no-repeat;
-
-}
-
-.container_cuenta{
-  display: flex;
-  justify-content: center;
+.frame {
+  width: 90%;
+  margin: 40px auto;
   text-align: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 15vh;
-  background-color: rgba(0, 0, 0, 0.159);
-  /* background-color: #d12728;
-  background-image: linear-gradient(180deg, #d12728 6%, #5575aa 68%); */
 }
 
-.titulo_principal{
-  font-family: ProximaNova;
-  color: #ffffff;
-  padding: 1rem;
+button {
+  margin: 20px;
 }
 
-.btn-grad {
-  background-image: linear-gradient(to right, #ebe8e5 0%, #FFFFFF  51%, #ECE9E6  100%)
+.custom-btn {
+  margin-top: 15vh;
+  width: 15vw;
+  height: 5vh;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+
+  outline: none;
 }
 
-.btn-grad {
-   margin: 10px 10rem;
-   padding: 15px 45px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   background-size: 200% auto;
-   color: #355491;            
-   box-shadow: 0 0 20px #eee;
-   border-radius: 10px;
-   display: block;
- }
+/* 5 */
+.btn-5 {
+  padding: 0;
+  border: none;
+  background: rgba(248, 31, 35, 0.589);
+  background: linear-gradient(0deg, rgb(248,31,33)) 0%, rgb(248,31,33) 100%;
+}
 
- .btn-grad:hover {
-   background-position: right center;
-   color: #fff;
-   text-decoration: none;
- }
-
+.btn-5:hover {
+  color: #fff;
+  background: transparent;
+  box-shadow:none;
+}
+.btn-5:before,
+.btn-5:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: rgb(248,31,33);
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
