@@ -5,19 +5,21 @@ import {Link} from "react-router-dom"
 function NavBar() {
   return (
     <div className="costumBg" variant="dark">
-      <Link to="/" className="logo-container">
+      <div className="logo-container">
+      <Link to="/" >
         <img src="/assets/ItinDev_logo.png" alt="ItinDev_logo"></img>
       </Link>
-      <p>ItinDev</p>
-      <div>
+      <p className="brand">&#x2774; ItinDev &#x2775; </p>
+      </div>
+      <div className="menu-options">
         <Nav.Link as={Link} className="link-nav" to="/">
           Home
         </Nav.Link>
         <Nav.Link as={Link} className="link-nav" to="#link">
-          Link
+          Matchs
         </Nav.Link>
       </div>
-
+      <div className="dropdown-nav">
       <NavDropdown
         title={<i className="fas fa-user"></i>}
         className="link-nav"
@@ -30,6 +32,7 @@ function NavBar() {
           Sing Up
         </NavDropdown.Item>
       </NavDropdown>
+      </div>
     </div>
   )
 }
