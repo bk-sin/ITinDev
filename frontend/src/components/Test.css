@@ -4,14 +4,16 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background-color: whitesmoke;
   width: 100vw;
   height: 90vh;
   font-family: 'Roboto', sans-serif;
-  background: #b92b27;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  /* background: #b92b27;
+  background: -webkit-linear-gradient(to right, #1565C0, #b92b27);
+  background: linear-gradient(to right, #1565C0, #b92b27); */
+  background: #000000;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #252525, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #252525, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
   transition: all .3s;
 }
 
@@ -59,7 +61,7 @@ body::-webkit-scrollbar {
 
 
 .info-card h2{
-  color: rgb(129, 32, 33);
+  color: rgb(211, 50, 52);
 }
 
 .info-card h3{
@@ -135,8 +137,9 @@ svg{
   border-radius: 50%;
 }
 
-.boton-individual-1{
-  box-shadow: -5px -2px 10px 2px #9b9b9bd7 inset;
+.boton-individual-1, .boton-individual-2, .boton-individual-3, .boton-individual-4 {
+  cursor: pointer;
+  box-shadow: -5px -2px 10px 2px #c0c0c0d7 inset;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -144,35 +147,23 @@ svg{
   width: 3rem;
   height: 3rem;
   background-color: whitesmoke;
-  color: #FF416C;  /* fallback for old browsers */
-  color: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
-  color: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.boton-individual-1{
+  color: #870000;  /* fallback for old browsers */
+  color: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 
 .boton-individual-2{
-  box-shadow: -5px -2px 10px 2px #9b9b9bd7 inset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  background-color: whitesmoke;
   color: #F7971E;  /* fallback for old browsers */
   color: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
   color: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .boton-individual-3{
-  box-shadow: -5px -2px 10px 2px #9b9b9bd7 inset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  background-color: whitesmoke;
   color: #f85032;  /* fallback for old browsers */
   color: -webkit-linear-gradient(to right, #e73827, #f85032);  /* Chrome 10-25, Safari 5.1-6 */
   color: linear-gradient(to right, #e73827, #f85032); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -180,14 +171,6 @@ svg{
 
 
 .boton-individual-4{
-  box-shadow: -5px -2px 10px 2px #9b9b9bd7 inset;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  background-color: whitesmoke;
   color: #76b852;  /* fallback for old browsers */
   color: -webkit-linear-gradient(to right, #8DC26F, #76b852);  /* Chrome 10-25, Safari 5.1-6 */
   color: linear-gradient(to right, #8DC26F, #76b852); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
