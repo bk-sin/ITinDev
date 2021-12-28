@@ -1,8 +1,8 @@
-import React from "react"
-import {Nav, NavDropdown} from "react-bootstrap"
-import {Link} from "react-router-dom"
-import authAction from "../redux/actions/authActions"
-import {connect} from "react-redux"
+import React from "react";
+import { Nav, NavDropdown } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import authAction from "../redux/actions/authActions";
+import { connect } from "react-redux";
 
 function NavBar(props) {
   return (
@@ -26,6 +26,7 @@ function NavBar(props) {
                 className="fas fa-user"
                 src={props.user.image}
                 alt="user profile pic"
+                style={{ height: 30 }}
               />
             }
             className="link-nav"
@@ -35,7 +36,7 @@ function NavBar(props) {
               as={Link}
               to="/"
               onClick={() => {
-                props.signOut()
+                props.signOut();
               }}
             >
               Sign Out
@@ -62,17 +63,17 @@ function NavBar(props) {
         )}
       </div>
     </div>
-  )
+  );
 }
 
 const mapDispatchToProps = {
   tokenDale: authAction.tokenDale,
   signOut: authAction.signOut,
-}
+};
 const mapStateToProps = (state) => {
   return {
     user: state.authReducer.user,
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar);

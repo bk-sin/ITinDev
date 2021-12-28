@@ -1,18 +1,19 @@
-import SignIn from "../components/SignIn"
-import SignUp from "../components/SignUp"
-import Admin from "../components/Admin"
-import TestPadre from "../components/TestPadre"
-import {connect} from "react-redux"
-import authAction from "../redux/actions/authActions"
-import Main from "../components/Main"
-import NavBar from "../components/NavBar"
-import Footer from "../components/Footer"
-import React from "react"
-import {Routes, Route, Navigate} from "react-router-dom"
+import SignIn from "../components/SignIn";
+import SignUp from "../components/SignUp";
+import Admin from "../components/Admin";
+import TestPadre from "../components/TestPadre";
+import { connect } from "react-redux";
+import authAction from "../redux/actions/authActions";
+import Main from "../components/Main";
+import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
+import Messenger from "../components/Messenger";
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 function RoutesManager(props) {
-  localStorage.getItem("token") && !props.user.name && props.tokenDale()
-  console.log(props)
+  localStorage.getItem("token") && !props.user.name && props.tokenDale();
+  console.log(props);
   return (
     <>
       <NavBar />
@@ -40,19 +41,20 @@ function RoutesManager(props) {
             props.user.name ? <Navigate replace to="/test" /> : <SignUp />
           }
         />
+        <Route path="/messenger" element={<Messenger />} />
       </Routes>
       <Footer />
     </>
-  )
+  );
 }
 const mapDispatchToProps = {
   tokenDale: authAction.tokenDale,
   signOut: authAction.signOut,
-}
+};
 const mapStateToProps = (state) => {
   return {
     user: state.authReducer.user,
-  }
-}
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(RoutesManager)
+export default connect(mapStateToProps, mapDispatchToProps)(RoutesManager);
