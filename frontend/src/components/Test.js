@@ -85,6 +85,7 @@ export default function Test(props) {
                 style={{backgroundColor: !canSwipe && "#c3c4d3"}}
                 onClick={() => {
                   swipe("left")
+                  props.newConver(props.personas[currentIndex]._id)
                   props.match(props.user, props.personas[currentIndex]._id)
                 }}
               ></ImCross>

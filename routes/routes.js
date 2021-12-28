@@ -34,7 +34,10 @@ Router.route("/user/matchs/:id").get(matchUsers)
 
 Router.route("/messages").post(addNewMessage)
 Router.route("/messages/:conversationId").get(getMessage)
-Router.route("/conversations").post(newConversation)
+Router.route("/conversations/:recieverId").post(
+  passport.authenticate("jwt", {session: false}),
+  newConversation
+)
 Router.route("/conversations/:userId").get(getUserConversation)
 Router.route("/conversations/find/:firstUserId/:secondUserId").get(getTwoUsers)
 Router.route("/user/:id").get(getOneUser)

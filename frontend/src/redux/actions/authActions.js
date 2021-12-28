@@ -151,19 +151,31 @@ const authAction = {
       }
     }
   },
-  newConversation: (senderID, recieverID) => {
+  newConversation: (recieverId) => {
     return async (dispatch, getState) => {
       const token = localStorage.getItem("token")
       try {
         await axios.post(
-          "http://localhost:4000/api/conversations",
-          {senderID, recieverID},
+          "http://localhost:4000/api/conversations/" + recieverId,
+          {},
           {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }
         )
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  },
+  getConversation: (id) => {
+    return async (dispatch, getState) => {
+      try {
+        const res = await axios.post(
+          "http://localhost:4000/api/conversations/" + id
+        )
+        console.log(res)
       } catch (error) {
         console.error(error)
       }

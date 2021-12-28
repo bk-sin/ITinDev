@@ -2,9 +2,10 @@ const Conversation = require("../models/Conversation")
 
 const conversationControllers = {
   newConversation: async (req, res) => {
-    console.log(req.body)
+    console.log(req.params)
+    console.log(req.user._id)
     const newConversation = new Conversation({
-      members: [req.body.senderId, req.body.receiverId],
+      members: [req.user._id.toString(), req.params.recieverId],
     })
 
     try {

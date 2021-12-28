@@ -20,15 +20,15 @@ function TestPadre(props) {
           personas={props.personas}
           user={props.user}
           match={props.match}
+          newConver={props.newConversation}
           matchsAndDismatchs={props.matchsAndDismatchs}
         />
       )}
-      <button
-        onClick={() =>
-          props.newConversation(props.user._id, props.personas[2]._id)
-        }
-      >
+      <button onClick={() => props.newConversation(props.personas[3]._id)}>
         Conversacion
+      </button>
+      <button onClick={() => props.getConversation(props.personas[2]._id)}>
+        GetConversation
       </button>
     </div>
   )
@@ -40,6 +40,7 @@ const mapDispatchToProps = {
   matchsAndDismatchs: authAction.matchsAndDismatchs,
   match: authAction.match,
   newConversation: authAction.newConversation,
+  getConversation: authAction.getConversation,
 }
 const mapStateToProps = (state) => {
   return {
