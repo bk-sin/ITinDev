@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken")
 
 const userControllers = {
   newUser: async (req, res) => {
-    let {name, lastName, country, email,age, password, gender,matchs,disMatchs, image, google} =
+    let {name, lastName, country, email,age, password, gender, description, matchs, disMatchs, image, google} =
       req.body
 
     try {
@@ -22,6 +22,7 @@ const userControllers = {
           email,
           age,
           password,
+          description,
           gender,
           matchs,
           disMatchs,
