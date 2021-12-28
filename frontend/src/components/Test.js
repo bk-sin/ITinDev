@@ -53,7 +53,7 @@ export default function Test(props) {
 
   return (
     <>
-      <div className="container-all">
+      <div className="container-general">
 
         <div className="tarjetasTinder">
           <div className="tarjetasTinderContainer">
@@ -73,7 +73,7 @@ export default function Test(props) {
                 >
                 </div>
                 
-                <h2>{character.name}</h2>
+                <h2>{character.name}, {character.age}</h2>
                 <h3>Te voy a hackear el corazon</h3>
                 </div>
               </TinderCard>

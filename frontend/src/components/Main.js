@@ -1,4 +1,6 @@
 import React from "react"
+import { Link } from 'react-router-dom'
+
 
 function Main() {
   return (
@@ -8,11 +10,11 @@ function Main() {
           <h1 className="titulo_principal">
             Encontrá con quien hablar un mismo lenguaje
           </h1>
-        <button class="custom-btn btn-5">
-          <span>
+        <Link as={Link} to="/signup" class="custom-btn btn-5">
+
             Crea tu cuenta
-          </span>
-        </button>
+ 
+        </Link>
         </div>
       </div>
     </>
