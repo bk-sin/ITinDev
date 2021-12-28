@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400&display=swap');
 
 *{
   padding: 0;
@@ -27,32 +28,31 @@ img {
 
 .container_principal {
   display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 90vh;
-  background: url('../public/assets/clay-banks-pfThjuy_jUA-unsplash.jpg') center center/cover no-repeat;
-  background-color: #070707;
+  background: url(../public/assets/ima4.jpg) center center/cover no-repeat;
 }
 
 .container_cuenta{
   display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  flex-flow: column nowrap;
+  justify-content: space-around;
   text-align: center;
-  flex-direction: column;
-  height: 10vh;
-  width: 100vw;
-  background-color: rgba(248, 31, 35, 0.377);
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.521);
+  align-items: center;
+  height: 60vh;
+  width: 60vw;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
 }
 
 .titulo_principal{
+  font-family: 'IBM Plex Mono', monospace;
   text-transform: uppercase;
-  color: #ffffff;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 20px  rgb(255, 255, 255);
   font-size: 2rem;
-  margin-bottom: unset;
 }
 
 
@@ -433,9 +433,8 @@ button {
 }
 
 .custom-btn {
-  margin-top: 15vh;
-  width: 15vw;
-  height: 5vh;
+  width: 18vw;
+  height: 8vh;
   color: #fff;
   text-transform: uppercase;
   border-radius: 5px;
@@ -444,15 +443,18 @@ button {
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-
   outline: none;
 }
 
 /* 5 */
 .btn-5 {
+  font-size: 1.5rem;
+font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  letter-spacing: 2px;
   padding: 0;
   border: none;
-  background: rgba(248, 31, 35, 0.589);
+  background: rgba(201, 24, 27, 0.8);
   background: linear-gradient(0deg, rgb(248,31,33)) 0%, rgb(248,31,33) 100%;
 }
 

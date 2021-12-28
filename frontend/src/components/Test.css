@@ -7,11 +7,7 @@
   width: 100vw;
   height: 90vh;
   font-family: 'Roboto', sans-serif;
-  background: #b92b27;
-  background: -webkit-linear-gradient(to right, #1565C0, #b92b27);
-  background: linear-gradient(to right, #092f5a, #631815); 
- /* background: url("../../public/assets/img9.jpeg") center center/cover no-repeat; */
-/*background: url("../../public/assets/ima3.jpg") center center/cover no-repeat; */
+  background: url(../../public/assets/ima2.jpg) center center/cover no-repeat;
   transition: all .3s;
 }
 
@@ -115,7 +111,7 @@ body::-webkit-scrollbar {
 }
 
 .buttons {
-  width: 50%;
+  width: 40%;
   bottom: 10vh;
   display: flex;
   flex-flow: row nowrap;

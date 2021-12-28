@@ -2,7 +2,6 @@ import React, {useState, useRef, useMemo} from "react"
 import TinderCard from "react-tinder-card"
 import "./Test.css"
 import { ImCross } from 'react-icons/im'
-import { BsCheckLg } from 'react-icons/bs'
 import { RiArrowGoBackFill }  from 'react-icons/ri'
 import {MdFavorite} from 'react-icons/md'
 
@@ -96,15 +95,11 @@ export default function Test(props) {
             </RiArrowGoBackFill>
             </div>
             <div className="boton-individual-3">
-            <MdFavorite>
-            </MdFavorite>
-            </div>
-            <div className="boton-individual-4">
-            <BsCheckLg
+            <MdFavorite
               style={{backgroundColor: !canSwipe && "#c3c4d3"}}
               onClick={() => swipe("right")}
             >
-            </BsCheckLg>
+            </MdFavorite>
             </div>
           </div>
         </div>
