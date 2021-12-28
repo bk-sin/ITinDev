@@ -21,7 +21,11 @@ const userControllers = {
     try {
       const userExists = await User.findOne({email})
       if (userExists) {
-        res.json({success: false, error: "Email already exist", response: null})
+        res.json({
+          success: false,
+          error: "Email already exist",
+          response: null,
+        })
       } else {
         password = bcryptjs.hashSync(password, 10)
 
@@ -114,6 +118,17 @@ const userControllers = {
       matchs: req.user.matchs,
       _id: req.user._id,
     })
+  },
+  getOneUser: async (req, res) => {
+    try {
+      let user = await User.findById(req.params.id)
+      res.json({res: user})
+    } catch (err) {
+      return res.status(400).json({
+        message: "cannot fetch user",
+        res: err.message,
+      })
+    }
   },
 }
 
