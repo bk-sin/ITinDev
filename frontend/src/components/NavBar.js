@@ -1,8 +1,8 @@
-import React from "react";
-import { Nav, NavDropdown } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import authAction from "../redux/actions/authActions";
-import { connect } from "react-redux";
+import React from "react"
+import {Nav, NavDropdown} from "react-bootstrap"
+import {Link} from "react-router-dom"
+import authAction from "../redux/actions/authActions"
+import {connect} from "react-redux"
 
 function NavBar(props) {
   return (
@@ -31,7 +31,7 @@ function NavBar(props) {
                 className="fas fa-user"
                 src={props.user.image}
                 alt="user profile pic"
-                style={{ height: 30 }}
+                style={{height: 30}}
               />
             }
             className="link-nav"
@@ -41,7 +41,7 @@ function NavBar(props) {
               as={Link}
               to="/"
               onClick={() => {
-                props.signOut();
+                props.signOut()
               }}
             >
               Sign Out
@@ -66,19 +66,36 @@ function NavBar(props) {
             </NavDropdown.Item>
           </NavDropdown>
         )}
+        <div className="menu-options">
+          <Nav.Link as={Link} className="link-nav" to="/">
+            Home
+          </Nav.Link>
+        </div>
+        <NavDropdown
+          title={<i className="fas fa-user"></i>}
+          className="link-nav"
+          id="basic-nav-dropdown"
+        >
+          <NavDropdown.Item as={Link} to="/signin">
+            ➡️ Sign In
+          </NavDropdown.Item>
+          <NavDropdown.Item as={Link} to="/signup">
+            👤+ Sing Up
+          </NavDropdown.Item>
+        </NavDropdown>
       </div>
     </div>
-  );
+  )
 }
 
 const mapDispatchToProps = {
   tokenDale: authAction.tokenDale,
   signOut: authAction.signOut,
-};
+}
 const mapStateToProps = (state) => {
   return {
     user: state.authReducer.user,
-  };
-};
+  }
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(NavBar);
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar)

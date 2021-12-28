@@ -8,10 +8,10 @@ function Main() {
           <h1 className="titulo_principal">
             Encontrá con quien hablar un mismo lenguaje
           </h1>
+          <button class="custom-btn btn-5">
+            <span>Crea tu cuenta</span>
+          </button>
         </div>
-        <button className="custom-btn btn-5">
-          <span>Crea tu cuenta</span>
-        </button>
       </div>
     </>
   )
