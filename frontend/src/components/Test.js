@@ -1,7 +1,8 @@
 import React, {useState, useRef, useMemo} from "react"
 import TinderCard from "react-tinder-card"
 import "./Test.css"
-import {AiOutlineLeft, AiOutlineRight } from 'react-icons/ai'
+import { ImCross } from 'react-icons/im'
+import { BsCheckLg } from 'react-icons/bs'
 import { RiArrowGoBackFill }  from 'react-icons/ri'
 import {MdFavorite} from 'react-icons/md'
 
@@ -80,23 +81,31 @@ export default function Test(props) {
             ))}
           </div>
           <div className="buttons">
-            <AiOutlineLeft
+            <div className="boton-individual-1">
+            <ImCross
               style={{backgroundColor: !canSwipe && "#c3c4d3"}}
               onClick={() => swipe("left")}
             >
-            </AiOutlineLeft>
+            </ImCross>
+            </div>
+            <div className="boton-individual-2">
             <RiArrowGoBackFill
               style={{backgroundColor: !canGoBack && "#c3c4d3"}}
               onClick={() => goBack()}
             >
-              Volver
             </RiArrowGoBackFill>
-            <AiOutlineRight
+            </div>
+            <div className="boton-individual-3">
+            <MdFavorite>
+            </MdFavorite>
+            </div>
+            <div className="boton-individual-4">
+            <BsCheckLg
               style={{backgroundColor: !canSwipe && "#c3c4d3"}}
               onClick={() => swipe("right")}
             >
-              Swipe derecha
-            </AiOutlineRight>
+            </BsCheckLg>
+            </div>
           </div>
         </div>
       </div>

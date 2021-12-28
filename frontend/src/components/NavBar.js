@@ -23,10 +23,10 @@ function NavBar() {
         id="basic-nav-dropdown"
       >
         <NavDropdown.Item as={Link} to="/signin">
-          Sign In
+        ➡️ Sign In
         </NavDropdown.Item>
         <NavDropdown.Item as={Link} to="/signup">
-          Sing Up
+        👤+ Sing Up
         </NavDropdown.Item>
       </NavDropdown>
       </div>
