@@ -1,8 +1,13 @@
+import "./css.css"
+import {BrowserRouter} from "react-router-dom"
+import RoutesManager from "./routes/routes"
+import "bootstrap/dist/css/bootstrap.min.css"
+
 function App() {
   return (
-    <div>
-      <h1>ITinDev</h1>
-    </div>
+    <BrowserRouter>
+      <RoutesManager />
+    </BrowserRouter>
   )
 }
 
