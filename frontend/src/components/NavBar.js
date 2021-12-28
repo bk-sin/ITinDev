@@ -59,30 +59,13 @@ function NavBar(props) {
             id="basic-nav-dropdown"
           >
             <NavDropdown.Item as={Link} to="/signin">
-              Sign In
+              ➡️ Sign In
             </NavDropdown.Item>
             <NavDropdown.Item as={Link} to="/signup">
-              Sing Up
+              👤+ Sing Up
             </NavDropdown.Item>
           </NavDropdown>
         )}
-        <div className="menu-options">
-          <Nav.Link as={Link} className="link-nav" to="/">
-            Home
-          </Nav.Link>
-        </div>
-        <NavDropdown
-          title={<i className="fas fa-user"></i>}
-          className="link-nav"
-          id="basic-nav-dropdown"
-        >
-          <NavDropdown.Item as={Link} to="/signin">
-            ➡️ Sign In
-          </NavDropdown.Item>
-          <NavDropdown.Item as={Link} to="/signup">
-            👤+ Sing Up
-          </NavDropdown.Item>
-        </NavDropdown>
       </div>
     </div>
   )

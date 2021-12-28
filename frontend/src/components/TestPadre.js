@@ -13,14 +13,23 @@ function TestPadre(props) {
 
   return (
     <div>
-      {loading && props.personas === "" ? (
+      {loading && props.personas === "" && props.user._id ? (
         <h1>Loading...</h1>
       ) : (
         <Test
           personas={props.personas}
+          user={props.user}
+          match={props.match}
           matchsAndDismatchs={props.matchsAndDismatchs}
         />
       )}
+      <button
+        onClick={() =>
+          props.newConversation(props.user._id, props.personas[2]._id)
+        }
+      >
+        Conversacion
+      </button>
     </div>
   )
 }
@@ -29,9 +38,10 @@ const mapDispatchToProps = {
   getMatchUsers: authAction.getMatchUsers,
   getUsers: authAction.getUsers,
   matchsAndDismatchs: authAction.matchsAndDismatchs,
+  match: authAction.match,
+  newConversation: authAction.newConversation,
 }
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     user: state.authReducer.user,
     test: state.authReducer.test,

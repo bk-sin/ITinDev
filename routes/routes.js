@@ -3,6 +3,7 @@ const Router = require("express").Router()
 const passport = require("../config/passport")
 const validator = require("../config/validator")
 const userControllers = require("../controllers/userControllers")
+const matchsControllers = require("../controllers/matchsControllers")
 const messageControllers = require("../controllers/messageControllers")
 const conversationControllers = require("../controllers/conversationControllers")
 const {Route} = require("express")
@@ -12,11 +13,13 @@ const {addNewMessage, getMessage} = messageControllers
 const {newConversation, getUserConversation, getTwoUsers} =
   conversationControllers
 
+const {matchsAndDismatchs, noMatchUsers, matchUsers} = matchsControllers
+
 Router.route("/users").get(getUsers)
 
-Router.route("/auth/signUp").post(validator, newUser)
+Router.route("/auth/signup").post(validator, newUser)
 
-Router.route("/auth/signIn").post(logIn)
+Router.route("/auth/signin").post(logIn)
 
 Router.route("/tokenVerification").get(
   passport.authenticate("jwt", {session: false}),

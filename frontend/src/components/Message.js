@@ -1,8 +1,8 @@
-import React from "react";
-import { format } from "timeago.js";
-import "./message.css";
+import React from "react"
+import {format} from "timeago.js"
+import "./message.css"
 
-const Message = ({ message, own }) => {
+const Message = ({message, own}) => {
   return (
     <div className={own ? "message own" : "message"}>
       <div className="messageTop">
@@ -15,7 +15,7 @@ const Message = ({ message, own }) => {
       </div>
       <div className="messageBottom">{format(message.createdAt)}</div>
     </div>
-  );
-};
+  )
+}
 
-export default Message;
+export default Message

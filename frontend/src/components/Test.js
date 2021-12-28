@@ -6,7 +6,6 @@ import {RiArrowGoBackFill} from "react-icons/ri"
 import {MdFavorite} from "react-icons/md"
 
 export default function Test(props) {
-  console.log(props)
   const [currentIndex, setCurrentIndex] = useState(props.personas.length - 1)
   const [lastDirection, setLastDirection] = useState()
   const currentIndexRef = useRef(currentIndex)
@@ -86,6 +85,7 @@ export default function Test(props) {
                 style={{backgroundColor: !canSwipe && "#c3c4d3"}}
                 onClick={() => {
                   swipe("left")
+                  props.match(props.user, props.personas[currentIndex]._id)
                 }}
               ></ImCross>
             </div>
@@ -99,7 +99,6 @@ export default function Test(props) {
                     props.matchsAndDismatchs(
                       props.personas[currentIndex + 1]._id
                     )
-                  console.log(props.personas[currentIndex + 1]._id)
                 }}
               ></RiArrowGoBackFill>
             </div>

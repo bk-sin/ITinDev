@@ -6,7 +6,6 @@ const matchsControllers = {
     try {
       const matchsList = await User.find({matchs: {$ne: matchsId}})
       if (matchsList.length != 0) {
-        console.log(matchsList)
         res.json({success: true, respuesta: matchsList})
       } else {
         res.json({success: false, respuesta: []})
@@ -19,9 +18,7 @@ const matchsControllers = {
     const matchsId = req.params.id
     try {
       const matchsList = await User.find({matchs: matchsId})
-
       if (matchsList.length != 0) {
-        console.log(matchsList)
         res.json({success: true, respuesta: matchsList})
       } else {
         res.json({success: false, respuesta: []})
@@ -31,8 +28,6 @@ const matchsControllers = {
     }
   },
   matchsAndDismatchs: (req, res) => {
-    console.log(req.params.id)
-    console.log(req.user._id)
     User.findOne({_id: req.params.id})
       .then((user) => {
         if (user.matchs.includes(req.user._id)) {

@@ -113,10 +113,8 @@ const authAction = {
       let res = await axios.get(
         "http://localhost:4000/api/user/matchs/" + user._id
       )
-      console.log(user)
 
-      const array = res.data.response
-      console.log(res.data.response)
+      const matches = user.matchs.some()
 
       dispatch({
         type: "TEST",
@@ -124,13 +122,42 @@ const authAction = {
       })
     }
   },
+  match: (user, idliked) => {
+    return async (dispatch, getState) => {
+      console.log(user)
+      console.log(idliked)
+      if (user.matchs.some((e) => e === idliked)) {
+        console.log("Hola")
+      } else {
+        console.log("no")
+      }
+    }
+  },
   matchsAndDismatchs: (id) => {
     return async (dispatch, getState) => {
       const token = localStorage.getItem("token")
       try {
-        const response = await axios.put(
+        await axios.put(
           "http://localhost:4000/api/match/" + id,
           {},
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+      } catch (error) {
+        console.error(error)
+      }
+    }
+  },
+  newConversation: (senderID, recieverID) => {
+    return async (dispatch, getState) => {
+      const token = localStorage.getItem("token")
+      try {
+        await axios.post(
+          "http://localhost:4000/api/conversations",
+          {senderID, recieverID},
           {
             headers: {
               Authorization: `Bearer ${token}`,
