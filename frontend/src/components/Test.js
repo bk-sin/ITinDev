@@ -69,7 +69,10 @@ export default function Test(props) {
                 className="swipe"
                 key={character._id}
                 preventSwipe={["down", "up"]}
-                onSwipe={(dir) => swiped(dir, character.name, index)}
+                onSwipe={(dir) => {
+                  dir === "right" && props.matchsAndDismatchs(character._id)
+                  swiped(dir, character.name, index)
+                }}
                 onCardLeftScreen={() => outOfFrame(character.name, index)}
               >
                 <div
@@ -85,13 +88,21 @@ export default function Test(props) {
           <div className="buttons">
             <button
               style={{backgroundColor: !canSwipe && "#c3c4d3"}}
-              onClick={() => swipe("left")}
+              onClick={() => {
+                swipe("left")
+              }}
             >
               Swipe izquierda
             </button>
             <button
               style={{backgroundColor: !canGoBack && "#c3c4d3"}}
-              onClick={() => goBack()}
+              onClick={() => {
+                goBack()
+                canGoBack &&
+                  lastDirection === "right" &&
+                  props.matchsAndDismatchs(props.personas[currentIndex + 1]._id)
+                console.log(props.personas[currentIndex + 1]._id)
+              }}
             >
               Volver
             </button>

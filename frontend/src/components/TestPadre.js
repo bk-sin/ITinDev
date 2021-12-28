@@ -6,7 +6,7 @@ import authAction from "../redux/actions/authActions"
 function TestPadre(props) {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    !props.personas[0] && props.getUsers()
+    !props.personas[0] && props.getUsers(props.user._id)
     props.personas.length > 0 && setLoading(false)
   }, [props.personas])
 
@@ -15,7 +15,10 @@ function TestPadre(props) {
       {loading && props.personas.length > 0 ? (
         <h1>Loading...</h1>
       ) : (
-        <Test personas={props.personas} />
+        <Test
+          personas={props.personas}
+          matchsAndDismatchs={props.matchsAndDismatchs}
+        />
       )}
     </div>
   )
@@ -23,9 +26,11 @@ function TestPadre(props) {
 
 const mapDispatchToProps = {
   getUsers: authAction.getUsers,
+  matchsAndDismatchs: authAction.matchsAndDismatchs,
 }
 const mapStateToProps = (state) => {
   return {
+    user: state.authReducer.user,
     personas: state.authReducer.all,
   }
 }

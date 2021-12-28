@@ -9,10 +9,8 @@ function Main() {
             Encontrá con quien hablar un mismo lenguaje
           </h1>
         </div>
-        <button class="custom-btn btn-5">
-          <span>
-            Crea tu cuenta
-          </span>
+        <button className="custom-btn btn-5">
+          <span>Crea tu cuenta</span>
         </button>
       </div>
     </>

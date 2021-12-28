@@ -99,13 +99,43 @@ const authAction = {
       dispatch({type: "USER", payload: ""})
     }
   },
-  getUsers: () => {
+  getUsers: (id) => {
     return async (dispatch, getState) => {
       let res = await axios.get("http://localhost:4000/api/users")
+
+      const noLikeados = res.data.respuesta.filter(
+        (like) => like._id !== id && like.matchs.length > 0
+      )
+
+      const filtrado = noLikeados.filter((user) =>
+        user.matchs.some((dentro) => dentro._id === id)
+      )
+
+      /* const cortado = nolikeados.filter(acortar => acortar === ) */
+      console.log(noLikeados)
       dispatch({
         type: "ALL",
         payload: res.data.respuesta,
       })
+    }
+  },
+  matchsAndDismatchs: (id) => {
+    return async (dispatch, getState) => {
+      const token = localStorage.getItem("token")
+      console.log(id)
+      try {
+        const response = await axios.put(
+          "http://localhost:4000/api/match/" + id,
+          {},
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        )
+      } catch (error) {
+        console.error(error)
+      }
     }
   },
 }

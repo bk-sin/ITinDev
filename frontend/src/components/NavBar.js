@@ -18,6 +18,11 @@ function NavBar(props) {
           <Nav.Link as={Link} className="link-nav" to="/">
             Home
           </Nav.Link>
+          {props.user.admin && (
+            <Nav.Link as={Link} className="link-nav" to="/test">
+              LOVE
+            </Nav.Link>
+          )}
         </div>
         {props.user.name ? (
           <NavDropdown

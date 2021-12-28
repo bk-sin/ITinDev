@@ -5,8 +5,18 @@ const jwt = require("jsonwebtoken")
 
 const userControllers = {
   newUser: async (req, res) => {
-    let {name, lastName, country, email, age, password, gender, image, google} =
-      req.body
+    let {
+      name,
+      lastName,
+      country,
+      email,
+      age,
+      password,
+      gender,
+      matchs,
+      image,
+      google,
+    } = req.body
 
     try {
       const userExists = await User.findOne({email})
@@ -23,6 +33,7 @@ const userControllers = {
           age,
           password,
           gender,
+          matchs,
           image,
           google,
         })
@@ -84,7 +95,7 @@ const userControllers = {
 
   getUsers: async (req, res) => {
     try {
-      const usersList = await User.find()
+      const usersList = await User.find().populate("matchs")
 
       res.json({success: true, respuesta: usersList})
     } catch (error) {
