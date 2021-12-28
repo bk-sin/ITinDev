@@ -1,4 +1,5 @@
 import React from "react";
+import { format } from "timeago.js";
 import "./message.css";
 
 const Message = ({ message, own }) => {
@@ -12,7 +13,7 @@ const Message = ({ message, own }) => {
         />
         <p className="messageText">{message.text}</p>
       </div>
-      <div className="messageBottom">{message.createdAt}</div>
+      <div className="messageBottom">{format(message.createdAt)}</div>
     </div>
   );
 };
