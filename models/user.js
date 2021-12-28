@@ -8,7 +8,8 @@ const userSchema = new mongoose.Schema({
   password: {type: String, required: true},
   age:{type:Number, required: true},
   gender: {type: String, required: true},
-  matchs:[{type: mongoose.Types.ObjectId, ref: "user"},],
+  matchs:[{type: mongoose.Types.ObjectId, ref: "user"}],
+  disMatchs:[{type: mongoose.Types.ObjectId, ref: "user"}],
   image: {type: String, required:true},
   google: {type: Boolean, default: false},
 })
