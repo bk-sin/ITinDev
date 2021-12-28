@@ -1,6 +1,7 @@
 const initialState = {
   user: [],
   all: "",
+  test: [],
 }
 
 function authReducer(state = initialState, action) {
@@ -16,6 +17,11 @@ function authReducer(state = initialState, action) {
         all: action.payload,
       }
 
+    case "TEST":
+      return {
+        ...state,
+        test: action.payload,
+      }
     default:
       return state
   }

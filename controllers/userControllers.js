@@ -111,6 +111,7 @@ const userControllers = {
       name: req.user.name,
       admin: req.user.admin,
       image: req.user.image,
+      matchs: req.user.matchs,
       _id: req.user._id,
     })
   },

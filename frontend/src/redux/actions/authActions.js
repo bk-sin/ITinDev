@@ -101,10 +101,25 @@ const authAction = {
   },
   getUsers: (id) => {
     return async (dispatch, getState) => {
-      let res = await axios.get("http://localhost:4000/api/user/matchs/" + id)
-      console.log(res.data.respuesta)
+      let res = await axios.get("http://localhost:4000/api/user/nomatchs/" + id)
       dispatch({
         type: "ALL",
+        payload: res.data.respuesta ? res.data.respuesta : null,
+      })
+    }
+  },
+  getMatchUsers: (user) => {
+    return async (dispatch, getState) => {
+      let res = await axios.get(
+        "http://localhost:4000/api/user/matchs/" + user._id
+      )
+      console.log(user)
+
+      const array = res.data.response
+      console.log(res.data.response)
+
+      dispatch({
+        type: "TEST",
         payload: res.data.respuesta ? res.data.respuesta : null,
       })
     }
@@ -112,7 +127,6 @@ const authAction = {
   matchsAndDismatchs: (id) => {
     return async (dispatch, getState) => {
       const token = localStorage.getItem("token")
-      console.log(id)
       try {
         const response = await axios.put(
           "http://localhost:4000/api/match/" + id,

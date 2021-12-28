@@ -1,10 +1,25 @@
 const User = require("../models/user")
 
 const matchsControllers = {
-  userMatchs: async (req, res) => {
+  noMatchUsers: async (req, res) => {
     const matchsId = req.params.id
     try {
       const matchsList = await User.find({matchs: {$ne: matchsId}})
+      if (matchsList.length != 0) {
+        console.log(matchsList)
+        res.json({success: true, respuesta: matchsList})
+      } else {
+        res.json({success: false, respuesta: []})
+      }
+    } catch (error) {
+      res.json({success: false, respuesta: "Oops!error"})
+    }
+  },
+  matchUsers: async (req, res) => {
+    const matchsId = req.params.id
+    try {
+      const matchsList = await User.find({matchs: matchsId})
+
       if (matchsList.length != 0) {
         console.log(matchsList)
         res.json({success: true, respuesta: matchsList})

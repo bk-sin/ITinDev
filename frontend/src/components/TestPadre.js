@@ -8,6 +8,7 @@ function TestPadre(props) {
   useEffect(() => {
     props.personas === "" && props.getUsers(props.user._id)
     props.personas.length > 0 && setLoading(false)
+    props.getMatchUsers(props.user)
   }, [props.personas])
 
   return (
@@ -25,12 +26,15 @@ function TestPadre(props) {
 }
 
 const mapDispatchToProps = {
+  getMatchUsers: authAction.getMatchUsers,
   getUsers: authAction.getUsers,
   matchsAndDismatchs: authAction.matchsAndDismatchs,
 }
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     user: state.authReducer.user,
+    test: state.authReducer.test,
     personas: state.authReducer.all,
   }
 }
