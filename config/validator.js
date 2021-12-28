@@ -27,6 +27,12 @@ const validator = (req, res, next) => {
             "string.empty": "Your Password  is a required field",
             "string.min": "Your Password  must have at least 4 characters",
         }),
+        description: joi.string().trim().min(10).max(100).required().pattern(new RegExp('[a-zA-Z]$')).messages({
+            "string.empty": "Your description is a required field",
+            "string.min": "Your description must have at least 10 characters",
+            "string.max": "Your description could have max. 100 characters",
+            "string.pattern.base": "Your description must contain only letters",
+        }),
         age:joi.string().min(2).max(15).trim().required().messages({
             "string.empty": "Your age  is a required field",
         }),
