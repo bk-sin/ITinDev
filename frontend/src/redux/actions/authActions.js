@@ -101,21 +101,11 @@ const authAction = {
   },
   getUsers: (id) => {
     return async (dispatch, getState) => {
-      let res = await axios.get("http://localhost:4000/api/users")
-
-      const noLikeados = res.data.respuesta.filter(
-        (like) => like._id !== id && like.matchs.length > 0
-      )
-
-      const filtrado = noLikeados.filter((user) =>
-        user.matchs.some((dentro) => dentro._id === id)
-      )
-
-      /* const cortado = nolikeados.filter(acortar => acortar === ) */
-      console.log(noLikeados)
+      let res = await axios.get("http://localhost:4000/api/user/matchs/" + id)
+      console.log(res.data.respuesta)
       dispatch({
         type: "ALL",
-        payload: res.data.respuesta,
+        payload: res.data.respuesta ? res.data.respuesta : null,
       })
     }
   },

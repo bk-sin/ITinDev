@@ -4,8 +4,9 @@ const matchsControllers = {
   userMatchs: async (req, res) => {
     const matchsId = req.params.id
     try {
-      const matchsList = await User.find({matchs: matchsId})
+      const matchsList = await User.find({matchs: {$ne: matchsId}})
       if (matchsList.length != 0) {
+        console.log(matchsList)
         res.json({success: true, respuesta: matchsList})
       } else {
         res.json({success: false, respuesta: []})

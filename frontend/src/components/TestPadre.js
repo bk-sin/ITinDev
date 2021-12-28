@@ -6,13 +6,13 @@ import authAction from "../redux/actions/authActions"
 function TestPadre(props) {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    !props.personas[0] && props.getUsers(props.user._id)
+    props.personas === "" && props.getUsers(props.user._id)
     props.personas.length > 0 && setLoading(false)
   }, [props.personas])
 
   return (
     <div>
-      {loading && props.personas.length > 0 ? (
+      {loading && props.personas === "" ? (
         <h1>Loading...</h1>
       ) : (
         <Test

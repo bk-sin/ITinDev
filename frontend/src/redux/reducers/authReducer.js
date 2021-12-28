@@ -1,6 +1,6 @@
 const initialState = {
-  user: {},
-  all: [],
+  user: [],
+  all: "",
 }
 
 function authReducer(state = initialState, action) {

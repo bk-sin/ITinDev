@@ -18,7 +18,7 @@ function NavBar(props) {
           <Nav.Link as={Link} className="link-nav" to="/">
             Home
           </Nav.Link>
-          {props.user.admin && (
+          {props.user.name && (
             <Nav.Link as={Link} className="link-nav" to="/test">
               LOVE
             </Nav.Link>
