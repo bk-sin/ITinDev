@@ -6,12 +6,14 @@ import GoogleLogin from "react-google-login"
 function SignUp(props) {
   const responseGoogle = (res) => {
     props.signupUser(
-      res.profileObj.email,
-      res.profileObj.googleId,
       res.profileObj.givenName,
       res.profileObj.familyName,
-      res.profileObj.imageUrl,
       "Argentina",
+      res.profileObj.email,
+      "18",
+      res.profileObj.googleId,
+      "male",
+      res.profileObj.imageUrl,
       true
     )
   }
@@ -64,8 +66,8 @@ function SignUp(props) {
                 className="inputs-btn"
                 ref={name}
                 required
-                minlength="3"
-                maxlength="20"
+                minLength="3"
+                maxLength="20"
               ></input>
               <label htmlFor="lastname">Lastname</label>
               <input
@@ -74,8 +76,8 @@ function SignUp(props) {
                 className="inputs-btn"
                 ref={lastname}
                 required
-                minlength="3"
-                maxlength="20"
+                minLength="3"
+                maxLength="20"
               ></input>
               <label htmlFor="email">Email</label>
               <input
@@ -92,8 +94,8 @@ function SignUp(props) {
                 className="inputs-btn"
                 ref={password}
                 required
-                minlength="8"
-                maxlength="20"
+                minLength="8"
+                maxLength="20"
               ></input>
             </div>
             <div className="container-inputs-2">

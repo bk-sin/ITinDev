@@ -11,5 +11,25 @@ const adminAction = {
       })
     }
   },
+  deletePeople: (id) => {
+    return async (dispatch, getState) => {
+      const token = localStorage.getItem("token")
+
+      await axios.put(
+        "http://localhost:4000/api/admin/deleteUser/" + id,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      const response = await axios.get("http://localhost:4000/api/users")
+      dispatch({
+        type: "ALL",
+        payload: response.data.response,
+      })
+    }
+  },
 }
 export default adminAction

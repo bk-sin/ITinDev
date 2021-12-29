@@ -10,6 +10,9 @@ function Admin(props) {
   const [ascdes, setascdes] = useState("DEFAULT")
 
   useEffect(() => {
+    props.getAllUsers()
+  }, [])
+  useEffect(() => {
     props.personas === "" && props.getAllUsers()
     props.personas !== "" && props.setPersonas()
   }, [props.personas])
@@ -26,12 +29,19 @@ function Admin(props) {
           <h2>Welcome {props.user.name}</h2>
           <ul>
             {props.auxiliar.map((character, index) => (
-              <User key={index} index={index} user={character} />
+              <User
+                key={index}
+                index={index}
+                user={character}
+                deletePeople={props.deletePeople}
+                getAllUsers={props.getAllUsers}
+              />
             ))}
           </ul>
           <button
             onClick={() => {
               props.setPersonas(ascdes)
+
               setascdes(ascdes === "ASC" ? "DES" : "ASC")
             }}
           >
@@ -45,8 +55,10 @@ function Admin(props) {
 const mapDispatchToProps = {
   getAllUsers: authAction.getAllUsers,
   setPersonas: adminAction.setPersonas,
+  deletePeople: adminAction.deletePeople,
 }
 const mapStateToProps = (state) => {
+  console.log(state)
   return {
     user: state.authReducer.user,
     personas: state.authReducer.all,

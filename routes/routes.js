@@ -6,6 +6,8 @@ const userControllers = require("../controllers/userControllers")
 const matchsControllers = require("../controllers/matchsControllers")
 const messageControllers = require("../controllers/messageControllers")
 const conversationControllers = require("../controllers/conversationControllers")
+const adminControllers = require("../controllers/adminControllers")
+
 const {Route} = require("express")
 const {newUser, logIn, tokenVerification, getUsers, getOneUser} =
   userControllers
@@ -14,8 +16,13 @@ const {newConversation, getUserConversation, getTwoUsers} =
   conversationControllers
 
 const {matchsAndDismatchs, noMatchUsers, matchUsers} = matchsControllers
+const {deletePeople} = adminControllers
 
 Router.route("/users").get(getUsers)
+Router.route("/admin/deleteUser/:id").put(
+  passport.authenticate("jwt", {session: false}),
+  deletePeople
+)
 
 Router.route("/auth/signup").post(validator, newUser)
 
