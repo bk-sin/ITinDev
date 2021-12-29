@@ -136,6 +136,9 @@ const Messenger = ({ user }) => {
                   placeholder="write something..."
                   onChange={(e) => setNewMessage(e.target.value)}
                   value={newMessage}
+                  onKeyPress={(e) => {
+                    e.key === "Enter" && handleSubmit(e);
+                  }}
                 ></textarea>
                 <button className="chatSubmitbutton" onClick={handleSubmit}>
                   Send
