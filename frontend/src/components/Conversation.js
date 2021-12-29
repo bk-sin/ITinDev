@@ -9,15 +9,14 @@ const Conversation = ({conversation, currentUser}) => {
     const friendId = conversation.members.find(
       (member) => member !== currentUser._id
     )
-    console.log(friendId)
+    //console.log(friendId);
     const getUser = async () => {
       try {
         const res = await axios.get(
           `http://localhost:4000/api/user/${friendId}`
         )
-        console.log(res.data.res)
         setUser(res.data.res)
-        console.log(user)
+        //console.log(user);
       } catch (err) {
         console.log(err)
       }
