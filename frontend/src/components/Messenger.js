@@ -18,7 +18,7 @@ const Messenger = ({ user }) => {
   const scrollRef = useRef();
 
   useEffect(() => {
-    socket.current = io("ws://localhost:8900");
+    socket.current = io("ws://localhost:4000");
     socket.current.on("getMessage", (data) => {
       setReceivedMessage({
         sender: data.senderId,
@@ -86,6 +86,7 @@ const Messenger = ({ user }) => {
     const receiverId = currentChat.members.find(
       (member) => member !== user._id
     );
+    console.log(receiverId);
 
     socket.current.emit("sendMessage", {
       senderId: user._id,
@@ -102,7 +103,7 @@ const Messenger = ({ user }) => {
       console.log(err);
     }
   };
-  console.log(messages);
+
   return (
     <div className="messenger">
       <div className="chatMenu">
@@ -124,7 +125,7 @@ const Messenger = ({ user }) => {
                   <div ref={scrollRef}>
                     <Message
                       message={message}
-                      own={message.sender === user._id}
+                      own={message.sender._id === user._id}
                     />
                   </div>
                 ))}

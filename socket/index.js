@@ -9,6 +9,12 @@ let users = [];
 const addUser = (userId, socketId) => {
   !users.some((user) => user.userId === userId) &&
     users.push({ userId, socketId });
+
+  for (var i = users.length - 1; i >= 0; --i) {
+    if (users[i].userId == null) {
+      users.splice(i, 1);
+    }
+  }
 };
 
 const removeUser = (socketId) => {
