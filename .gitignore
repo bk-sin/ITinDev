@@ -5,6 +5,7 @@ node_modules
 frontend/node_modules
 /.pnp
 .pnp.js
+socket/node_modules
 
 # testing
 frontend/coverage
