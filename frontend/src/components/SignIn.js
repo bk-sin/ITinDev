@@ -1,11 +1,19 @@
 import {useRef} from "react"
 import {connect} from "react-redux"
-import {BsEmojiLaughing} from "react-icons/bs"
 import authAction from "../redux/actions/authActions"
+import GoogleLogin from "react-google-login"
 
 function SignIn(props) {
   const email = useRef()
   const password = useRef()
+
+  const responseGoogle = (response) => {
+    props.signinUser(
+      response.profileObj.email,
+      response.profileObj.googleId,
+      true
+    )
+  }
 
   console.log(props)
   function handleSignIn(e) {
@@ -43,6 +51,14 @@ function SignIn(props) {
           >
             <span>Iniciar</span>
           </button>
+          <GoogleLogin
+            clientId="113911854537-8j68k30a4qpl884ffcvk7hvdfmsdlfnc.apps.googleusercontent.com"
+            buttonText="Sign Up with Google"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            className="google-btn"
+            cookiePolicy={"single_host_origin"}
+          />
         </form>
         <div className="contenedor-registro">
           <p>Aun no estás Registrado?</p>

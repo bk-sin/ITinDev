@@ -26,6 +26,7 @@ function SignUp(props) {
   const country = useRef()
   const age = useRef()
   const gender = useRef()
+  const description = useRef()
 
   function handleSignUp(e) {
     e.preventDefault()
@@ -39,7 +40,8 @@ function SignUp(props) {
       password.current.value,
       gender.current.value,
       photo.current.value,
-      "false"
+      "false",
+      description.current.value
     )
 
     email.current.value = ""
@@ -50,6 +52,7 @@ function SignUp(props) {
     country.current.value = ""
     age.current.value = ""
     gender.current.value = ""
+    description.current.value = ""
   }
 
   return (
@@ -142,6 +145,13 @@ function SignUp(props) {
                 <option value="Ecuador">Ecuador</option>
                 <option value="Peru">Peru</option>
               </select>
+              <label htmlFor="age">Description</label>
+              <textarea
+                id="description"
+                className="inputs-btn"
+                required
+                ref={description}
+              ></textarea>
             </div>
           </div>
           <div>
