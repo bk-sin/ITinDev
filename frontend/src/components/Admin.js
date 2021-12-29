@@ -41,6 +41,7 @@ function Admin(props) {
                   deletePeople={props.deletePeople}
                   editPeople={props.editPeople}
                   getAllUsers={props.getAllUsers}
+                  banPeople={props.banPeople}
                 />
               ))}
           </ul>
@@ -63,6 +64,7 @@ const mapDispatchToProps = {
   setPersonas: adminAction.setPersonas,
   deletePeople: adminAction.deletePeople,
   editPeople: adminAction.editPeople,
+  banPeople: adminAction.banPeople,
 }
 const mapStateToProps = (state) => {
   console.log(state)

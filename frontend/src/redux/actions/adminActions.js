@@ -55,5 +55,25 @@ const adminAction = {
       })
     }
   },
+  banPeople: (id) => {
+    return async (dispatch, getState) => {
+      const token = localStorage.getItem("token")
+
+      const all = await axios.put(
+        "http://localhost:4000/api/admin/ban/" + id,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      console.log(all)
+      dispatch({
+        type: "ALL",
+        payload: all.data,
+      })
+    }
+  },
 }
 export default adminAction

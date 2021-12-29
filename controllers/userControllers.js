@@ -124,6 +124,7 @@ const userControllers = {
       image: req.user.image,
       matchs: req.user.matchs,
       _id: req.user._id,
+      banned: req.user.banned,
     })
   },
   getOneUser: async (req, res) => {
