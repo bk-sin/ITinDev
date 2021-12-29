@@ -38,7 +38,7 @@ const Messenger = ({ user }) => {
   useEffect(() => {
     socket.current.emit("addUser", user._id);
     socket.current.on("getUsers", (users) => {
-      console.log(users);
+      // console.log(users);
     });
   }, [user]);
 
@@ -62,7 +62,7 @@ const Messenger = ({ user }) => {
         const res = await axios.get(
           `http://localhost:4000/api/messages/${currentChat?._id}`
         );
-        console.log(currentChat);
+        //console.log(currentChat);
         setMessages(res.data);
       } catch (err) {
         console.log(err);
@@ -108,7 +108,7 @@ const Messenger = ({ user }) => {
     <div className="messenger">
       <div className="chatMenu">
         <div className="chatMenuWrapper">
-          <input placeholder="Search for friends" className="chatMenuInput" />
+          {/* <input placeholder="Search for friends" className="chatMenuInput" /> */}
           {conversations.map((conversation) => (
             <div onClick={() => setCurrentChat(conversation)}>
               <Conversation conversation={conversation} currentUser={user} />
