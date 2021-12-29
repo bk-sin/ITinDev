@@ -49,7 +49,7 @@ function SignUp(props) {
     age.current.value = ""
     gender.current.value = ""
   }
-
+console.log(props.user)
   return (
     <div className="cointainer-all">
       <div className="form-neon">

@@ -2,10 +2,10 @@ const User = require("../models/user")
 
 const adminControllers={
 
-     matchsAndDismatchs:(req,res) =>{
+    deleteUser:(req,res) =>{
         User.findOne({_id: req.params.id})
         .then((user) =>{
-               User.findOneAndUpdate({_id:req.params.id}, {$pull:{_id:req.params.id}},{new:true})
+               User.findOneAndUpdate({_id:req.params.id}, {$pull:{_id:req.user.id}},{new:true})
                .then((user)=> res.json({success:true, response:user}))
                .catch((error) => console.log(error))
         })
