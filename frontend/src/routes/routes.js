@@ -24,10 +24,7 @@ function RoutesManager(props) {
           }
         />
         <Route path="/" element={<Main user={props.user} />} />
-        <Route
-          path="/admin"
-          element={props.user.admin ? <Admin /> : <Navigate replace to="/" />}
-        />
+        <Route path="/admin" element={<Admin user={props.user} />} />
         <Route
           path="/signin"
           element={

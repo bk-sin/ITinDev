@@ -1,7 +1,7 @@
 const initialState = {
   user: [],
   all: "",
-  test: [],
+  auxiliar: [],
 }
 
 function authReducer(state = initialState, action) {
@@ -17,10 +17,24 @@ function authReducer(state = initialState, action) {
         all: action.payload,
       }
 
-    case "TEST":
+    case "ASC":
       return {
         ...state,
-        test: action.payload,
+        auxiliar: state.all.sort(function (b, a) {
+          return a.name < b.name ? 1 : a.name > b.name ? -1 : 0
+        }),
+      }
+    case "DES":
+      return {
+        ...state,
+        auxiliar: state.all.sort(function (a, b) {
+          return a.name < b.name ? 1 : a.name > b.name ? -1 : 0
+        }),
+      }
+    case "DEFAULT":
+      return {
+        ...state,
+        auxiliar: action.payload,
       }
     default:
       return state

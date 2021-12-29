@@ -55,7 +55,7 @@ export default function Test(props) {
       <div className="container-general">
         <div className="tarjetasTinder">
           <div className="tarjetasTinderContainer">
-            {props.personas.length > 0 &&
+            {props.personas !== "Oops!error" ? (
               props.personas.map((character, index) => (
                 <TinderCard
                   ref={childRefs[index]}
@@ -78,7 +78,10 @@ export default function Test(props) {
                     <h3>Te voy a hackear el corazon</h3>
                   </div>
                 </TinderCard>
-              ))}
+              ))
+            ) : (
+              <h1>Loading...</h1>
+            )}
           </div>
           <div className="buttons">
             <div className="boton-individual-1">

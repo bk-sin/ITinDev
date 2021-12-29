@@ -31,9 +31,10 @@ Router.route("/match/:id").put(
 ),
   Router.route("/disMatch/:id").put(
     passport.authenticate("jwt", {session: false}),
-    dismatchsAndMatchs
+    matchsAndDismatchs
   ),
-  Router.route("/user/matchs/:id").get(userMatchs)
+  Router.route("/user/matchs/:id").get(matchUsers)
+Router.route("/user/nomatchs/:id").get(matchUsers)
 
 Router.route("/messages").post(addNewMessage)
 Router.route("/messages/:conversationId").get(getMessage)

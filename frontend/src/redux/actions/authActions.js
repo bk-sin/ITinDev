@@ -99,6 +99,15 @@ const authAction = {
       dispatch({type: "USER", payload: ""})
     }
   },
+  getAllUsers: (id) => {
+    return async (dispatch, getState) => {
+      let res = await axios.get("http://localhost:4000/api/users")
+      dispatch({
+        type: "ALL",
+        payload: res.data.respuesta ? res.data.respuesta : null,
+      })
+    }
+  },
   getUsers: (id) => {
     return async (dispatch, getState) => {
       let res = await axios.get("http://localhost:4000/api/user/nomatchs/" + id)
