@@ -39,7 +39,7 @@ function RoutesManager(props) {
       <Route
         path="/test"
         element={
-          !props.user.name ? <Navigate replace to="/signup" /> : <TestPadre />
+           <TestPadre />
         }
       />
       <Route
@@ -51,11 +51,11 @@ function RoutesManager(props) {
       />
       <Route
         path="/signin"
-        element={props.user.name ? <Navigate replace to="/test" /> : <SignIn />}
+        element={<SignIn />}
       />
       <Route
         path="/signup"
-        element={props.user.name ? <Navigate replace to="/test" /> : <SignUp />}
+        element={<SignUp />}
       />
 <<<<<<< HEAD
 >>>>>>> 82e336f66c7ecf88b2f5759f696960dd679f5465

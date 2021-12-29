@@ -1,6 +1,9 @@
 import React, {useState, useRef, useMemo} from "react"
 import TinderCard from "react-tinder-card"
 import "./Test.css"
+import { ImCross } from 'react-icons/im'
+import { RiArrowGoBackFill }  from 'react-icons/ri'
+import {MdFavorite} from 'react-icons/md'
 
 export default function Test(props) {
   console.log(props)
@@ -50,17 +53,8 @@ export default function Test(props) {
 
   return (
     <>
-      <h1>Hola</h1>
-      <div>
-        <link
-          href="https://fonts.googleapis.com/css?family=Damion&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css?family=Alatsi&display=swap"
-          rel="stylesheet"
-        />
-        <h1>React Tinder Card</h1>
+      <div className="container-general">
+
         <div className="tarjetasTinder">
           <div className="tarjetasTinderContainer">
             {props.personas.map((character, index) => (
@@ -72,42 +66,42 @@ export default function Test(props) {
                 onSwipe={(dir) => swiped(dir, character.name, index)}
                 onCardLeftScreen={() => outOfFrame(character.name, index)}
               >
+                <div className="info-card">
                 <div
                   style={{backgroundImage: "url(" + character.image + ")"}}
                   className="tarjeta"
                 >
-                  <h3>{character.name}</h3>
+                </div>
+                
+                <h2>{character.name}, {character.age}</h2>
+                <h3>Te voy a hackear el corazon</h3>
                 </div>
               </TinderCard>
             ))}
           </div>
           <div className="buttons">
-            <button
+            <div className="boton-individual-1">
+            <ImCross
               style={{backgroundColor: !canSwipe && "#c3c4d3"}}
               onClick={() => swipe("left")}
             >
-              Swipe izquierda
-            </button>
-            <button
+            </ImCross>
+            </div>
+            <div className="boton-individual-2">
+            <RiArrowGoBackFill
               style={{backgroundColor: !canGoBack && "#c3c4d3"}}
               onClick={() => goBack()}
             >
-              Volver
-            </button>
-            <button
+            </RiArrowGoBackFill>
+            </div>
+            <div className="boton-individual-3">
+            <MdFavorite
               style={{backgroundColor: !canSwipe && "#c3c4d3"}}
               onClick={() => swipe("right")}
             >
-              Swipe derecha
-            </button>
+            </MdFavorite>
+            </div>
           </div>
-          {lastDirection ? (
-            <h2 key={lastDirection} className="infoText">
-              You swiped {lastDirection}
-            </h2>
-          ) : (
-            <h2 className="infoText">Swipe para algun lado</h2>
-          )}
         </div>
       </div>
     </>

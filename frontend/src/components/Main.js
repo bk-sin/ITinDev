@@ -1,4 +1,6 @@
 import React from "react"
+import { Link } from 'react-router-dom'
+
 
 function Main() {
   return (
@@ -6,10 +8,14 @@ function Main() {
       <div className="container_principal">
         <div className="container_cuenta">
           <h1 className="titulo_principal">
-            ¿Estás list@ para codear tu corazón?
+            Encontrá con quien hablar un mismo lenguaje
           </h1>
+        <Link as={Link} to="/signup" class="custom-btn btn-5">
+
+            Crea tu cuenta
+ 
+        </Link>
         </div>
-        <button className="btn-grad">Crear cuenta de citas</button>
       </div>
     </>
   )
