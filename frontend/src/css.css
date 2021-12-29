@@ -286,11 +286,12 @@ font-family: 'IBM Plex Mono', monospace;
   position: relative;
   display: inline-block;
   outline: none;
+  margin-right: 4vw;
 }
 
 .btn-signUp {
-  font-size: 1rem;
-font-family: 'IBM Plex Mono', monospace;
+  font-size: 80%;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 600;
   letter-spacing: 2px;
   padding: 0;
@@ -330,9 +331,6 @@ font-family: 'IBM Plex Mono', monospace;
   width:100%;
   transition:800ms ease all;
 }
-
-
-
 
 
 
