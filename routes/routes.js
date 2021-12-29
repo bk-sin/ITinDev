@@ -49,7 +49,7 @@ Router.route("/match/:id").put(
     matchsAndDismatchs
   ),
   Router.route("/user/matchs/:id").get(matchUsers)
-Router.route("/user/nomatchs/:id").get(matchUsers)
+Router.route("/user/nomatchs/:id").get(noMatchUsers)
 
 Router.route("/messages").post(addNewMessage)
 Router.route("/messages/:conversationId").get(getMessage)

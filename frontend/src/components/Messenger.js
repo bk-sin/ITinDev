@@ -19,11 +19,7 @@ const Messenger = ({user}) => {
   const scrollRef = useRef()
 
   useEffect(() => {
-<<<<<<< HEAD
-    socket.current = io("ws://localhost:8900")
-=======
-    socket.current = io("ws://localhost:4000");
->>>>>>> 05807bbb5c692e5e6eace4c2b409c1fafef00125
+    socket.current = io("ws://localhost:4000")
     socket.current.on("getMessage", (data) => {
       setReceivedMessage({
         sender: data.senderId,
@@ -44,8 +40,8 @@ const Messenger = ({user}) => {
     socket.current.emit("addUser", user._id)
     socket.current.on("getUsers", (users) => {
       // console.log(users);
-    });
-  }, [user]);
+    })
+  }, [user])
 
   useEffect(() => {
     const getConversations = async () => {
@@ -66,15 +62,9 @@ const Messenger = ({user}) => {
       try {
         const res = await axios.get(
           `http://localhost:4000/api/messages/${currentChat?._id}`
-<<<<<<< HEAD
         )
-        console.log(currentChat)
-        setMessages(res.data)
-=======
-        );
         //console.log(currentChat);
-        setMessages(res.data);
->>>>>>> 05807bbb5c692e5e6eace4c2b409c1fafef00125
+        setMessages(res.data)
       } catch (err) {
         console.log(err)
       }
@@ -94,14 +84,8 @@ const Messenger = ({user}) => {
       conversationId: currentChat._id,
     }
 
-<<<<<<< HEAD
     const receiverId = currentChat.members.find((member) => member !== user._id)
-=======
-    const receiverId = currentChat.members.find(
-      (member) => member !== user._id
-    );
-    console.log(receiverId);
->>>>>>> 05807bbb5c692e5e6eace4c2b409c1fafef00125
+    console.log(receiverId)
 
     socket.current.emit("sendMessage", {
       senderId: user._id,
@@ -117,13 +101,8 @@ const Messenger = ({user}) => {
     } catch (err) {
       console.log(err)
     }
-<<<<<<< HEAD
   }
-  console.log(messages)
-=======
-  };
 
->>>>>>> 05807bbb5c692e5e6eace4c2b409c1fafef00125
   return (
     <div className="messenger">
       <div className="chatMenu">

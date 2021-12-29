@@ -19,9 +19,14 @@ function NavBar(props) {
             Home
           </Nav.Link>
           {props.user.name && (
-            <Nav.Link as={Link} className="link-nav" to="/test">
-              LOVE
-            </Nav.Link>
+            <>
+              <Nav.Link as={Link} className="link-nav" to="/test">
+                LOVE
+              </Nav.Link>
+              <Nav.Link as={Link} className="link-nav" to="/messenger">
+                MESSENGER
+              </Nav.Link>
+            </>
           )}
         </div>
         {props.user.name ? (

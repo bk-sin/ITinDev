@@ -9,15 +9,12 @@ import NavBar from "../components/NavBar"
 import Footer from "../components/Footer"
 import Messenger from "../components/Messenger"
 import React from "react"
-import {useNavigate} from "react-router-dom"
 import {Routes, Route, Navigate} from "react-router-dom"
 import Banned from "../components/Banned"
 
 function RoutesManager(props) {
   localStorage.getItem("token") && !props.user.name && props.tokenDale()
-  const navigate = useNavigate()
-  /* props.user.banned && navigate("/banned", {replace: true}) */
-  console.log(props.user)
+
   return (
     <>
       <NavBar />
@@ -31,6 +28,12 @@ function RoutesManager(props) {
             path="/test"
             element={
               props.user.name ? <TestPadre /> : <Navigate replace to="/" />
+            }
+          />
+          <Route
+            path="/messenger"
+            element={
+              props.user.name ? <Messenger /> : <Navigate replace to="/" />
             }
           />
           <Route path="/" element={<Main user={props.user} />} />
@@ -47,7 +50,6 @@ function RoutesManager(props) {
               props.user.name ? <Navigate replace to="/test" /> : <SignUp />
             }
           />
-          <Route path="/messenger" element={<Messenger />} />
         </Routes>
       )}
       <Footer />
