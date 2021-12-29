@@ -13,7 +13,9 @@ const userControllers = {
       age,
       password,
       gender,
+      description,
       matchs,
+      disMatchs,
       image,
       google,
     } = req.body
@@ -36,8 +38,10 @@ const userControllers = {
           email,
           age,
           password,
+          description,
           gender,
           matchs,
+          disMatchs,
           image,
           google,
         })
