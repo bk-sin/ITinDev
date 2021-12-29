@@ -70,12 +70,12 @@ export default function Test(props) {
                 >
                   <div className="info-card">
                     <div
-                      /*                   style={{backgroundImage: "url(" + character.image + ")"}}
-                       */ className="tarjeta"
+                      style={{backgroundImage: "url(" + character.image + ")"}}
+                      className="tarjeta"
                     ></div>
 
                     <h2>{character.name}</h2>
-                    <h3>Te voy a hackear el corazon</h3>
+                    <p>{character.description}</p>
                   </div>
                 </TinderCard>
               ))
