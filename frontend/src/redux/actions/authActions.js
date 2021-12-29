@@ -11,7 +11,8 @@ const authAction = {
     password,
     gender,
     image,
-    google
+    google,
+    description
   ) => {
     return async (dispatch, getState) => {
       try {
@@ -27,6 +28,7 @@ const authAction = {
             gender,
             image,
             google,
+            description,
           }
         )
         if (response.data.success && !response.data.error) {
@@ -58,6 +60,7 @@ const authAction = {
         )
 
         if (response.data.success) {
+          console.log(response)
           localStorage.setItem("token", response.data.response.token)
           toast.success("Welcome to MyTinerary " + response.data.response.name)
 

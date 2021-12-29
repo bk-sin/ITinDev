@@ -1,5 +1,4 @@
 const User = require("../models/user")
-const Users = require("../models/users")
 const bcryptjs = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 
@@ -42,43 +41,47 @@ const userControllers = {
     }
   },
   logIn: async (req, res) => {
-    const {email, password, google} = req.body
+    const {email, password} = req.body
     try {
-      const userExists = await User.findOne({email})
-      if (!userExists) {
-        res.json({
-          success: true,
-          error:
-            "The email is incorrect, please verify that it is correctly written",
-        })
-      } else {
-        let contraseñaCoincide = bcryptjs.compareSync(
-          password,
-          userExists.password
-        )
-        if (contraseñaCoincide) {
-          const token = jwt.sign({...userExists}, process.env.SECRET_KEY)
+      const user = await User.findOne({email})
+      if (user) {
+        const passwordIsOk = bcryptjs.compareSync(password, user.password)
+        if (passwordIsOk) {
+          const token = jwt.sign({...user}, process.env.SECRET_KEY)
           res.json({
             success: true,
             response: {
+              name: user.name,
+              lastname: user.lastname,
+              email: user.email,
+              country: user.country,
+              image: user.image,
               token,
-              email,
-              image: userExists.image,
-              name: userExists.name,
-              admin: userExists.admin,
+              admin: user.admin,
             },
+
             error: null,
           })
         } else {
           res.json({
-            success: true,
-            error: "The password does not match the assigned email",
+            success: false,
+            response: null,
+            error: "Password is incorrect!",
           })
         }
-        if (userExists.google && !google) throw new Error("Invalid email")
+      } else {
+        res.json({
+          success: false,
+          response: null,
+          error: "Email doesnt exist!",
+        })
       }
     } catch (error) {
-      res.json({success: false, response: null, error: error})
+      res.json({
+        success: false,
+        response: null,
+        error: error,
+      })
     }
   },
 
@@ -101,6 +104,7 @@ const userControllers = {
       admin: req.user.admin,
       image: req.user.image,
       _id: req.user._id,
+      banned: req.user.banned,
     })
   },
 }

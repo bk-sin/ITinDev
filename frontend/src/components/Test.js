@@ -71,6 +71,7 @@ export default function Test(props) {
                   style={{backgroundImage: "url(" + character.image + ")"}}
                   className="tarjeta"
                 >
+<<<<<<< HEAD
                 </div>
                 
                 <h2>{character.name}, {character.age}</h2>
@@ -78,6 +79,22 @@ export default function Test(props) {
                 </div>
               </TinderCard>
             ))}
+=======
+                  <div className="info-card">
+                    <div
+                      style={{backgroundImage: "url(" + character.image + ")"}}
+                      className="tarjeta"
+                    ></div>
+
+                    <h2>{character.name}</h2>
+                    <p>{character.description}</p>
+                  </div>
+                </TinderCard>
+              ))
+            ) : (
+              <h1>Loading...</h1>
+            )}
+>>>>>>> 840de9b9bd51b3a59be51497a2cdf72c3b2b9d80
           </div>
           <div className="buttons">
             <div className="boton-individual-1">
