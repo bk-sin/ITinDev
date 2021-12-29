@@ -1,6 +1,6 @@
 import React, {useState, useRef, useMemo} from "react"
 import TinderCard from "react-tinder-card"
-import "./Test.css"
+
 
 export default function Test(props) {
   console.log(props)
@@ -72,11 +72,8 @@ export default function Test(props) {
                 onSwipe={(dir) => swiped(dir, character.name, index)}
                 onCardLeftScreen={() => outOfFrame(character.name, index)}
               >
-                <div
-                  /*                   style={{backgroundImage: "url(" + character.image + ")"}}
-                   */ className="tarjeta"
-                >
-                  <img src={character.image} />
+                <div style={{backgroundImage: "url(" + character.image + ")"}}className="tarjeta">
+                  
                   <h3>{character.name}</h3>
                 </div>
               </TinderCard>
