@@ -8,6 +8,7 @@ import Message from "./Message"
 import "./messenger.css"
 
 const Messenger = ({user}) => {
+  console.log(user)
   const [conversations, setConversations] = useState([])
   const [currentChat, setCurrentChat] = useState(null)
   const [messages, setMessages] = useState([])

@@ -121,6 +121,7 @@ const userControllers = {
   },
   getOneUser: async (req, res) => {
     try {
+      console.log(req.params.id)
       let user = await User.findById(req.params.id)
       res.json({res: user})
     } catch (err) {

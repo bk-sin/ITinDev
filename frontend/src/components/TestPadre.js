@@ -13,7 +13,7 @@ function TestPadre(props) {
 
   return (
     <div>
-      {loading && props.personas === "" && props.user._id ? (
+      {loading && props.personas === "" && localStorage.getItem("token") ? (
         <h1>Loading...</h1>
       ) : (
         <Test

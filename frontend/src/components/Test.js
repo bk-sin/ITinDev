@@ -55,29 +55,30 @@ export default function Test(props) {
       <div className="container-all">
         <div className="tarjetasTinder">
           <div className="tarjetasTinderContainer">
-            {props.personas.map((character, index) => (
-              <TinderCard
-                ref={childRefs[index]}
-                className="swipe"
-                key={character._id}
-                preventSwipe={["down", "up"]}
-                onSwipe={(dir) => {
-                  dir === "right" && props.matchsAndDismatchs(character._id)
-                  swiped(dir, character.name, index)
-                }}
-                onCardLeftScreen={() => outOfFrame(character.name, index)}
-              >
-                <div className="info-card">
-                  <div
-                    /*                   style={{backgroundImage: "url(" + character.image + ")"}}
-                     */ className="tarjeta"
-                  ></div>
+            {props.personas[0] &&
+              props.personas.map((character, index) => (
+                <TinderCard
+                  ref={childRefs[index]}
+                  className="swipe"
+                  key={character._id}
+                  preventSwipe={["down", "up"]}
+                  onSwipe={(dir) => {
+                    dir === "right" && props.matchsAndDismatchs(character._id)
+                    swiped(dir, character.name, index)
+                  }}
+                  onCardLeftScreen={() => outOfFrame(character.name, index)}
+                >
+                  <div className="info-card">
+                    <div
+                      /*                   style={{backgroundImage: "url(" + character.image + ")"}}
+                       */ className="tarjeta"
+                    ></div>
 
-                  <h2>{character.name}</h2>
-                  <h3>Te voy a hackear el corazon</h3>
-                </div>
-              </TinderCard>
-            ))}
+                    <h2>{character.name}</h2>
+                    <h3>Te voy a hackear el corazon</h3>
+                  </div>
+                </TinderCard>
+              ))}
           </div>
           <div className="buttons">
             <div className="boton-individual-1">
