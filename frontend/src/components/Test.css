@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 
-.container-all {
+.container-general {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -123,15 +123,16 @@ body::-webkit-scrollbar {
   text-align: center;
 }
 
-svg {
+.boton-individual-1 svg,
+.boton-individual-2 svg,
+.boton-individual-3 svg {
   padding: 0.5rem;
   border-radius: 50%;
 }
 
 .boton-individual-1,
 .boton-individual-2,
-.boton-individual-3,
-.boton-individual-4 {
+.boton-individual-3 {
   cursor: pointer;
   box-shadow: -5px -2px 10px 2px #c0c0c0d7 inset;
   display: flex;
@@ -196,5 +197,33 @@ svg {
     to right,
     #8dc26f,
     #76b852
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.boton-individual-2 {
+  color: #f7971e; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #ffd200,
+    #f7971e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #ffd200,
+    #f7971e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.boton-individual-3 {
+  color: #f85032; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #e73827,
+    #f85032
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #e73827,
+    #f85032
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

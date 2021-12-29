@@ -52,10 +52,10 @@ export default function Test(props) {
 
   return (
     <>
-      <div className="container-all">
+      <div className="container-general">
         <div className="tarjetasTinder">
           <div className="tarjetasTinderContainer">
-            {props.personas[0] &&
+            {props.personas.length > 0 &&
               props.personas.map((character, index) => (
                 <TinderCard
                   ref={childRefs[index]}

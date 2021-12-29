@@ -1,6 +1,7 @@
 import React from "react"
+import {Link} from "react-router-dom"
 
-function Main() {
+function Main(props) {
   return (
     <>
       <div className="container_principal">
@@ -8,9 +9,9 @@ function Main() {
           <h1 className="titulo_principal">
             Encontrá con quien hablar un mismo lenguaje
           </h1>
-          <button class="custom-btn btn-5">
-            <span>Crea tu cuenta</span>
-          </button>
+          <Link as={Link} to="/signup" className="custom-btn btn-5">
+            {props.user.name ? "LOVE" : "Crea tu cuenta"}
+          </Link>
         </div>
       </div>
     </>

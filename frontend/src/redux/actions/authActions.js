@@ -114,8 +114,6 @@ const authAction = {
         "http://localhost:4000/api/user/matchs/" + user._id
       )
 
-      const matches = user.matchs.some()
-
       dispatch({
         type: "TEST",
         payload: res.data.respuesta ? res.data.respuesta : null,

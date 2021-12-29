@@ -1,6 +1,6 @@
 import {useRef} from "react"
 import {connect} from "react-redux"
-import {Link} from "react-router-dom"
+import {BsEmojiLaughing} from "react-icons/bs"
 import authAction from "../redux/actions/authActions"
 
 function SignIn(props) {
@@ -17,25 +17,43 @@ function SignIn(props) {
 
   return (
     <div className="cointainer-all">
-      <Link to="/admin">Admin</Link>
       <div className="form-neon">
-        <form onSubmit={handleSignIn}>
-          <input
-            type="text"
-            className="btn-signin"
-            placeholder="Email"
-            ref={email}
-            required
-          />
-          <input
-            type="password"
-            className="btn-signin"
-            placeholder="Password"
-            ref={password}
-            required
-          />
-          <input type="submit" value="Sign in" className="btn-signin Submit" />
+        <form className="formSignIn" onSubmit={handleSignIn}>
+          <p>👋 BIENVENIDO!</p>
+          <div>
+            <input
+              type="text"
+              className="input-signin"
+              placeholder="Email"
+              ref={email}
+              required
+            />
+            <input
+              type="password"
+              className="input-signin"
+              placeholder="Password"
+              ref={password}
+              required
+            />
+          </div>
+          <button
+            className="custom-signIn btn-signIn"
+            type="submit"
+            value="Sign in"
+          >
+            <span>Iniciar</span>
+          </button>
         </form>
+        <div className="contenedor-registro">
+          <p>Aun no estás Registrado?</p>
+          <button
+            className="custom-signUp btn-signUp"
+            type="submit"
+            value="Sign in"
+          >
+            <span>Registrate</span>
+          </button>
+        </div>
       </div>
     </div>
   )
