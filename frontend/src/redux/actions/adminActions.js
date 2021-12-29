@@ -11,23 +11,47 @@ const adminAction = {
       })
     }
   },
-  deletePeople: (id) => {
+  deletePeople: (id, type) => {
     return async (dispatch, getState) => {
       const token = localStorage.getItem("token")
 
-      await axios.put(
+      const all = await axios.put(
         "http://localhost:4000/api/admin/deleteUser/" + id,
-        {},
+        {type},
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
       )
-      const response = await axios.get("http://localhost:4000/api/users")
+
+      console.log(all)
       dispatch({
         type: "ALL",
-        payload: response.data.response,
+        payload: all.data,
+      })
+    }
+  },
+  editPeople: (id, edit) => {
+    return async (dispatch, getState) => {
+      const token = localStorage.getItem("token")
+
+      const all = await axios.put(
+        "http://localhost:4000/api/admin/editUser/" + id,
+        {
+          ...edit,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+
+      console.log(all)
+      dispatch({
+        type: "ALL",
+        payload: all.data,
       })
     }
   },

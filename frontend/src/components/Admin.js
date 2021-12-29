@@ -34,6 +34,7 @@ function Admin(props) {
                 index={index}
                 user={character}
                 deletePeople={props.deletePeople}
+                editPeople={props.editPeople}
                 getAllUsers={props.getAllUsers}
               />
             ))}
@@ -56,6 +57,7 @@ const mapDispatchToProps = {
   getAllUsers: authAction.getAllUsers,
   setPersonas: adminAction.setPersonas,
   deletePeople: adminAction.deletePeople,
+  editPeople: adminAction.editPeople,
 }
 const mapStateToProps = (state) => {
   console.log(state)

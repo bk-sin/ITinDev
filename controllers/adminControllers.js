@@ -1,64 +1,36 @@
 const User = require("../models/user")
 
 const adminControllers = {
-  deletePeople: (req, res) => {
-    console.log(req.user)
+  deletePeople: async (req, res) => {
     if (req.user.admin) {
-      User.findOneAndRemove({_id: req.params.id}).then((response) => {
-        console.log(response)
+      User.findOneAndRemove({_id: req.params.id}).then(async (response) => {
+        const all = await User.find()
+        res.json(all)
       })
     } else {
       console.log("You must be admin")
     }
   },
-  delOrEditComment: async (req, res) => {
-    const commentID = req.body.commentID
-    const edit = req.body.edit
-    const itineraryID = req.body.itineraryID
-    const type = req.body.type
+  editUser: async (req, res) => {
+    const id = req.params.id
 
-    if (type === "DEL") {
-      Itinerary.updateOne(
-        {
-          _id: itineraryID,
-        },
-        {
-          $pull: {
-            comments: {
-              _id: commentID,
-            },
-          },
-        },
-        {new: true}
-      )
-        .populate("comments.user")
-        .then((response) => {
-          res.json({success: true, response: response})
-        })
-        .catch((err) => {
-          res.json({success: false, response: err})
-        })
-    } else if (type === "MOD") {
-      Itinerary.updateOne(
-        {
-          _id: itineraryID,
-          "comments._id": commentID,
-        },
-        {
-          "comments.$.comment": edit,
-        },
-        {new: true}
-      )
-        .populate("comments.user")
-        .then((response) => {
-          res.json({success: true, response: response})
-        })
-        .catch((err) => {
-          res.json({success: false, response: err})
-        })
-    } else {
-      res.json({success: false, response: "Bad type"})
-    }
+    User.findOneAndUpdate(
+      {
+        _id: id,
+      },
+      {
+        $set: req.body,
+      },
+      {new: true}
+    )
+      .then(async (response) => {
+        console.log(response)
+        const all = await User.find()
+        res.json(all)
+      })
+      .catch((err) => {
+        res.json({success: false, response: err})
+      })
   },
 }
 module.exports = adminControllers

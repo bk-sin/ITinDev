@@ -15,6 +15,7 @@ function authReducer(state = initialState, action) {
       return {
         ...state,
         all: action.payload,
+        auxiliar: action.payload,
       }
 
     case "ASC":
