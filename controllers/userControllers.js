@@ -5,29 +5,13 @@ const jwt = require("jsonwebtoken")
 
 const userControllers = {
   newUser: async (req, res) => {
-    let {
-      name,
-      lastName,
-      country,
-      email,
-      age,
-      password,
-      gender,
-      description,
-      matchs,
-      disMatchs,
-      image,
-      google,
-    } = req.body
+    let {name, lastName, country, email, age, password, gender, image, google} =
+      req.body
 
     try {
       const userExists = await User.findOne({email})
       if (userExists) {
-        res.json({
-          success: false,
-          error: "Email already exist",
-          response: null,
-        })
+        res.json({success: false, error: "Email already exist", response: null})
       } else {
         password = bcryptjs.hashSync(password, 10)
 
@@ -38,10 +22,7 @@ const userControllers = {
           email,
           age,
           password,
-          description,
           gender,
-          matchs,
-          disMatchs,
           image,
           google,
         })
@@ -103,7 +84,7 @@ const userControllers = {
 
   getUsers: async (req, res) => {
     try {
-      const usersList = await User.find().populate("matchs")
+      const usersList = await User.find()
 
       res.json({success: true, respuesta: usersList})
     } catch (error) {
@@ -119,21 +100,8 @@ const userControllers = {
       name: req.user.name,
       admin: req.user.admin,
       image: req.user.image,
-      matchs: req.user.matchs,
       _id: req.user._id,
     })
-  },
-  getOneUser: async (req, res) => {
-    try {
-      console.log(req.params.id)
-      let user = await User.findById(req.params.id)
-      res.json({res: user})
-    } catch (err) {
-      return res.status(400).json({
-        message: "cannot fetch user",
-        res: err.message,
-      })
-    }
   },
 }
 
