@@ -1,21 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
 
-.container-general{
+.container-general {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   width: 100vw;
   height: 90vh;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background: url(../../public/assets/ima2.jpg) center center/cover no-repeat;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
 
-.tarjetasTinder{
+.tarjetasTinder {
   width: 40vw;
   height: 60vh;
   display: flex;
@@ -30,10 +30,9 @@ body::-webkit-scrollbar {
   justify-content: center;
   margin-top: 10vh;
   overflow: hidden;
-  
 }
 
-.info-card{
+.info-card {
   background-color: whitesmoke;
   border-radius: 5px;
   width: 25vw;
@@ -53,18 +52,16 @@ body::-webkit-scrollbar {
   box-shadow: 0px 0px 8px rgb(65, 65, 65);
 }
 
-
-.info-card h2{
+.info-card h2 {
   color: rgb(211, 50, 52);
 }
 
-.info-card h3{
+.info-card h3 {
   color: #070707;
   font-size: 1rem;
 }
 
-
-.infoText{
+.infoText {
   z-index: -10;
 }
 
@@ -120,18 +117,22 @@ body::-webkit-scrollbar {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   left: 0;
   right: 0;
   text-align: center;
 }
 
-.boton-individual-1 svg, .boton-individual-2 svg, .boton-individual-3 svg{
-  padding: .5rem;
+.boton-individual-1 svg,
+.boton-individual-2 svg,
+.boton-individual-3 svg {
+  padding: 0.5rem;
   border-radius: 50%;
 }
 
-.boton-individual-1, .boton-individual-2, .boton-individual-3{
+.boton-individual-1,
+.boton-individual-2,
+.boton-individual-3 {
   cursor: pointer;
   box-shadow: -5px -2px 10px 2px #c0c0c0d7 inset;
   display: flex;
@@ -143,23 +144,86 @@ body::-webkit-scrollbar {
   background-color: whitesmoke;
 }
 
-.boton-individual-1{
-  color: #870000;  /* fallback for old browsers */
-  color: -webkit-linear-gradient(to right, #190A05, #870000);  /* Chrome 10-25, Safari 5.1-6 */
-  color: linear-gradient(to right, #190A05, #870000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+.boton-individual-1 {
+  color: #870000; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #190a05,
+    #870000
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #190a05,
+    #870000
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-
-.boton-individual-2{
-  color: #F7971E;  /* fallback for old browsers */
-  color: -webkit-linear-gradient(to right, #FFD200, #F7971E);  /* Chrome 10-25, Safari 5.1-6 */
-  color: linear-gradient(to right, #FFD200, #F7971E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.boton-individual-2 {
+  color: #f7971e; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #ffd200,
+    #f7971e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #ffd200,
+    #f7971e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.boton-individual-3{
-  color: #f85032;  /* fallback for old browsers */
-  color: -webkit-linear-gradient(to right, #e73827, #f85032);  /* Chrome 10-25, Safari 5.1-6 */
-  color: linear-gradient(to right, #e73827, #f85032); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+.boton-individual-3 {
+  color: #f85032; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #e73827,
+    #f85032
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #e73827,
+    #f85032
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.boton-individual-4 {
+  color: #76b852; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #8dc26f,
+    #76b852
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #8dc26f,
+    #76b852
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.boton-individual-2 {
+  color: #f7971e; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #ffd200,
+    #f7971e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #ffd200,
+    #f7971e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.boton-individual-3 {
+  color: #f85032; /* fallback for old browsers */
+  color: -webkit-linear-gradient(
+    to right,
+    #e73827,
+    #f85032
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(
+    to right,
+    #e73827,
+    #f85032
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}

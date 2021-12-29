@@ -19,36 +19,40 @@ function SignIn(props) {
     <div className="cointainer-all">
       <div className="form-neon">
         <form className="formSignIn" onSubmit={handleSignIn}>
-        <p>👋 BIENVENIDO!</p>
+          <p>👋 BIENVENIDO!</p>
           <div>
-          <input
-            type="text"
-            className="input-signin"
-            placeholder="Email"
-            ref={email}
-            required
-          />
-          <input
-            type="password"
-            className="input-signin"
-            placeholder="Password"
-            ref={password}
-            required
-          />
+            <input
+              type="text"
+              className="input-signin"
+              placeholder="Email"
+              ref={email}
+              required
+            />
+            <input
+              type="password"
+              className="input-signin"
+              placeholder="Password"
+              ref={password}
+              required
+            />
           </div>
-          <button class="custom-signIn btn-signIn" type="submit" value="Sign in">
-            <span>
-              Iniciar
-            </span>
-        </button>
+          <button
+            className="custom-signIn btn-signIn"
+            type="submit"
+            value="Sign in"
+          >
+            <span>Iniciar</span>
+          </button>
         </form>
         <div className="contenedor-registro">
-        <p>Aun no estás Registrado?</p>
-        <button className="custom-signUp btn-signUp" type="submit" value="Sign in">
-            <span>
-              Registrate
-            </span>
-        </button>
+          <p>Aun no estás Registrado?</p>
+          <button
+            className="custom-signUp btn-signUp"
+            type="submit"
+            value="Sign in"
+          >
+            <span>Registrate</span>
+          </button>
         </div>
       </div>
     </div>
