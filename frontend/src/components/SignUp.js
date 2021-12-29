@@ -58,7 +58,7 @@ function SignUp(props) {
   return (
     <div className="cointainer-all">
       <div className="form-neon-signUp">
-        <p className="signUp signP">👉 Registrate!</p>
+        <p className="signUp">👉 Registrate!</p>
         <form className="formSignUp" onSubmit={handleSignUp}>
           <div className="container-inputs-signup">
             <div className="container-inputs-1">
@@ -154,7 +154,7 @@ function SignUp(props) {
               ></textarea>
             </div>
           </div>
-          <div>
+          <div className="container-btn-1">
             <button
               className="custom-signUp btn-signUp"
               type="submit"

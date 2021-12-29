@@ -16,11 +16,11 @@ function NavBar(props) {
       <div className="dropdown-nav">
         <div className="menu-options">
           <Nav.Link as={Link} className="link-nav" to="/">
-            Home
+              Home
           </Nav.Link>
           {props.user.name && (
             <Nav.Link as={Link} className="link-nav" to="/test">
-              LOVE
+              Conocé
             </Nav.Link>
           )}
         </div>
@@ -28,10 +28,9 @@ function NavBar(props) {
           <NavDropdown
             title={
               <img
-                className="fas fa-user"
+                className="user-url"
                 src={props.user.image}
                 alt="user profile pic"
-                style={{height: 30}}
               />
             }
             className="link-nav"
@@ -44,7 +43,7 @@ function NavBar(props) {
                 props.signOut()
               }}
             >
-              Sign Out
+              ⬅️ Sign Out
             </NavDropdown.Item>
             {props.user.admin && (
               <NavDropdown.Item as={Link} to="/admin">

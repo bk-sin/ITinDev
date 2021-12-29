@@ -53,10 +53,18 @@ function SignIn(props) {
           </button>
           <GoogleLogin
             clientId="113911854537-8j68k30a4qpl884ffcvk7hvdfmsdlfnc.apps.googleusercontent.com"
-            buttonText="Sign Up with Google"
+            render={(renderProps) => (
+              <button
+                onClick={renderProps.onClick}
+                className="custom-signIn btn-signIn"
+                disabled={renderProps.disabled}
+              >
+                Iniciá con Google
+              </button>
+            )}
+            buttonText="Registarse con Google"
             onSuccess={responseGoogle}
             onFailure={responseGoogle}
-            className="google-btn"
             cookiePolicy={"single_host_origin"}
           />
         </form>
