@@ -10,7 +10,7 @@ function Main(props) {
             Encontrá con quien hablar un mismo lenguaje
           </h1>
           <Link as={Link} to="/signup" className="custom-btn btn-5">
-            {props.user.name ? "CONOCÉ" : "Crea tu cuenta"}
+            {props.user.name ? "buscar" : "Crea tu cuenta"}
           </Link>
         </div>
       </div>

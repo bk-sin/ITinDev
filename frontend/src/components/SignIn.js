@@ -44,29 +44,31 @@ function SignIn(props) {
               required
             />
           </div>
-          <button
-            className="custom-signIn btn-signIn"
-            type="submit"
-            value="Sign in"
-          >
-            <span>Iniciar</span>
-          </button>
-          <GoogleLogin
-            clientId="113911854537-8j68k30a4qpl884ffcvk7hvdfmsdlfnc.apps.googleusercontent.com"
-            render={(renderProps) => (
-              <button
-                onClick={renderProps.onClick}
-                className="custom-signIn btn-signIn"
-                disabled={renderProps.disabled}
-              >
-                Iniciá con Google
-              </button>
-            )}
-            buttonText="Registarse con Google"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={"single_host_origin"}
-          />
+          <div className="conteiner-btns-signin">
+            <button
+              className="custom-signIn btn-signIn"
+              type="submit"
+              value="Sign in"
+            >
+              <span>Iniciá</span>
+            </button>
+            <GoogleLogin
+              clientId="113911854537-8j68k30a4qpl884ffcvk7hvdfmsdlfnc.apps.googleusercontent.com"
+              render={(renderProps) => (
+                <button
+                  onClick={renderProps.onClick}
+                  className="custom-signIn btn-signIn"
+                  disabled={renderProps.disabled}
+                >
+                  Iniciá con Google
+                </button>
+              )}
+              buttonText="Iniciá con Google"
+              onSuccess={responseGoogle}
+              onFailure={responseGoogle}
+              cookiePolicy={"single_host_origin"}
+            />
+          </div>
         </form>
         <div className="contenedor-registro">
           <p>Aun no estás Registrado?</p>

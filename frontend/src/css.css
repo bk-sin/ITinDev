@@ -49,6 +49,7 @@ img {
   color: rgb(255, 255, 255);
   text-shadow: 0px 0px 20px  rgb(255, 255, 255);
   font-size: 2rem;
+  padding: 0 1rem;
 }
 
 
@@ -70,7 +71,7 @@ img {
 .form-neon{
   padding: 1rem;
   width: 45vw;
-  height: 60vh;
+  min-height: 60vh;
   background: #000000d2;
   border-radius: 5px;
   color: whitesmoke;
@@ -99,8 +100,9 @@ img {
 
 /* SIGNIN BOTON */
 .custom-signIn{
-  width: 10vw;
-  height: 5vh;
+  margin: .5rem 0;
+  min-width: 10vw;
+  min-height: 5vh;
   color: #fff;
   text-transform: uppercase;
   border-radius: 5px;
@@ -113,11 +115,11 @@ img {
 }
 
 .btn-signIn {
+  padding: 0 .5rem;
   font-size: 1rem;
 font-family: 'IBM Plex Mono', monospace;
   font-weight: 600;
   letter-spacing: 2px;
-  padding: 0;
   border: none;
   background: rgb(254,39,96);
   background: linear-gradient(0deg, rgb(254,39,96)) 0%, rgb(254,39,96) 100%;
@@ -169,7 +171,7 @@ font-family: 'IBM Plex Mono', monospace;
   padding: 1rem 0;
   align-self: flex-star;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -197,7 +199,7 @@ font-family: 'IBM Plex Mono', monospace;
 }
 
 .btn-signup{
-  font: normal 1rem 'Roboto';
+  width: 100%;
   background-color: unset;
   color: #ffffff;
   border: unset;
@@ -222,19 +224,16 @@ font-family: 'IBM Plex Mono', monospace;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center ;
-  height:60%;
   width: 100%;
 }
 
-.formSignUp > input{
-  width: 8rem;
-}
+
 
 .form-neon-signUp{
   margin-top: 3rem;
   padding: 0 1rem;
-  width: 60vw;
-  height: 80vh;
+  min-width: 45vw;
+  min-height: 60vh;
   background: #000000d2;
   border-radius: 5px;
   color: whitesmoke;
@@ -263,19 +262,48 @@ font-family: 'IBM Plex Mono', monospace;
 .container-inputs-1, .container-inputs-2 {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: flex-start;
-  width: 80%;
-  margin: .5rem
+  justify-content: center;
+  width: 40%;
+  margin: 2rem .5rem .5rem 0;
 }
 
-.container-inputs-1 > input, .container-inputs-2 > input{
+
+.inputs-btn{
   margin: 0 0 1rem 0 ;
+}
+
+#gender, #country{
+  padding: 0 0 .28rem 0;
+}
+
+.container-btn-1{
+  width: 80%;
+  margin: 0 0 1rem 0 ;
+}
+
+.text-area-container{
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+textarea{
+  min-height: 3rem;
+  max-height: 4rem;
+  resize: none;
+}
+
+.container-btns-signUp,.conteiner-btns-signin{
+  width: 40vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 /* SIGNUP BTON */
 .custom-signUp{
-  width: 10vw;
-  height: 5vh;
+  min-width: 10vw;
+  min-height: 5vh;
   color: rgb(254,39,96);
   text-transform: uppercase;
   border-radius: 5px;
@@ -289,10 +317,10 @@ font-family: 'IBM Plex Mono', monospace;
 
 .btn-signUp {
   font-size: 1rem;
-font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 600;
   letter-spacing: 2px;
-  padding: 0;
+  padding: 0 .5rem;
   border: none;
   background: whitesmoke;
   background: linear-gradient(0deg, whitesmoke) 0%, whitesmoke 100%;
@@ -557,6 +585,7 @@ button {
 
   
   .costumBg{
+    flex-flow: column nowrap;
     justify-content: center ;
     align-content: center;
   }
@@ -572,13 +601,14 @@ button {
   }
 
   .cointainer-all{
-    padding: .5rem;
+    justify-content: flex-end;
   }
 
 
   /* MEDIA QUERYS DE FORMS  - CHECKEAR */
   .form-neon{
-    width: 100%;
+    min-width: 90%;
+    min-height: 60vh;
   }
 
   .inputs-container{
@@ -603,5 +633,8 @@ button {
     margin: .5rem 0;
   }
 
+  .btn-5{
+    font-size: unset;
+  }
 
 }

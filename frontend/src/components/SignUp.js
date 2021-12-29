@@ -62,7 +62,7 @@ console.log(props.user)
         <form className="formSignUp" onSubmit={handleSignUp}>
           <div className="container-inputs-signup">
             <div className="container-inputs-1">
-              <label htmlFor="name">Name</label>
+              <label htmlFor="name">Nombre:</label>
               <input
                 type="text"
                 id="name"
@@ -72,7 +72,7 @@ console.log(props.user)
                 minLength="3"
                 maxLength="20"
               ></input>
-              <label htmlFor="lastname">Lastname</label>
+              <label htmlFor="lastname">Apellido:</label>
               <input
                 type="text"
                 id="lastname"
@@ -82,7 +82,7 @@ console.log(props.user)
                 minLength="3"
                 maxLength="20"
               ></input>
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Email:</label>
               <input
                 type="email"
                 id="email"
@@ -90,7 +90,7 @@ console.log(props.user)
                 ref={email}
                 required
               ></input>
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password">Contraseña:</label>
               <input
                 type="password"
                 id="password"
@@ -102,15 +102,15 @@ console.log(props.user)
               ></input>
             </div>
             <div className="container-inputs-2">
-              <label htmlFor="photo">Photo</label>
+              <label htmlFor="photo">Foto:</label>
               <input
                 type="string"
                 id="photo"
-                className="btn-signup"
+                className="inputs-btn"
                 required
                 ref={photo}
               ></input>
-              <label htmlFor="age">Age</label>
+              <label htmlFor="age">Edad:</label>
               <input
                 type="number"
                 id="age"
@@ -118,7 +118,7 @@ console.log(props.user)
                 required
                 ref={age}
               ></input>
-              <label htmlFor="gender">Gender</label>
+              <label htmlFor="gender">Género:</label>
               <select
                 type="string"
                 id="gender"
@@ -126,10 +126,10 @@ console.log(props.user)
                 required
                 ref={gender}
               >
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
               </select>
-              <label htmlFor="country">Country</label>
+              <label htmlFor="country">País:</label>
               <select
                 type="text"
                 id="country"
@@ -145,31 +145,45 @@ console.log(props.user)
                 <option value="Ecuador">Ecuador</option>
                 <option value="Peru">Peru</option>
               </select>
-              <label htmlFor="age">Description</label>
-              <textarea
-                id="description"
-                className="inputs-btn"
-                required
-                ref={description}
-              ></textarea>
             </div>
           </div>
           <div className="container-btn-1">
-            <button
-              className="custom-signUp btn-signUp"
-              type="submit"
-              value="Sign in"
-            >
-              <span>Registrate</span>
-            </button>
-            <GoogleLogin
-              clientId="113911854537-8j68k30a4qpl884ffcvk7hvdfmsdlfnc.apps.googleusercontent.com"
-              buttonText="Sign Up with Google"
-              onSuccess={responseGoogle}
-              onFailure={responseGoogle}
-              className="google-btn"
-              cookiePolicy={"single_host_origin"}
-            />
+              <div className="text-area-container">
+                <label htmlFor="age">Tu descripción:</label>
+                <textarea
+                  id="description"
+                  className="inputs-btn"
+                  required
+                  ref={description}
+                ></textarea>
+              </div>
+            <div className="container-btns-signUp">
+              <button
+                className="custom-signUp btn-signUp"
+                type="submit"
+                value="Sign in"
+              >
+                <span>
+                  Registrate
+                </span>
+              </button>
+              <GoogleLogin
+            clientId="113911854537-8j68k30a4qpl884ffcvk7hvdfmsdlfnc.apps.googleusercontent.com"
+            render={(renderProps) => (
+              <button
+                onClick={renderProps.onClick}
+                className="custom-signUp btn-signUp"
+                disabled={renderProps.disabled}
+              >
+                Registrate con Google
+              </button>
+            )}
+            buttonText="Registarse con Google"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={"single_host_origin"}
+          />
+            </div>
           </div>
         </form>
         <div className="contenedor-registro">

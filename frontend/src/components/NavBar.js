@@ -20,7 +20,7 @@ function NavBar(props) {
           </Nav.Link>
           {props.user.name && (
             <Nav.Link as={Link} className="link-nav" to="/test">
-              Conocé
+              buscar
             </Nav.Link>
           )}
         </div>
@@ -47,7 +47,7 @@ function NavBar(props) {
             </NavDropdown.Item>
             {props.user.admin && (
               <NavDropdown.Item as={Link} to="/admin">
-                Admin Panel
+                🔐 Admin Panel
               </NavDropdown.Item>
             )}
           </NavDropdown>
