@@ -11,6 +11,7 @@ export default function Admin(props) {
   const country = useRef()
   const age = useRef()
   const gender = useRef()
+  const description = useRef()
 
   function handleEdit(e) {
     e.preventDefault()
@@ -30,6 +31,7 @@ export default function Admin(props) {
           country: country.current.value,
           age: age.current.value,
           gender: gender.current.value,
+          description: description.current.value,
         })
         swal("Poof! Your imaginary file has been deleted!", {
           icon: "success",
@@ -158,6 +160,13 @@ export default function Admin(props) {
             <option value="Ecuador">Ecuador</option>
             <option value="Peru">Peru</option>
           </select>
+          <textarea
+            id="description"
+            className="inputs-btn"
+            required
+            defaultValue={props.user.description}
+            ref={description}
+          ></textarea>
           <input type="submit" value="Submit" className="btn-submit" />
         </form>
       )}

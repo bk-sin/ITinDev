@@ -13,8 +13,12 @@ function Admin(props) {
     props.getAllUsers()
   }, [])
   useEffect(() => {
-    props.personas === "" && props.getAllUsers()
-    props.personas !== "" && props.setPersonas()
+    props.personas === "" &&
+      props.personas === "Oops!error" &&
+      props.getAllUsers()
+    props.personas !== "" &&
+      props.personas !== "Oops!error" &&
+      props.setPersonas()
   }, [props.personas])
 
   return (
@@ -28,16 +32,17 @@ function Admin(props) {
           <h1>Admin Panel</h1>
           <h2>Welcome {props.user.name}</h2>
           <ul>
-            {props.auxiliar.map((character, index) => (
-              <User
-                key={index}
-                index={index}
-                user={character}
-                deletePeople={props.deletePeople}
-                editPeople={props.editPeople}
-                getAllUsers={props.getAllUsers}
-              />
-            ))}
+            {props.personas !== "Oops!error" &&
+              props.auxiliar.map((character, index) => (
+                <User
+                  key={index}
+                  index={index}
+                  user={character}
+                  deletePeople={props.deletePeople}
+                  editPeople={props.editPeople}
+                  getAllUsers={props.getAllUsers}
+                />
+              ))}
           </ul>
           <button
             onClick={() => {
