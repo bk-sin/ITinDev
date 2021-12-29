@@ -6,10 +6,9 @@ const userControllers = require("../controllers/userControllers")
 const matchsControllers=require("../controllers/matchsControllers")
 const{userMatchs,matchsAndDismatchs,dismatchsAndMatchs}=matchsControllers
 const {Route} = require("express")
-const {newUser, logIn, tokenVerification,getUsers} = userControllers
+const {newUser, logIn, tokenVerification, getUsers} = userControllers
 
-Router.route('/users')
-.get(getUsers)
+Router.route("/users").get(getUsers)
 
 Router.route("/auth/signUp").post(validator, newUser)
 

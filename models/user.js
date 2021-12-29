@@ -13,6 +13,7 @@ const userSchema = new mongoose.Schema({
   disMatchs:[{type: mongoose.Types.ObjectId, ref: "user"}],
   image: {type: String, required:true},
   google: {type: Boolean, default: false},
+  admin: {type: Boolean, default: false},
 })
 
 const User = mongoose.model("user", userSchema)
