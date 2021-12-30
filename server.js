@@ -6,7 +6,7 @@ const Router = require("./routes/routes")
 const path = require("path")
 const {Server} = require("socket.io")
 const HOST = process.env.HOST || "0.0.0.0"
-const PORT = process.env.PORT || "4000"
+const PORT = process.env.PORT || 4000
 require("./config/database")
 
 const app = express()
