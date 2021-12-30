@@ -16,9 +16,9 @@ export default function Admin(props) {
   function handleEdit(e) {
     e.preventDefault()
     swal({
-      title: "Are you sure?",
-      text: "Once deleted, you will not be able to recover this imaginary file!",
-      icon: "warning",
+      title: `Acabas de matchear con  ${props.user.name}`,
+      text: "Quieres ir a escribirle algo para romper el hielo?",
+      iconHtml: '<img src="https://picsum.photos/100/100">',
       buttons: true,
       dangerMode: true,
     }).then((willEdit) => {
@@ -54,9 +54,9 @@ export default function Admin(props) {
       <button
         onClick={() => {
           swal({
-            title: "Are you sure?",
-            text: "Once deleted, you will not be able to recover this imaginary file!",
-            icon: "warning",
+            title: `Acabas de matchear con  ${props.user.name}`,
+            text: "Quieres ir a escribirle algo para romper el hielo?",
+            iconHtml: '<img src="https://picsum.photos/100/100">',
             buttons: true,
             dangerMode: true,
           }).then((willDelete) => {
@@ -177,6 +177,14 @@ export default function Admin(props) {
         }}
       >
         BAN
+      </button>
+      <button
+        onClick={() => {
+          console.log("admin")
+          props.giveRemoveAdmin(props.user._id)
+        }}
+      >
+        {props.user.admin ? "REMOVE ADMIN" : "GIVE ADMIN"}
       </button>
     </li>
   )
