@@ -102,6 +102,7 @@ const Messenger = ({ user }) => {
     } catch (err) {
       console.log(err);
     }
+    setNewMessage("");
   };
 
   return (
@@ -123,9 +124,10 @@ const Messenger = ({ user }) => {
               <div className="chatBoxTop">
                 {messages.map((message) => (
                   <div ref={scrollRef}>
+                    console.log(message.sender)
                     <Message
                       message={message}
-                      own={message.sender._id === user._id}
+                      own={message.sender === user._id}
                     />
                   </div>
                 ))}
