@@ -7,12 +7,14 @@ import {connect} from "react-redux"
 function NavBar(props) {
   return (
     <div className="costumBg" variant="dark">
-      <div className="logo-container">
-        <Link to="/">
-          <img src="/assets/ItinDev_logo.png" alt="ItinDev_logo"></img>
-        </Link>
-        <p className="brand">&#x2774; ItinDev &#x2775; </p>
-      </div>
+      { 
+        <div className="logo-container">
+          <Link to="/">
+            <img src="/assets/ItinDev_logo.png" alt="ItinDev_logo"></img>
+          </Link>
+          <p className="brand">&#x2774; ItinDev &#x2775; </p>
+        </div>
+      }
       <div className="dropdown-nav">
         <div className="menu-options">
           <Nav.Link as={Link} className="link-nav" to="/">
@@ -21,10 +23,10 @@ function NavBar(props) {
           {props.user.name && (
             <>
               <Nav.Link as={Link} className="link-nav" to="/test">
-                LOVE
+                BUSCA
               </Nav.Link>
               <Nav.Link as={Link} className="link-nav" to="/messenger">
-                MESSENGER
+                CHAT
               </Nav.Link>
             </>
           )}

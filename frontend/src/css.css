@@ -592,7 +592,7 @@ button {
 
 
   .dropdown-nav{
-    padding: 0;
+    padding: 0 ;
   }
 
   .logo-container{
@@ -604,6 +604,9 @@ button {
     justify-content: flex-end;
   }
 
+  .nav-link{
+    padding: .5rem !important;
+  }
 
   /* MEDIA QUERYS DE FORMS  - CHECKEAR */
   .form-neon{
