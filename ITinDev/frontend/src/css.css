@@ -1,0 +1,640 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  
+}
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+
+img {
+  width: 100%;
+}
+
+.padre {
+  width: 100vw;
+}
+
+/* Estilos de componente main */
+.container_principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 90vh;
+  background: url(../public/assets/ima4.jpg) center center/cover no-repeat;
+}
+
+.container_cuenta{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  text-align: center;
+  align-items: center;
+  height: 60vh;
+  width: 60vw;
+  background-color: rgba(0, 0, 0, 0.74);
+  border-radius: 5px;
+}
+
+.titulo_principal{
+  font-family: 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 20px  rgb(255, 255, 255);
+  font-size: 2rem;
+  padding: 0 1rem;
+}
+
+
+
+
+/* ESTILO FORM SIGN IN*/
+
+.cointainer-all{
+  width: 100vw;
+  min-height: 90vh;
+  background: url(../public/assets/ima6.jpg) center center/cover no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-neon{
+  padding: 1rem;
+  width: 45vw;
+  min-height: 60vh;
+  background: #000000d2;
+  border-radius: 5px;
+  color: whitesmoke;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .5s;
+  overflow: hidden;
+  box-shadow: -5px 5px 10px rgb(0, 0, 0);
+}
+
+
+.formSignIn{
+  color: #ffffff;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center ;
+  height: 50vh
+}
+
+
+.form-neon p{
+  font-size: 2rem;
+}
+
+/* SIGNIN BOTON */
+.custom-signIn{
+  margin: .5rem 0;
+  min-width: 10vw;
+  min-height: 5vh;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+}
+
+.btn-signIn {
+  padding: 0 .5rem;
+  font-size: 1rem;
+font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: none;
+  background: rgb(254,39,96);
+  background: linear-gradient(0deg, rgb(254,39,96)) 0%, rgb(254,39,96) 100%;
+}
+
+.btn-signIn:hover {
+  color: #fff;
+  background: transparent;
+  box-shadow:none;
+}
+
+.btn-signIn:before,
+.btn-signIn:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: rgb(254,39,96);
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+
+.btn-signIn:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+
+.btn-signIn:hover:before,
+.btn-signIn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+.emoji svg{
+  font-size: 3rem;
+  color: white;
+  padding: unset;
+}
+
+.contenedor-registro{
+  border-top: 1px solid rgb(182, 182, 182);
+  padding: 1rem 0;
+  align-self: flex-star;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.contenedor-registro > p{
+  margin-bottom: unset;
+  font-size: 1rem;
+}
+
+.input-signin{
+  margin: 1rem 0 ;
+  padding: .1rem;
+  width: 90%;
+  color: #ffffff;
+  border: unset;
+  background-color: #00000044;
+  border-bottom: 1px solid #f8f8f8;
+  background-image: unset;
+}
+
+.input-signin:focus{
+  outline: none;
+  border: 1px solid #f8f8f8;
+  background-color: unset;
+}
+
+.btn-signup{
+  width: 100%;
+  background-color: unset;
+  color: #ffffff;
+  border: unset;
+  border-bottom: 1px solid #f8f8f8;
+}
+
+.btn-signup:focus{
+  outline: none;
+}
+
+.btn-signup{
+  width: 10rem !important;
+  background-color: #00000077 !important;
+  text-align: center !important;
+}
+
+/* SIGN UP FORM STYLE */
+
+.formSignUp{
+  color: #ffffff;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center ;
+  width: 100%;
+}
+
+
+
+.form-neon-signUp{
+  margin-top: 3rem;
+  padding: 0 1rem;
+  min-width: 45vw;
+  min-height: 60vh;
+  background: #000000d2;
+  border-radius: 5px;
+  color: whitesmoke;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: .5s;
+  overflow: hidden;
+  box-shadow: -5px 5px 10px rgb(0, 0, 0);
+}
+
+.form-neon-signUp > p{
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: unset;
+}
+
+.container-inputs-signup{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.container-inputs-1, .container-inputs-2 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  width: 40%;
+  margin: 2rem .5rem .5rem 0;
+}
+
+
+.inputs-btn{
+  margin: 0 0 1rem 0 ;
+}
+
+#gender, #country{
+  padding: 0 0 .28rem 0;
+}
+
+.container-btn-1{
+  width: 80%;
+  margin: 0 0 1rem 0 ;
+}
+
+.text-area-container{
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+textarea{
+  min-height: 3rem;
+  max-height: 4rem;
+  resize: none;
+}
+
+.container-btns-signUp,.conteiner-btns-signin{
+  width: 40vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+/* SIGNUP BTON */
+.custom-signUp{
+  min-width: 10vw;
+  min-height: 5vh;
+  color: rgb(254,39,96);
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+}
+
+.btn-signUp {
+  font-size: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0 .5rem;
+  border: none;
+  background: whitesmoke;
+  background: linear-gradient(0deg, whitesmoke) 0%, whitesmoke 100%;
+}
+
+.btn-signUp:hover {
+  color: rgb(254,39,96);
+  background: transparent;
+  box-shadow:none;
+}
+.btn-signUp:before,
+.btn-signUp:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: whitesmoke;
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-signUp:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-signUp:hover:before,
+.btn-signUp:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
+
+/* user PHOTO */
+.user-url{
+  border-radius: 50%;
+  object-fit: cover;
+  width: 35px;
+  height: 35px;
+}
+
+/* ESTILO COMPONENTE NAVBAR */
+.costumBg{
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: rgb(0,0,0);
+  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4962359943977591) 60%, rgba(0,0,0,0) 100%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 4;
+}
+
+
+.logo-container{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  min-width: 20%;
+}
+
+.logo-container img{
+  width: 45px;
+  margin-right: 1rem;
+}
+
+.brand{
+  color: whitesmoke;
+  font-size: 2rem;
+  margin-bottom: unset;
+}
+
+.menu-options{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+}
+
+
+.dropdown-nav{
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.links-nav{
+display: flex;
+flex-flow: row nowrap;
+}
+
+.link-nav{
+margin-bottom: unset !important;
+color: whitesmoke !important;
+text-transform: uppercase;
+}
+
+
+.link-nav:hover{
+text-shadow: 0 0 8px white;
+transition: .3s;
+
+}
+
+
+.fa-user{
+font-size: 20px;
+color: whitesmoke;
+
+}
+
+/* ESTILO COMPONENTE FOOTER */
+
+footer{
+  color: white;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 10vh;
+  background-color: black;
+}
+
+footer p{
+  margin-bottom: unset;
+}
+
+.icons-container{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  }
+
+
+#github {
+  font-size: 30px;
+  color: white;
+  border-radius: 3px;
+  animation: animate 3s linear infinite;
+}
+
+
+#github {
+  animation-delay: 0.1s;
+}
+
+@keyframes animate {
+  50% {
+    filter: hue-rotate(0deg);
+    color: white;
+    text-shadow: 0 -5px 20px rgb(248,31,33);
+  }
+  0%, 100% {
+    filter: hue-rotate(10deg);
+    color: rgb(248,31,33);
+  }
+}
+
+
+.frame {
+  width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+button {
+  margin: 20px;
+}
+
+.custom-btn {
+  margin: 0 1rem;
+  min-width: 18vw;
+  min-height: 8vh;
+  color: whitesmoke;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-5{
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 0 1rem;
+  border: none;
+  background: rgba(201, 24, 27, 0.8);
+  background: linear-gradient(0deg, rgb(248,31,33)) 0%, rgb(248,31,33) 100%;
+}
+
+.btn-5:hover {
+  color: #fff;
+  background: transparent;
+  box-shadow:none;
+}
+.btn-5:before,
+.btn-5:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: rgb(248,31,33);
+  box-shadow:
+   -1px -1px 5px 0px #fff,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-5:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-5:hover:before,
+.btn-5:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
+@media screen and (max-width: 450px){
+
+/* MAIN Y NAVBAR MEDIAQUERYS */
+
+  .container_principal{
+    height: 88.5vh;
+  }
+
+
+  .container_cuenta{
+    margin-top: 4.5rem;
+    width: 80vw;
+  }
+
+
+  .titulo_principal{
+    font-size: 1.5rem;
+  }
+
+  
+  .costumBg{
+    flex-flow: column nowrap;
+    justify-content: center ;
+    align-content: center;
+  }
+
+
+  .dropdown-nav{
+    padding: 0;
+  }
+
+  .logo-container{
+    padding-left: 0.2rem !important;
+    padding: 0
+  }
+
+  .cointainer-all{
+    justify-content: flex-end;
+  }
+
+
+  /* MEDIA QUERYS DE FORMS  - CHECKEAR */
+  .form-neon{
+    min-width: 90%;
+    min-height: 60vh;
+  }
+
+  .inputs-container{
+    width: 100%;
+    border: unset;
+    margin: 0;
+    align-items: center;
+  }
+
+  .btns-container{
+    min-height: 20vh;
+    width: 100%;
+    padding: 0;
+    justify-content: center
+  }
+
+  .btns-container>p{
+    display: none;
+  }
+
+  .btn-form{
+    margin: .5rem 0;
+  }
+
+  .btn-5{
+    font-size: unset;
+  }
+
+}
