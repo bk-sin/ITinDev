@@ -1,8 +1,15 @@
 import swal from "sweetalert"
-import {useState, useRef} from "react"
+import {useState, useRef} from "react";
+import { Modal } from 'react-bootstrap'
 
 export default function Admin(props) {
   const [edit, setEdit] = useState(false)
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
 
   const email = useRef()
   const name = useRef()
@@ -42,6 +49,8 @@ export default function Admin(props) {
     })
   }
 
+  
+
 
   return (
     <>
@@ -80,7 +89,8 @@ export default function Admin(props) {
           <button
             onClick={() => {
               setEdit(!edit)
-            }}
+              handleShow()
+            }} 
           >
             🖊️
           </button>
@@ -93,98 +103,115 @@ export default function Admin(props) {
           </button>
           </div>
     </div>
-        <div className="form-admin-conteiner">
-        {edit && (
-          <form onSubmit={handleEdit}>
-            <label htmlFor="name">Name</label>
-            <input
-              type="text"
-              id="name"
-              className="inputs-btn"
-              ref={name}
-              required
-              defaultValue={props.user.name}
-              minLength="3"
-              maxLength="20"
-            ></input>
-            <label htmlFor="lastname">Lastname</label>
-            <input
-              type="text"
-              id="lastname"
-              className="inputs-btn"
-              ref={lastname}
-              required
-              defaultValue={props.user.lastName}
-              minLength="3"
-              maxLength="20"
-            ></input>
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              className="inputs-btn"
-              ref={email}
-              defaultValue={props.user.email}
-              required
-            ></input>
-            <label htmlFor="photo">Photo</label>
-            <input
-              type="string"
-              id="photo"
-              className="btn-signup"
-              required
-              defaultValue={props.user.image}
-              ref={photo}
-            ></input>
-            <label htmlFor="age">Age</label>
-            <input
-              type="number"
-              id="age"
-              className="inputs-btn"
-              required
-              defaultValue={props.user.age}
-              ref={age}
-            ></input>
-            <label htmlFor="gender">Gender</label>
-            <select
-              type="string"
-              id="gender"
-              className="inputs-btn"
-              required
-              defaultValue={props.user.gender}
-              ref={gender}
-            >
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-            <label htmlFor="country">Country</label>
-            <select
-              type="text"
-              id="country"
-              className="inputs-btn"
-              defaultValue={props.user.country}
-              ref={country}
-            >
-              <option value="Argentina">Argentina</option>
-              <option value="Bolivia">Bolivia</option>
-              <option value="Paraguay">Paraguay</option>
-              <option value="Brasil">Brasil</option>
-              <option value="Uruguay">Uruguay</option>
-              <option value="Chile">Chile</option>
-              <option value="Ecuador">Ecuador</option>
-              <option value="Peru">Peru</option>
-            </select>
-            <textarea
-              id="description"
-              className="inputs-btn"
-              required
-              defaultValue={props.user.description}
-              ref={description}
-            ></textarea>
-            <input type="submit" value="Submit" className="btn-submit" />
-          </form>
-        )}
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>
+            Editar el perfil de {props.user.name}:
+          </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+          <div className="form-admin-conteiner">
+          {edit && (
+            <form onSubmit={handleEdit}>
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                className="inputs-btn"
+                ref={name}
+                required
+                defaultValue={props.user.name}
+                minLength="3"
+                maxLength="20"
+              ></input>
+              <label htmlFor="lastname">Lastname</label>
+              <input
+                type="text"
+                id="lastname"
+                className="inputs-btn"
+                ref={lastname}
+                required
+                defaultValue={props.user.lastName}
+                minLength="3"
+                maxLength="20"
+              ></input>
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                className="inputs-btn"
+                ref={email}
+                defaultValue={props.user.email}
+                required
+              ></input>
+              <label htmlFor="photo">Photo</label>
+              <input
+                type="string"
+                id="photo"
+                className="btn-signup"
+                required
+                defaultValue={props.user.image}
+                ref={photo}
+              ></input>
+              <label htmlFor="age">Age</label>
+              <input
+                type="number"
+                id="age"
+                className="inputs-btn"
+                required
+                defaultValue={props.user.age}
+                ref={age}
+              ></input>
+              <label htmlFor="gender">Gender</label>
+              <select
+                type="string"
+                id="gender"
+                className="inputs-btn"
+                required
+                defaultValue={props.user.gender}
+                ref={gender}
+              >
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+              <label htmlFor="country">Country</label>
+              <select
+                type="text"
+                id="country"
+                className="inputs-btn"
+                defaultValue={props.user.country}
+                ref={country}
+              >
+                <option value="Argentina">Argentina</option>
+                <option value="Bolivia">Bolivia</option>
+                <option value="Paraguay">Paraguay</option>
+                <option value="Brasil">Brasil</option>
+                <option value="Uruguay">Uruguay</option>
+                <option value="Chile">Chile</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Peru">Peru</option>
+              </select>
+              <label htmlFor="description">Description</label>
+              <textarea
+                id="description"
+                className="inputs-btn"
+                required
+                defaultValue={props.user.description}
+                ref={description}
+              ></textarea>
+              <Modal.Footer>
+              <input type="submit" value="Editar" className="btn-submit" />
+              </Modal.Footer>
+            </form>
+          )}
     </div>
+    </Modal.Body>
+    </Modal>
     </>
   )
 }

@@ -676,7 +676,46 @@ button {
 .form-admin-conteiner form{
   display: flex;
   flex-flow: column nowrap;
-  background-color: rgb(197, 197, 197);
+  justify-content:center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(40,44,52);
+}
+
+.form-admin-conteiner label{
+  margin: .5rem 0 0 .5rem;
+  color: whitesmoke
+}
+
+.form-admin-conteiner input{
+  margin: .5rem;
+}
+
+.form-admin-conteiner select{
+  margin: .5rem
+}
+
+.form-admin-conteiner textarea{
+  margin: .5rem
+}
+
+.form-admin-conteiner .btn-submit{
+  padding: 0 .5rem;
+  font-size: 1rem;
+font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  border: none;
+  background: rgba(238, 15, 19, 0.8);
+  background: linear-gradient(0deg, rgb(248, 31, 33)) 0%, rgb(248,31,33) 100%;
+}
+
+.form-admin-conteiner .btn-submit:hover{
+  transition: .3s;
+  background: rgba(255, 11, 15, 0.8);
+  background: linear-gradient(0deg, rgb(248, 31, 33)) 0%, rgb(248,31,33) 100%;
+  box-shadow: 0 2px 5px black;
 }
 
 
