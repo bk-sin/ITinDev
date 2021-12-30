@@ -614,6 +614,7 @@ button {
 
 .filter-conteiner input{
   margin: .5rem;
+  border-radius: 5px;
   padding: 0 .5rem;
   min-width: 3rem;
   min-height: 3rem;
