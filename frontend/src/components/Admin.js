@@ -12,6 +12,7 @@ function Admin(props) {
   useEffect(() => {
     props.getAllUsers()
   }, [])
+
   useEffect(() => {
     props.personas === "" &&
       props.personas === "Oops!error" &&
@@ -48,12 +49,18 @@ function Admin(props) {
           <button
             onClick={() => {
               props.setPersonas(ascdes)
-
+              props.filterPeople()
               setascdes(ascdes === "ASC" ? "DES" : "ASC")
             }}
           >
             Alfabetico
           </button>
+          <input
+            className="SearchInput"
+            onChange={(e) => props.filterPeople(e.target.value)}
+            type="text"
+            placeholder="Search a City"
+          />
         </>
       )}
     </>
@@ -65,9 +72,9 @@ const mapDispatchToProps = {
   deletePeople: adminAction.deletePeople,
   editPeople: adminAction.editPeople,
   banPeople: adminAction.banPeople,
+  filterPeople: adminAction.filterPeople,
 }
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     user: state.authReducer.user,
     personas: state.authReducer.all,
