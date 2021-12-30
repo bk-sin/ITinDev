@@ -6,9 +6,9 @@ const Router = require("./routes/routes")
 const path = require("path")
 
 require("./config/database")
-const PORT = process.env.PORT || "4000"
+
 const app = express()
-app.set("port", PORT)
+
 app.use(cors())
 app.use(express.json())
 app.use(passport.initialize())
