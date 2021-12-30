@@ -1,8 +1,4 @@
 {
-  "name": "itindev",
-  "author": "emi",
-  "description": "test",
-  "version": "0.0.1",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -23,7 +19,24 @@
     "dev": "nodeman server.js",
     "heroku-postbuild": "cd frontend && npm install && npm run build"
   },
-  "engines": {
-    "node": "16.13.0"
-  }
+  "name": "itindev",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bk-sin/ITinDev.git"
+  },
+  "keywords": [
+    "tinder",
+    "react",
+    "node",
+    "mongo"
+  ],
+  "author": "Emiliano Alegre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bk-sin/ITinDev/issues"
+  },
+  "homepage": "https://github.com/bk-sin/ITinDev#readme",
+  "description": "Proyecto de MindHub MERN"
 }
