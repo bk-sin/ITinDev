@@ -26,18 +26,18 @@ if (process.env.NODE_ENV === "production") {
 const host = process.env.HOST || "0.0.0.0"
 const port = process.env.PORT || "4000"
 
-const server = app.listen(port, host, () =>
+/* const server =  */ app.listen(port, host, () =>
   console.log("App listening on port " + port + " on " + host)
 )
 
-const io = new Server(server, {cors: {origin: "*"}})
+/* const io = new Server(server, {cors: {origin: "*"}}) */
 /* io.on("connect", (socket) => {
   console.log("Socket Connected"); 
 });*/
 
-let users = []
+/* let users = [] */
 
-const addUser = (userId, socketId) => {
+/* const addUser = (userId, socketId) => {
   !users.some((user) => user.userId === userId) &&
     users.push({userId, socketId})
   for (var i = users.length - 1; i >= 0; --i) {
@@ -82,3 +82,4 @@ io.on("connection", (socket) => {
     io.emit("getUsers", users)
   })
 })
+ */
