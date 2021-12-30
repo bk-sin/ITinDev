@@ -53,6 +53,7 @@ const adminAction = {
       })
     }
   },
+
   banPeople: (id) => {
     return async (dispatch, getState) => {
       const token = localStorage.getItem("token")

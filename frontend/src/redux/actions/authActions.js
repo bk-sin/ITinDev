@@ -48,6 +48,7 @@ const authAction = {
       }
     }
   },
+
   signinUser: (email, password) => {
     return async (dispatch, getState) => {
       try {
