@@ -34,15 +34,6 @@ function Admin(props) {
             <h3>Hola {props.user.name}! 👋</h3>
             <h2>Administrador de usuarios:</h2>
             <div className="filter-conteiner">
-              <button
-                onClick={() => {
-                  props.setPersonas(ascdes)
-                  props.filterPeople()
-                  setascdes(ascdes === "ASC" ? "DES" : "ASC")
-                }}
-              >
-                Ordenar alfabéticamente
-              </button>
               <input
                 className="SearchInput"
                 onChange={(e) => props.filterPeople(e.target.value)}
@@ -62,6 +53,7 @@ function Admin(props) {
                   editPeople={props.editPeople}
                   getAllUsers={props.getAllUsers}
                   banPeople={props.banPeople}
+                  giveRemoveAdmin={props.giveRemoveAdmin}
                 />
               ))}
           </div>

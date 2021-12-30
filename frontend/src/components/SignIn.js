@@ -54,7 +54,7 @@ function SignIn(props) {
               <span>Iniciá</span>
             </button>
             <GoogleLogin
-              clientId="113911854537-8j68k30a4qpl884ffcvk7hvdfmsdlfnc.apps.googleusercontent.com"
+              clientId="773392097856-hbh7oh9am9qlqmeclba343n6lk7s94uc.apps.googleusercontent.com"
               render={(renderProps) => (
                 <button
                   onClick={renderProps.onClick}
