@@ -16,7 +16,7 @@ const Conversation = ({ conversation, currentUser }) => {
           `http://localhost:4000/api/user/${friendId}`
         );
         setUser(res.data.res);
-        //console.log(user);
+        console.log(res.data.res);
       } catch (err) {
         console.log(err);
       }

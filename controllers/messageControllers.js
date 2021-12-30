@@ -16,7 +16,7 @@ const messageControllers = {
     try {
       const messages = await Message.find({
         conversationId: req.params.conversationId,
-      }).populate("sender");
+      });
       res.status(200).json(messages);
     } catch (err) {
       res.status(500).json(err);

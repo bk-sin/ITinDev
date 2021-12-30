@@ -38,7 +38,7 @@ const Messenger = ({ user }) => {
   useEffect(() => {
     socket.current.emit("addUser", user._id);
     socket.current.on("getUsers", (users) => {
-      // console.log(users);
+      console.log(users);
     });
   }, [user]);
 
@@ -124,7 +124,7 @@ const Messenger = ({ user }) => {
               <div className="chatBoxTop">
                 {messages.map((message) => (
                   <div ref={scrollRef}>
-                    console.log(message.sender)
+                    {console.log(message.sender)}
                     <Message
                       message={message}
                       own={message.sender === user._id}
