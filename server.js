@@ -3,6 +3,7 @@ const passport = require("passport")
 const express = require("express")
 const cors = require("cors")
 const Router = require("./routes/routes")
+const path = require("path")
 
 require("./config/database")
 
@@ -11,6 +12,13 @@ app.use(cors())
 app.use(express.json())
 app.use(passport.initialize())
 app.use("/api", Router)
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"))
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"))
+  })
+}
 
 let server = app.listen(
   process.env.PORT || "4000",
