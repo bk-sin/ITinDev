@@ -4,6 +4,7 @@ const express = require("express")
 const cors = require("cors")
 const Router = require("./routes/routes")
 const path = require("path")
+const {Server} = require("socket.io")
 
 require("./config/database")
 
@@ -12,6 +13,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(passport.initialize())
+
 app.use("/api", Router)
 
 if (process.env.NODE_ENV === "production") {
@@ -21,13 +23,13 @@ if (process.env.NODE_ENV === "production") {
   })
 }
 
-let server = app.listen(
-  process.env.PORT || "4000",
-  process.env.HOST || "0.0.0.0",
-  () => console.log(`Server listening port: ${process.env.PORT || "4000"}`)
+const host = process.env.HOST || "0.0.0.0"
+const port = process.env.PORT
+
+const server = app.listen(port, host, () =>
+  console.log("App listening on port " + port + " on " + host)
 )
 
-const {Server} = require("socket.io")
 const io = new Server(server, {cors: {origin: "*"}})
 /* io.on("connect", (socket) => {
   console.log("Socket Connected"); 
