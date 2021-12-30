@@ -10,7 +10,7 @@ function NavBar(props) {
     <div className="costumBg" variant="dark">
       <div
         className={`logo-container ${
-          location.pathname === "/test" && "ocultar"
+          location.pathname === "/buscar" && "ocultar"
         }`}
       >
         <Link to="/">
@@ -26,8 +26,8 @@ function NavBar(props) {
           </Nav.Link>
           {props.user.name && (
             <>
-              <Nav.Link as={Link} className="link-nav" to="/test">
-                BUSCA
+              <Nav.Link as={Link} className="link-nav" to="/buscar">
+                BUSCAR
               </Nav.Link>
               <Nav.Link as={Link} className="link-nav" to="/messenger">
                 CHAT
