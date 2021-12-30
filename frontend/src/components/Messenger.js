@@ -43,7 +43,7 @@ const Messenger = ({user}) => {
     const getConversations = async () => {
       try {
         let res = await axios.get(
-          "http://localhost:4000/api/conversations/" + user._id
+          "https://itindev-mindhub.herokuapp.com/api/conversations/" + user._id
         )
         setConversations(res.data)
       } catch (err) {
@@ -57,7 +57,7 @@ const Messenger = ({user}) => {
     const getMessages = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:4000/api/messages/${currentChat?._id}`
+          `https://itindev-mindhub.herokuapp.com/api/messages/${currentChat?._id}`
         )
         setMessages(res.data)
       } catch (err) {
@@ -88,7 +88,7 @@ const Messenger = ({user}) => {
     })
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/messages",
+        "https://itindev-mindhub.herokuapp.com/api/messages",
         message
       )
       setMessages([...messages, res.data])

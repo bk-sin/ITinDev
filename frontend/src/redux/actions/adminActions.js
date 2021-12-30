@@ -16,7 +16,7 @@ const adminAction = {
       const token = localStorage.getItem("token")
 
       const all = await axios.put(
-        "http://localhost:4000/api/admin/deleteUser/" + id,
+        "https://itindev-mindhub.herokuapp.com/api/admin/deleteUser/" + id,
         {type},
         {
           headers: {
@@ -36,7 +36,7 @@ const adminAction = {
       const token = localStorage.getItem("token")
 
       const all = await axios.put(
-        "http://localhost:4000/api/admin/editUser/" + id,
+        "https://itindev-mindhub.herokuapp.com/api/admin/editUser/" + id,
         {
           ...edit,
         },
@@ -58,7 +58,7 @@ const adminAction = {
       const token = localStorage.getItem("token")
 
       const all = await axios.put(
-        "http://localhost:4000/api/admin/ban/" + id,
+        "https://itindev-mindhub.herokuapp.com/api/admin/ban/" + id,
         {},
         {
           headers: {
@@ -77,7 +77,7 @@ const adminAction = {
       const token = localStorage.getItem("token")
 
       const all = await axios.put(
-        "http://localhost:4000/api/admin/giveRemoveAdmin/" + id,
+        "https://itindev-mindhub.herokuapp.com/api/admin/giveRemoveAdmin/" + id,
         {},
         {
           headers: {

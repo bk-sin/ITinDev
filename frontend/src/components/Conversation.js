@@ -12,7 +12,7 @@ const Conversation = ({conversation, currentUser}) => {
     const getUser = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:4000/api/user/${friendId}`
+          `https://itindev-mindhub.herokuapp.com/api/user/${friendId}`
         )
         setUser(res.data.res)
       } catch (err) {

@@ -17,7 +17,7 @@ const authAction = {
     return async (dispatch, getState) => {
       try {
         let response = await axios.post(
-          "http://localhost:4000/api/auth/signup",
+          "https://itindev-mindhub.herokuapp.com/api/auth/signup",
           {
             name,
             lastName,
@@ -52,7 +52,7 @@ const authAction = {
     return async (dispatch, getState) => {
       try {
         const response = await axios.post(
-          "http://localhost:4000/api/auth/signin",
+          "https://itindev-mindhub.herokuapp.com/api/auth/signin",
           {
             email,
             password,
@@ -80,7 +80,7 @@ const authAction = {
       try {
         const token = localStorage.getItem("token")
         const response = await axios.get(
-          "http://localhost:4000/api/tokenVerification",
+          "https://itindev-mindhub.herokuapp.com/api/tokenVerification",
 
           {
             headers: {
@@ -104,7 +104,9 @@ const authAction = {
   },
   getAllUsers: (id) => {
     return async (dispatch, getState) => {
-      let res = await axios.get("http://localhost:4000/api/users")
+      let res = await axios.get(
+        "https://itindev-mindhub.herokuapp.com/api/users"
+      )
       dispatch({
         type: "ALL",
         payload: res.data.respuesta ? res.data.respuesta : null,
@@ -113,7 +115,9 @@ const authAction = {
   },
   getUsers: (id) => {
     return async (dispatch, getState) => {
-      let res = await axios.get("http://localhost:4000/api/user/nomatchs/" + id)
+      let res = await axios.get(
+        "https://itindev-mindhub.herokuapp.com/api/user/nomatchs/" + id
+      )
 
       const filtrado = res.data.respuesta.filter((e) => e._id !== id)
       dispatch({
@@ -125,7 +129,7 @@ const authAction = {
   getMatchUsers: (user) => {
     return async (dispatch, getState) => {
       let res = await axios.get(
-        "http://localhost:4000/api/user/matchs/" + user._id
+        "https://itindev-mindhub.herokuapp.com/api/user/matchs/" + user._id
       )
 
       dispatch({
@@ -140,7 +144,7 @@ const authAction = {
       const token = localStorage.getItem("token")
       try {
         await axios.put(
-          "http://localhost:4000/api/match/" + id,
+          "https://itindev-mindhub.herokuapp.com/api/match/" + id,
           {},
           {
             headers: {
@@ -158,7 +162,8 @@ const authAction = {
       const token = localStorage.getItem("token")
       try {
         await axios.post(
-          "http://localhost:4000/api/conversations/" + recieverId,
+          "https://itindev-mindhub.herokuapp.com/api/conversations/" +
+            recieverId,
           {},
           {
             headers: {
@@ -175,7 +180,7 @@ const authAction = {
     return async (dispatch, getState) => {
       try {
         const res = await axios.post(
-          "http://localhost:4000/api/conversations/" + id
+          "https://itindev-mindhub.herokuapp.com/api/conversations/" + id
         )
       } catch (error) {
         console.error(error)
