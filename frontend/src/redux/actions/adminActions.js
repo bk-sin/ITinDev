@@ -75,5 +75,12 @@ const adminAction = {
       })
     }
   },
+  filterPeople: (search) => {
+    return (dispatch, getState) => {
+      const all = getState().authReducer.all
+
+      dispatch({type: "SEARCH", payload: {all, search}})
+    }
+  },
 }
 export default adminAction
