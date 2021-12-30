@@ -131,7 +131,7 @@ const Messenger = ({user}) => {
                   value={newMessage}
                 ></textarea>
                 <button className="chatSubmitbutton" onClick={handleSubmit}>
-                  Send
+                  Enviar
                 </button>
               </div>
             </>

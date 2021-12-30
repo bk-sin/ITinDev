@@ -9,7 +9,6 @@
 .chatMenu {
   min-height: 15vh;
   background-color: black;
-  border-bottom: 1px solid rgba(83, 10, 11, 0.8);
 }
 
 .chatMenuInput {
@@ -20,14 +19,20 @@
 }
 
 .chatBox {
+  display: flex;
+  justify-content: center;
   flex: 5.5;
 }
 
 .chatBoxWrapper {
+  background: url(https://unageek.com/wp-content/uploads/2020/03/Fondo_pantalla_chat_WA_StarWars_UnaGeek_Oscuro.jpg) center center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
+  height: 80vh;
+  width: 50%;
+  padding: 10px;
 }
 
 .chatBoxTop {
@@ -47,16 +52,20 @@
   width: 80%;
   height: 90px;
   padding: 10px;
+  border-radius: 5px;
 }
 
-.chatSubmitButton {
-  width: 70px;
-  height: 40px;
-  border: none;
+.chatBoxBottom button{
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  padding: .5rem;
+  margin: 0 0 0 .5rem;
+  font-size: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
   border-radius: 5px;
-  cursor: pointer;
-  background-color: teal;
-  color: white;
+  letter-spacing: 2px;
+  background: #070707;
 }
 
 .chatOnline {
@@ -64,7 +73,6 @@
 }
 
 .chatMenuWrapper,
-.chatBoxWrapper,
 .chatOnlineWrapper {
   padding: 10px;
   height: 100%;
@@ -72,7 +80,8 @@
 
 .chatMenuWrapper{
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
+  justify-content: flex-start;
 }
 
 
@@ -99,5 +108,9 @@
 
   .chatOnline {
     flex: 1px;
+  }
+
+  .chatBoxWrapper{
+    width: 90%;
   }
 }

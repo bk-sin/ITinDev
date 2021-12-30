@@ -5,19 +5,20 @@
   cursor: pointer;
   border-radius: 5px;
   margin-top: 20px;
+  color: whitesmoke;
+  margin: .5rem;
 }
 
 .conversation:hover {
-  
   background-color: rgb(56, 56, 56);
 }
 
 .conversationImg {
+  margin: .5rem;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   object-fit: cover;
-  margin-right: 20px;
 }
 
 .conversationName {
