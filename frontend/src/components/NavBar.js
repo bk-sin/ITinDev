@@ -1,5 +1,5 @@
 import React from "react"
-import {Nav, NavDropdown, Navbar} from "react-bootstrap"
+import {Nav, NavDropdown} from "react-bootstrap"
 import {Link} from "react-router-dom"
 import authAction from "../redux/actions/authActions"
 import {connect} from "react-redux"
