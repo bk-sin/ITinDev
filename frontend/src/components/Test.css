@@ -70,7 +70,6 @@ body::-webkit-scrollbar {
 .swipe {
   position: absolute;
   /* transform: translate(50px,50px) !important; */
-
 }
 
 .botonesSwipe {
@@ -87,22 +86,6 @@ body::-webkit-scrollbar {
   border-radius: 50%;
   font-size: 2rem;
   padding: 3vw;
-}
-
-.replay {
-  color: orange;
-}
-.close {
-  color: red;
-}
-.star {
-  color: blue;
-}
-.fav {
-  color: green;
-}
-.energy {
-  color: purple;
 }
 
 .contenedor {
@@ -231,22 +214,20 @@ body::-webkit-scrollbar {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.description-user{
-  color:black
+.description-user {
+  color: black;
 }
 
-.description-user{
+.description-user {
   max-width: 100%;
 }
 
 /* MEDIA QUERYS CARDS */
-@media screen and (max-width: 450px){
-
-  .info-card{
+@media screen and (max-width: 450px) {
+  .info-card {
     min-width: 80vw;
     min-height: 70vh;
     margin-top: 1rem;
-    
   }
 
   .tarjeta {
@@ -260,5 +241,4 @@ body::-webkit-scrollbar {
   .ocultar {
     display: none !important;
   }
-
 }

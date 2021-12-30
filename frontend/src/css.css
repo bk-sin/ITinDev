@@ -1,17 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;200;300;400&display=swap");
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  
 }
 
-body{
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
 }
-
 
 img {
   width: 100%;
@@ -31,7 +29,7 @@ img {
   background: url(../public/assets/ima4.jpg) center center/cover no-repeat;
 }
 
-.container_cuenta{
+.container_cuenta {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-around;
@@ -43,21 +41,18 @@ img {
   border-radius: 5px;
 }
 
-.titulo_principal{
-  font-family: 'IBM Plex Mono', monospace;
+.titulo_principal {
+  font-family: "IBM Plex Mono", monospace;
   text-transform: uppercase;
   color: rgb(255, 255, 255);
-  text-shadow: 0px 0px 20px  rgb(255, 255, 255);
+  text-shadow: 0px 0px 20px rgb(255, 255, 255);
   font-size: 2rem;
   padding: 0 1rem;
 }
 
-
-
-
 /* ESTILO FORM SIGN IN*/
 
-.cointainer-all{
+.cointainer-all {
   width: 100vw;
   min-height: 90vh;
   background: url(../public/assets/ima6.jpg) center center/cover no-repeat;
@@ -68,7 +63,7 @@ img {
   align-items: center;
 }
 
-.form-neon{
+.form-neon {
   padding: 1rem;
   width: 45vw;
   min-height: 60vh;
@@ -78,29 +73,27 @@ img {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  transition: .5s;
+  transition: 0.5s;
   overflow: hidden;
   box-shadow: -5px 5px 10px rgb(0, 0, 0);
 }
 
-
-.formSignIn{
+.formSignIn {
   color: #ffffff;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
-  align-items: center ;
-  height: 50vh
+  align-items: center;
+  height: 50vh;
 }
 
-
-.form-neon p{
+.form-neon p {
   font-size: 2rem;
 }
 
 /* SIGNIN BOTON */
-.custom-signIn{
-  margin: .5rem 0;
+.custom-signIn {
+  margin: 0.5rem 0;
   min-width: 10vw;
   min-height: 5vh;
   color: #fff;
@@ -115,58 +108,56 @@ img {
 }
 
 .btn-signIn {
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   font-size: 1rem;
-font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 600;
   letter-spacing: 2px;
   border: none;
-  background: rgb(254,39,96);
-  background: linear-gradient(0deg, rgb(254,39,96)) 0%, rgb(254,39,96) 100%;
+  background: rgb(254, 39, 96);
+  background: linear-gradient(0deg, rgb(254, 39, 96)) 0%, rgb(254, 39, 96) 100%;
 }
 
 .btn-signIn:hover {
   color: #fff;
   background: transparent;
-  box-shadow:none;
+  box-shadow: none;
 }
 
 .btn-signIn:before,
-.btn-signIn:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: rgb(254,39,96);
-  box-shadow:
-   -1px -1px 5px 0px #fff,
-   7px 7px 20px 0px #0003,
-   4px 4px 5px 0px #0002;
-  transition:400ms ease all;
+.btn-signIn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: rgb(254, 39, 96);
+  box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+  transition: 400ms ease all;
 }
 
-.btn-signIn:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
+.btn-signIn:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
 }
 
 .btn-signIn:hover:before,
-.btn-signIn:hover:after{
-  width:100%;
-  transition:800ms ease all;
+.btn-signIn:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
 }
 
-.emoji svg{
+.emoji svg {
   font-size: 3rem;
   color: white;
   padding: unset;
 }
 
-.contenedor-registro{
+.contenedor-registro {
   border-top: 1px solid rgb(182, 182, 182);
   padding: 1rem 0;
   align-self: flex-star;
@@ -176,14 +167,14 @@ font-family: 'IBM Plex Mono', monospace;
   align-items: center;
 }
 
-.contenedor-registro > p{
+.contenedor-registro > p {
   margin-bottom: unset;
   font-size: 1rem;
 }
 
-.input-signin{
-  margin: 1rem 0 ;
-  padding: .1rem;
+.input-signin {
+  margin: 1rem 0;
+  padding: 0.1rem;
   width: 90%;
   color: #ffffff;
   border: unset;
@@ -192,13 +183,13 @@ font-family: 'IBM Plex Mono', monospace;
   background-image: unset;
 }
 
-.input-signin:focus{
+.input-signin:focus {
   outline: none;
   border: 1px solid #f8f8f8;
   background-color: unset;
 }
 
-.btn-signup{
+.btn-signup {
   width: 100%;
   background-color: unset;
   color: #ffffff;
@@ -206,11 +197,11 @@ font-family: 'IBM Plex Mono', monospace;
   border-bottom: 1px solid #f8f8f8;
 }
 
-.btn-signup:focus{
+.btn-signup:focus {
   outline: none;
 }
 
-.btn-signup{
+.btn-signup {
   width: 10rem !important;
   background-color: #00000077 !important;
   text-align: center !important;
@@ -218,18 +209,16 @@ font-family: 'IBM Plex Mono', monospace;
 
 /* SIGN UP FORM STYLE */
 
-.formSignUp{
+.formSignUp {
   color: #ffffff;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center ;
+  align-items: center;
   width: 100%;
 }
 
-
-
-.form-neon-signUp{
+.form-neon-signUp {
   margin-top: 3rem;
   padding: 0 1rem;
   min-width: 55vw;
@@ -239,61 +228,63 @@ font-family: 'IBM Plex Mono', monospace;
   color: whitesmoke;
   text-decoration: none;
   text-transform: uppercase;
-  transition: .5s;
+  transition: 0.5s;
   overflow: hidden;
   box-shadow: -5px 5px 10px rgb(0, 0, 0);
 }
 
-.form-neon-signUp > p{
+.form-neon-signUp > p {
   font-size: 2rem;
   text-align: center;
   margin-bottom: unset;
 }
 
-.container-inputs-signup{
+.container-inputs-signup {
   display: flex;
   flex-flow: row nowrap;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
 }
 
-.container-inputs-1, .container-inputs-2 {
+.container-inputs-1,
+.container-inputs-2 {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   width: 40%;
-  margin: 2rem .5rem .5rem 0;
+  margin: 2rem 0.5rem 0.5rem 0;
 }
 
-
-.inputs-btn{
-  margin: 0 0 1rem 0 ;
+.inputs-btn {
+  margin: 0 0 1rem 0;
 }
 
-#gender, #country{
-  padding: 0 0 .28rem 0;
+#gender,
+#country {
+  padding: 0 0 0.28rem 0;
 }
 
-.container-btn-1{
+.container-btn-1 {
   width: 80%;
-  margin: 0 0 1rem 0 ;
+  margin: 0 0 1rem 0;
 }
 
-.text-area-container{
+.text-area-container {
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
 }
 
-textarea{
+textarea {
   min-height: 3rem;
   max-height: 4rem;
   resize: none;
 }
 
-.container-btns-signUp,.conteiner-btns-signin{
+.container-btns-signUp,
+.conteiner-btns-signin {
   min-width: 40vw;
   display: flex;
   flex-flow: row wrap;
@@ -301,10 +292,10 @@ textarea{
 }
 
 /* SIGNUP BTON */
-.custom-signUp{
+.custom-signUp {
   min-width: 10vw;
   min-height: 5vh;
-  color: rgb(254,39,96);
+  color: rgb(254, 39, 96);
   text-transform: uppercase;
   border-radius: 5px;
   font-weight: 500;
@@ -317,10 +308,10 @@ textarea{
 
 .btn-signUp {
   font-size: 1rem;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 600;
   letter-spacing: 2px;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   margin: 1rem 0 0 0;
   border: none;
   background: whitesmoke;
@@ -328,41 +319,37 @@ textarea{
 }
 
 .btn-signUp:hover {
-  color: rgb(254,39,96);
+  color: rgb(254, 39, 96);
   background: transparent;
-  box-shadow:none;
+  box-shadow: none;
 }
 .btn-signUp:before,
-.btn-signUp:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
+.btn-signUp:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
   background: whitesmoke;
-  box-shadow:
-   -1px -1px 5px 0px #fff,
-   7px 7px 20px 0px #0003,
-   4px 4px 5px 0px #0002;
-  transition:400ms ease all;
+  box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+  transition: 400ms ease all;
 }
-.btn-signUp:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
+.btn-signUp:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
 }
 .btn-signUp:hover:before,
-.btn-signUp:hover:after{
-  width:100%;
-  transition:800ms ease all;
+.btn-signUp:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
 }
 
-
-
 /* user PHOTO */
-.user-url{
+.user-url {
   border-radius: 50%;
   object-fit: cover;
   width: 35px;
@@ -370,23 +357,27 @@ textarea{
 }
 
 /* ESTILO COMPONENTE NAVBAR */
-.costumBg{
-  width: 100%;
+.costumBg {
+  width: 100vw;
   min-height: 10vh;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  background: rgb(0,0,0);
-  background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.4962359943977591) 60%, rgba(0,0,0,0) 100%);
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.4962359943977591) 60%,
+    rgba(0, 0, 0, 0) 100%
+  );
   position: fixed;
   top: 0;
   left: 0;
   z-index: 4;
 }
 
-
-.logo-container{
+.logo-container {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -394,59 +385,54 @@ textarea{
   min-width: 20%;
 }
 
-.logo-container img{
+.logo-container img {
   width: 45px;
   margin-right: 1rem;
 }
 
-.brand{
+.brand {
   color: whitesmoke;
   font-size: 2rem;
   margin-bottom: unset;
 }
 
-.menu-options{
+.menu-options {
   display: flex;
   flex-flow: row nowrap;
   justify-content: flex-end;
 }
 
-
-.dropdown-nav{
-display: flex;
-justify-content: center;
-align-items: center;
+.dropdown-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.links-nav{
-display: flex;
-flex-flow: row nowrap;
+.links-nav {
+  display: flex;
+  flex-flow: row nowrap;
 }
 
-.link-nav{
-margin-bottom: unset !important;
-color: whitesmoke !important;
-text-transform: uppercase;
-font-weight: bold;
+.link-nav {
+  margin-bottom: unset !important;
+  color: whitesmoke !important;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-
-.link-nav:hover{
-text-shadow: 0 0 8px white;
-transition: .3s;
-
+.link-nav:hover {
+  text-shadow: 0 0 8px white;
+  transition: 0.3s;
 }
 
-
-.fa-user{
-font-size: 20px;
-color: whitesmoke;
-
+.fa-user {
+  font-size: 20px;
+  color: whitesmoke;
 }
 
 /* ESTILO COMPONENTE FOOTER */
 
-footer{
+footer {
   color: white;
   display: flex;
   flex-flow: column nowrap;
@@ -458,16 +444,15 @@ footer{
   background-color: black;
 }
 
-footer p{
+footer p {
   margin-bottom: unset;
 }
 
-.icons-container{
+.icons-container {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-  }
-
+}
 
 #github {
   font-size: 30px;
@@ -475,7 +460,6 @@ footer p{
   border-radius: 3px;
   animation: animate 3s linear infinite;
 }
-
 
 #github {
   animation-delay: 0.1s;
@@ -485,14 +469,14 @@ footer p{
   50% {
     filter: hue-rotate(0deg);
     color: white;
-    text-shadow: 0 -5px 20px rgb(248,31,33);
+    text-shadow: 0 -5px 20px rgb(248, 31, 33);
   }
-  0%, 100% {
+  0%,
+  100% {
     filter: hue-rotate(10deg);
-    color: rgb(248,31,33);
+    color: rgb(248, 31, 33);
   }
 }
-
 
 .frame {
   width: 90%;
@@ -521,84 +505,81 @@ button {
   align-items: center;
 }
 
-.btn-5{
+.btn-5 {
   text-decoration: none;
   font-size: 1.5rem;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 600;
   letter-spacing: 2px;
   padding: 0 1rem;
   border: none;
   background: rgba(201, 24, 27, 0.8);
-  background: linear-gradient(0deg, rgb(248,31,33)) 0%, rgb(248,31,33) 100%;
+  background: linear-gradient(0deg, rgb(248, 31, 33)) 0%, rgb(248, 31, 33) 100%;
 }
 
 .btn-5:hover {
   color: #fff;
   background: transparent;
-  box-shadow:none;
+  box-shadow: none;
 }
 .btn-5:before,
-.btn-5:after{
-  content:'';
-  position:absolute;
-  top:0;
-  right:0;
-  height:2px;
-  width:0;
-  background: rgb(248,31,33);
-  box-shadow:
-   -1px -1px 5px 0px #fff,
-   7px 7px 20px 0px #0003,
-   4px 4px 5px 0px #0002;
-  transition:400ms ease all;
+.btn-5:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: rgb(248, 31, 33);
+  box-shadow: -1px -1px 5px 0px #fff, 7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+  transition: 400ms ease all;
 }
-.btn-5:after{
-  right:inherit;
-  top:inherit;
-  left:0;
-  bottom:0;
+.btn-5:after {
+  right: inherit;
+  top: inherit;
+  left: 0;
+  bottom: 0;
 }
 .btn-5:hover:before,
-.btn-5:hover:after{
-  width:100%;
-  transition:800ms ease all;
+.btn-5:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
 }
 
-
-.contenedor-admin-page{
-  background-color: rgb(40,44,52);
+.contenedor-admin-page {
+  background-color: rgb(40, 44, 52);
   width: 100%;
   min-height: 90vh;
-  padding-top: 4rem ;
+  padding-top: 4rem;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
 }
 
-.usuarios-admin-filters > h2, .usuarios-admin-filters h3 {
+.usuarios-admin-filters > h2,
+.usuarios-admin-filters h3 {
   color: whitesmoke;
   text-transform: uppercase;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   text-align: center;
 }
 
-.usuarios-admin-filters{
+.usuarios-admin-filters {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
 }
 
-.filter-conteiner{
+.filter-conteiner {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
- 
 }
 
-.filter-conteiner button{
-  margin: .5rem;
-  padding: 0 .5rem;
+.filter-conteiner button {
+  margin: 0.5rem;
+  padding: 0 0.5rem;
   cursor: pointer;
   box-shadow: -5px -2px 10px 2px #c0c0c0d7 inset;
   filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.657));
@@ -612,54 +593,53 @@ button {
   border: unset;
 }
 
-.filter-conteiner input{
-  margin: .5rem;
+.filter-conteiner input {
+  margin: 0.5rem;
   border-radius: 5px;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   min-width: 3rem;
   min-height: 3rem;
 }
 
-.usuarios-admin-conteiner{
+.usuarios-admin-conteiner {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   padding: unset;
-
 }
 
-.usuarios-admin-conteiner > .usuarios-admin{
+.usuarios-admin-conteiner > .usuarios-admin {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
   align-items: center;
   background-color: whitesmoke;
   margin: 1rem;
-  width: 15rem;
-  min-height: 10rem;
+  width: 20rem;
+  min-height: 17rem;
   border-radius: 5px;
 }
 
-.usuarios-admin:hover{
+.usuarios-admin:hover {
   box-shadow: 0 5px 10px black;
 }
-.usuarios-admin img{
+.usuarios-admin img {
   border-radius: 5px;
   width: 80px;
   height: 80px;
   object-fit: cover;
 }
 
-.button-admin-conteiner{
+.button-admin-conteiner {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.button-admin-conteiner button{
-  margin: .5rem;
-  font-family: 'IBM Plex Mono', monospace;
+.button-admin-conteiner button {
+  margin: 0.5rem;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 15px;
   cursor: pointer;
   box-shadow: -5px -2px 10px 2px #c0c0c0d7 inset;
@@ -674,172 +654,163 @@ button {
   border: unset;
 }
 
-.button-admin-conteiner button:hover{
-  transition: .2s;
+.button-admin-conteiner button:hover {
+  transition: 0.2s;
   filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.657));
 }
 
-
-.form-admin-conteiner form{
+.form-admin-conteiner form {
   display: flex;
   flex-flow: column nowrap;
-  justify-content:center;
+  justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: rgb(40,44,52);
+  background-color: rgb(40, 44, 52);
 }
 
-.form-admin-conteiner label{
-  margin: .5rem 0 0 .5rem;
-  color: whitesmoke
+.form-admin-conteiner label {
+  margin: 0.5rem 0 0 0.5rem;
+  color: whitesmoke;
 }
 
-.form-admin-conteiner input{
-  margin: .5rem;
+.form-admin-conteiner input {
+  margin: 0.5rem;
 }
 
-.form-admin-conteiner select{
-  margin: .5rem
+.form-admin-conteiner select {
+  margin: 0.5rem;
 }
 
-.form-admin-conteiner textarea{
-  margin: .5rem
+.form-admin-conteiner textarea {
+  margin: 0.5rem;
 }
 
-.form-admin-conteiner .btn-submit{
+.form-admin-conteiner .btn-submit {
   color: whitesmoke;
   border: 1px solid whitesmoke;
-  padding: .5rem;
-  margin: 0 0 0 .5rem;
+  padding: 0.5rem;
+  margin: 0 0 0 0.5rem;
   font-size: 1rem;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-weight: 600;
   border-radius: 5px;
   letter-spacing: 2px;
   background: #070707;
 }
 
-.form-admin-conteiner .btn-submit:hover{
-  transition: .3s;
+.form-admin-conteiner .btn-submit:hover {
+  transition: 0.3s;
   box-shadow: 0 2px 5px black;
 }
 
+@media screen and (max-width: 450px) {
+  .usuarios-admin-filters > h2,
+  .usuarios-admin-filters h3 {
+    max-width: 300px;
+  }
 
-@media screen and (max-width: 450px){
+  .filter-conteiner {
+    flex-flow: column nowrap;
+    max-width: 300px;
+  }
 
+  .contenedor-admin-page {
+    padding-top: 8rem;
+  }
 
-.usuarios-admin-filters > h2, .usuarios-admin-filters h3 {
-  max-width: 300px ;
-}
-
-.filter-conteiner{
-  flex-flow: column nowrap;
-  max-width: 300px 
-}
-
-
-.contenedor-admin-page{
-  padding-top: 8rem;
-}
-
-
-  .container_principal{
+  .container_principal {
     height: 88.5vh;
   }
 
-
-  .container_cuenta{
+  .container_cuenta {
     margin-top: 4.5rem;
     width: 80vw;
   }
 
-
-  .titulo_principal{
+  .titulo_principal {
     font-size: 1.5rem;
   }
 
-  
-  .costumBg{
+  .costumBg {
     flex-flow: column nowrap;
-    justify-content: center ;
+    justify-content: center;
     align-content: center;
   }
 
-
-  .dropdown-nav{
-    padding: 0 ;
+  .dropdown-nav {
+    padding: 0;
   }
 
-  .logo-container{
+  .logo-container {
     padding-left: 0.2rem !important;
-    padding: 0
+    padding: 0;
   }
 
-  .cointainer-all{
+  .cointainer-all {
     justify-content: flex-end;
   }
 
-  .nav-link{
-    padding: .5rem !important;
+  .nav-link {
+    padding: 0.5rem !important;
   }
 
   /* MEDIA QUERYS DE FORMS  - CHECKEAR */
-  .form-neon{
+  .form-neon {
     min-width: 90%;
     min-height: 60vh;
     margin-bottom: 1rem;
   }
 
-  .inputs-container{
+  .inputs-container {
     width: 100%;
     border: unset;
     margin: 0;
     align-items: center;
   }
 
-  .btns-container{
+  .btns-container {
     min-height: 20vh;
     width: 100%;
     padding: 0;
-    justify-content: center
+    justify-content: center;
   }
 
-  .btns-container>p{
+  .btns-container > p {
     display: none;
   }
 
-  .btn-form{
-    margin: .5rem 0;
+  .btn-form {
+    margin: 0.5rem 0;
   }
 
-  .btn-5{
+  .btn-5 {
     font-size: unset;
   }
 
-  .btn-signIn{
-    margin: .5rem;
+  .btn-signIn {
+    margin: 0.5rem;
   }
 
-  .contenedor-registro{
+  .contenedor-registro {
     flex-flow: column nowrap;
   }
 
-  .container-inputs-signup{
+  .container-inputs-signup {
     flex-flow: column nowrap;
   }
 
-  .container-inputs-1, .container-inputs-2{
+  .container-inputs-1,
+  .container-inputs-2 {
     width: 90%;
   }
 
-  .form-neon-signUp{
+  .form-neon-signUp {
     margin-top: 5.5rem;
   }
-
 }
 
-@media screen and (min-width: 768px) and (max-width: 1200px){
-  .form-neon-signUp{
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .form-neon-signUp {
     min-width: 70vw;
   }
 }

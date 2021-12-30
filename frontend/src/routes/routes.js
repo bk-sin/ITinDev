@@ -5,8 +5,7 @@ import TestPadre from "../components/TestPadre"
 import {connect} from "react-redux"
 import authAction from "../redux/actions/authActions"
 import Main from "../components/Main"
-import NavBar from "../components/NavBar"
-import Footer from "../components/Footer"
+
 import Messenger from "../components/Messenger"
 import React from "react"
 import {Routes, Route, Navigate} from "react-router-dom"
@@ -17,7 +16,6 @@ function RoutesManager(props) {
 
   return (
     <>
-      <NavBar />
       {props.user.banned ? (
         <Routes>
           <Route element={<Banned />} />
@@ -52,7 +50,6 @@ function RoutesManager(props) {
           />
         </Routes>
       )}
-      <Footer />
     </>
   )
 }

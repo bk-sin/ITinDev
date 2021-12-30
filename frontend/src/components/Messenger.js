@@ -14,6 +14,8 @@ const Messenger = ({user}) => {
   const [newMessage, setNewMessage] = useState("")
   const [receivedMessage, setReceivedMessage] = useState(null)
 
+  const textarea = useRef()
+
   const socket = useRef()
   const scrollRef = useRef()
 
@@ -95,6 +97,8 @@ const Messenger = ({user}) => {
     } catch (err) {
       console.log(err)
     }
+
+    textarea.current.value = ""
   }
 
   return (
@@ -124,12 +128,14 @@ const Messenger = ({user}) => {
                 ))}
               </div>
               <div className="chatBoxBottom">
-                <textarea
+                <input
+                  type="text"
                   className="chatMessageInput"
-                  placeholder="write something..."
+                  placeholder="Escribi tu mensaje aca..."
                   onChange={(e) => setNewMessage(e.target.value)}
+                  ref={textarea}
                   value={newMessage}
-                ></textarea>
+                ></input>
                 <button className="chatSubmitbutton" onClick={handleSubmit}>
                   Enviar
                 </button>
