@@ -3,13 +3,13 @@ const passport = require("passport")
 const express = require("express")
 const cors = require("cors")
 const Router = require("./routes/routes")
+const app = express()
 const path = require("path")
 const {Server} = require("socket.io")
 const HOST = process.env.HOST || "0.0.0.0"
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT
 require("./config/database")
-
-const app = express()
+require("./config/passport")
 
 app.use(cors())
 app.use(express.json())
