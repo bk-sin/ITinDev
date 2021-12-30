@@ -33,10 +33,9 @@ function NavBar(props) {
           <NavDropdown
             title={
               <img
-                className="fas fa-user"
+                className="user-url"
                 src={props.user.image}
                 alt="user profile pic"
-                style={{height: 30}}
               />
             }
             className="link-nav"
@@ -49,11 +48,11 @@ function NavBar(props) {
                 props.signOut()
               }}
             >
-              Sign Out
+              ⬅️ Sign Out
             </NavDropdown.Item>
             {props.user.admin && (
               <NavDropdown.Item as={Link} to="/admin">
-                Admin Panel
+                🔐 Admin Panel
               </NavDropdown.Item>
             )}
           </NavDropdown>

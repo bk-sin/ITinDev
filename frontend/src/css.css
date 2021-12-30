@@ -22,7 +22,6 @@ img {
 }
 
 /* Estilos de componente main */
-
 .container_principal {
   display: flex;
   justify-content: center;
@@ -40,7 +39,7 @@ img {
   align-items: center;
   height: 60vh;
   width: 60vw;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.61);
   border-radius: 5px;
 }
 
@@ -50,7 +49,10 @@ img {
   color: rgb(255, 255, 255);
   text-shadow: 0px 0px 20px  rgb(255, 255, 255);
   font-size: 2rem;
+  padding: 0 1rem;
 }
+
+
 
 
 /* ESTILO FORM SIGN IN*/
@@ -69,7 +71,7 @@ img {
 .form-neon{
   padding: 1rem;
   width: 45vw;
-  height: 60vh;
+  min-height: 60vh;
   background: #000000d2;
   border-radius: 5px;
   color: whitesmoke;
@@ -98,8 +100,9 @@ img {
 
 /* SIGNIN BOTON */
 .custom-signIn{
-  width: 10vw;
-  height: 5vh;
+  margin: .5rem 0;
+  min-width: 10vw;
+  min-height: 5vh;
   color: #fff;
   text-transform: uppercase;
   border-radius: 5px;
@@ -112,11 +115,11 @@ img {
 }
 
 .btn-signIn {
+  padding: 0 .5rem;
   font-size: 1rem;
 font-family: 'IBM Plex Mono', monospace;
   font-weight: 600;
   letter-spacing: 2px;
-  padding: 0;
   border: none;
   background: rgb(254,39,96);
   background: linear-gradient(0deg, rgb(254,39,96)) 0%, rgb(254,39,96) 100%;
@@ -168,7 +171,7 @@ font-family: 'IBM Plex Mono', monospace;
   padding: 1rem 0;
   align-self: flex-star;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-evenly;
   align-items: center;
 }
@@ -196,7 +199,7 @@ font-family: 'IBM Plex Mono', monospace;
 }
 
 .btn-signup{
-  font: normal 1rem 'Roboto';
+  width: 100%;
   background-color: unset;
   color: #ffffff;
   border: unset;
@@ -221,22 +224,19 @@ font-family: 'IBM Plex Mono', monospace;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: center ;
-  height:80%;
   width: 100%;
 }
 
-.formSignUp > input{
-  width: 8rem;
-}
+
 
 .form-neon-signUp{
-  padding: 1rem;
-  width: 60vw;
-  height: 80vh;
+  margin-top: 3rem;
+  padding: 0 1rem;
+  min-width: 45vw;
+  min-height: 60vh;
   background: #000000d2;
   border-radius: 5px;
   color: whitesmoke;
-  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   transition: .5s;
@@ -244,8 +244,9 @@ font-family: 'IBM Plex Mono', monospace;
   box-shadow: -5px 5px 10px rgb(0, 0, 0);
 }
 
-.form-neon-signUp p{
+.form-neon-signUp > p{
   font-size: 2rem;
+  text-align: center;
   margin-bottom: unset;
 }
 
@@ -253,27 +254,56 @@ font-family: 'IBM Plex Mono', monospace;
   display: flex;
   flex-flow: row nowrap;
   justify-content:center;
+  align-items: center;
   width: 100%;
-  height: 80%;
+  height: 100%;
 }
 
 .container-inputs-1, .container-inputs-2 {
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
-  align-items: center;
-  width: 80%;
-  margin: .5rem
+  width: 40%;
+  margin: 2rem .5rem .5rem 0;
 }
 
-.container-inputs-1 > input, .container-inputs-2 > input{
-  margin: .5rem 0 ;
+
+.inputs-btn{
+  margin: 0 0 1rem 0 ;
+}
+
+#gender, #country{
+  padding: 0 0 .28rem 0;
+}
+
+.container-btn-1{
+  width: 80%;
+  margin: 0 0 1rem 0 ;
+}
+
+.text-area-container{
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+}
+
+textarea{
+  min-height: 3rem;
+  max-height: 4rem;
+  resize: none;
+}
+
+.container-btns-signUp,.conteiner-btns-signin{
+  width: 40vw;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
 }
 
 /* SIGNUP BTON */
 .custom-signUp{
-  width: 10vw;
-  height: 5vh;
+  min-width: 10vw;
+  min-height: 5vh;
   color: rgb(254,39,96);
   text-transform: uppercase;
   border-radius: 5px;
@@ -287,10 +317,10 @@ font-family: 'IBM Plex Mono', monospace;
 
 .btn-signUp {
   font-size: 1rem;
-font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 600;
   letter-spacing: 2px;
-  padding: 0;
+  padding: 0 .5rem;
   border: none;
   background: whitesmoke;
   background: linear-gradient(0deg, whitesmoke) 0%, whitesmoke 100%;
@@ -330,83 +360,12 @@ font-family: 'IBM Plex Mono', monospace;
 
 
 
-
-
-
-/* MEDIA QUERYS DE FORMULARIO */
-@media screen and (max-width: 450px){
-
-  .cointainer-all{
-    padding: .5rem;
-  }
-
-  .form-neon{
-    width: 100%;
-  }
-
-  .inputs-container{
-    width: 100%;
-    border: unset;
-    margin: 0;
-    align-items: center;
-  }
-
-  .btns-container{
-    min-height: 20vh;
-    width: 100%;
-    padding: 0;
-    justify-content: center
-  }
-
-  .btns-container>p{
-    display: none;
-  }
-
-  .logo-form img{
-    display: none
-  }
-  .ppal-btn{
-    display: flex;
-    flex-flow: column nowrap;
-  }
-
-  .btn-form{
-    margin: .5rem 0;
-  }
-
-}
-
 /* user PHOTO */
-.user-url img{
+.user-url{
   border-radius: 50%;
   object-fit: cover;
   width: 35px;
   height: 35px;
-}
-
-.link-nav{
-  margin-bottom: unset !important;
-  font-size: 2vh;
-}
-
-@media screen and (max-width: 450px){
-  
-  .costumeBg{
-    justify-content: unset;
-  }
-
-
-  .dropdown-nav{
-    flex: 1 1 auto;
-    padding: 0
-  }
-
-  .logo-container{
-    padding-left: 0.2rem !important;
-    flex: 1 1 auto;
-    padding: 0
-  }
-
 }
 
 /* ESTILO COMPONENTE NAVBAR */
@@ -414,7 +373,7 @@ font-family: 'IBM Plex Mono', monospace;
   width: 100%;
   min-height: 10vh;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
   background: rgb(0,0,0);
@@ -425,12 +384,13 @@ font-family: 'IBM Plex Mono', monospace;
   z-index: 4;
 }
 
+
 .logo-container{
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  width: 20%;
+  min-width: 20%;
 }
 
 .logo-container img{
@@ -452,18 +412,18 @@ font-family: 'IBM Plex Mono', monospace;
 
 
 .dropdown-nav{
-padding: 0px 2rem;
 display: flex;
-flex: 0 1 auto
+justify-content: center;
+align-items: center;
 }
 
 .links-nav{
-font-size: 2vh;
 display: flex;
 flex-flow: row nowrap;
 }
 
 .link-nav{
+margin-bottom: unset !important;
 color: whitesmoke !important;
 text-transform: uppercase;
 }
@@ -492,7 +452,7 @@ footer{
   align-content: center;
   align-items: center;
   width: 100%;
-  height: 10vh;
+  min-height: 10vh;
   background-color: black;
 }
 
@@ -543,27 +503,29 @@ button {
 }
 
 .custom-btn {
-  width: 18vw;
-  height: 8vh;
-  color: #fff;
+  margin: 0 1rem;
+  min-width: 18vw;
+  min-height: 8vh;
+  color: whitesmoke;
   text-transform: uppercase;
   border-radius: 5px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  display: inline-block;
   outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* 5 */
-.btn-5 {
+.btn-5{
   text-decoration: none;
   font-size: 1.5rem;
-font-family: 'IBM Plex Mono', monospace;
+  font-family: 'IBM Plex Mono', monospace;
   font-weight: 600;
   letter-spacing: 2px;
-  padding: 0;
+  padding: 0 1rem;
   border: none;
   background: rgba(201, 24, 27, 0.8);
   background: linear-gradient(0deg, rgb(248,31,33)) 0%, rgb(248,31,33) 100%;
@@ -602,3 +564,77 @@ font-family: 'IBM Plex Mono', monospace;
 }
 
 
+@media screen and (max-width: 450px){
+
+/* MAIN Y NAVBAR MEDIAQUERYS */
+
+  .container_principal{
+    height: 88.5vh;
+  }
+
+
+  .container_cuenta{
+    margin-top: 4.5rem;
+    width: 80vw;
+  }
+
+
+  .titulo_principal{
+    font-size: 1.5rem;
+  }
+
+  
+  .costumBg{
+    flex-flow: column nowrap;
+    justify-content: center ;
+    align-content: center;
+  }
+
+
+  .dropdown-nav{
+    padding: 0;
+  }
+
+  .logo-container{
+    padding-left: 0.2rem !important;
+    padding: 0
+  }
+
+  .cointainer-all{
+    justify-content: flex-end;
+  }
+
+
+  /* MEDIA QUERYS DE FORMS  - CHECKEAR */
+  .form-neon{
+    min-width: 90%;
+    min-height: 60vh;
+  }
+
+  .inputs-container{
+    width: 100%;
+    border: unset;
+    margin: 0;
+    align-items: center;
+  }
+
+  .btns-container{
+    min-height: 20vh;
+    width: 100%;
+    padding: 0;
+    justify-content: center
+  }
+
+  .btns-container>p{
+    display: none;
+  }
+
+  .btn-form{
+    margin: .5rem 0;
+  }
+
+  .btn-5{
+    font-size: unset;
+  }
+
+}
