@@ -52,16 +52,20 @@
   width: 80%;
   height: 90px;
   padding: 10px;
+  border-radius: 5px;
 }
 
-.chatSubmitButton {
-  width: 70px;
-  height: 40px;
-  border: none;
+.chatBoxBottom button{
+  color: whitesmoke;
+  border: 1px solid whitesmoke;
+  padding: .5rem;
+  margin: 0 0 0 .5rem;
+  font-size: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
   border-radius: 5px;
-  cursor: pointer;
-  background-color: teal;
-  color: white;
+  letter-spacing: 2px;
+  background: #070707;
 }
 
 .chatOnline {
