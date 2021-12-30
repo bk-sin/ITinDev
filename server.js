@@ -24,7 +24,12 @@ if (process.env.NODE_ENV === "production") {
 let server = app.listen(
   process.env.PORT || "4000",
   process.env.HOST || "0.0.0.0",
-  () => console.log(`Server listening port: ${process.env.PORT || "4000"}`)
+  () =>
+    console.log(
+      `Server listening port: ${process.env.PORT || "4000"}`,
+      this.address().port,
+      app.settings.env
+    )
 )
 
 const {Server} = require("socket.io")

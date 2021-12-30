@@ -1,4 +1,8 @@
 {
+  "name": "itindev",
+  "author": "emi",
+  "description": "test",
+  "version": "0.0.1",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
@@ -17,6 +21,9 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodeman server.js",
-    "heroku-postbuild":"cd frontend && npm install && npm run build"
+    "heroku-postbuild": "cd frontend && npm install && npm run build"
+  },
+  "engines": {
+    "node": "16.13.0"
   }
 }
