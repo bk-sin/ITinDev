@@ -294,7 +294,7 @@ textarea{
 }
 
 .container-btns-signUp,.conteiner-btns-signin{
-  width: 40vw;
+  min-width: 40vw;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
@@ -321,6 +321,7 @@ textarea{
   font-weight: 600;
   letter-spacing: 2px;
   padding: 0 .5rem;
+  margin: 1rem 0 0 0;
   border: none;
   background: whitesmoke;
   background: linear-gradient(0deg, whitesmoke) 0%, whitesmoke 100%;
@@ -613,6 +614,7 @@ button {
   .form-neon{
     min-width: 90%;
     min-height: 60vh;
+    margin-bottom: 1rem;
   }
 
   .inputs-container{
@@ -639,6 +641,14 @@ button {
 
   .btn-5{
     font-size: unset;
+  }
+
+  .btn-signIn{
+    margin: .5rem;
+  }
+
+  .contenedor-registro{
+    flex-flow: column nowrap;
   }
 
 }

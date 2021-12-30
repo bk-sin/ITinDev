@@ -19,6 +19,7 @@ function NavBar(props) {
         </Link>
         <p className="brand">&#x2774; ItinDev &#x2775; </p>
       </div>
+
       <div className="dropdown-nav">
         <div className="menu-options">
           <Nav.Link as={Link} className="link-nav" to="/">
@@ -35,8 +36,49 @@ function NavBar(props) {
             </>
           )}
         </div>
-        </div>
+        {props.user.name ? (
+          <NavDropdown
+            title={
+              <img
+                className="user-url"
+                src={props.user.image}
+                alt="user profile pic"
+              />
+            }
+            className="link-nav"
+            id="basic-nav-dropdown"
+          >
+            <NavDropdown.Item
+              as={Link}
+              to="/"
+              onClick={() => {
+                props.signOut()
+              }}
+            >
+              ⬅️ Sign Out
+            </NavDropdown.Item>
+            {props.user.admin && (
+              <NavDropdown.Item as={Link} to="/admin">
+                🔐 Admin Panel
+              </NavDropdown.Item>
+            )}
+          </NavDropdown>
+        ) : (
+          <NavDropdown
+            title={<i className="fas fa-user"></i>}
+            className="link-nav"
+            id="basic-nav-dropdown"
+          >
+            <NavDropdown.Item as={Link} to="/signin">
+              ➡️ Sign In
+            </NavDropdown.Item>
+            <NavDropdown.Item as={Link} to="/signup">
+              👤+ Sing Up
+            </NavDropdown.Item>
+          </NavDropdown>
+        )}
       </div>
+    </div>
   )
 }
 

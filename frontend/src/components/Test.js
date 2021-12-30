@@ -77,6 +77,7 @@ export default function Test(props) {
     updateCurrentIndex(newIndex)
     await childRefs[newIndex].current.restoreCard()
   }
+  console.log(props)
 
   return (
     <>
@@ -102,8 +103,8 @@ export default function Test(props) {
                       className="tarjeta"
                     ></div>
 
-                    <h2>{character.name}</h2>
-                    <p>{character.description}</p>
+                    <h2>{character.name}, {character.age}</h2>
+                    <p className="description-user">{character.description}</p>
                   </div>
                 </TinderCard>
               ))

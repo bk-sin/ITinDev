@@ -35,16 +35,18 @@ body::-webkit-scrollbar {
 .info-card {
   background-color: whitesmoke;
   border-radius: 5px;
-  width: 25vw;
-  height: 70vh;
+  width: 40vw;
+  max-height: 70vh;
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  padding: 1rem;
+  overflow-wrap: break-word;
 }
 
 .tarjeta {
   margin-top: 5px;
-  width: 20vw;
+  width: 95%;
   height: 45vh;
   background-size: cover;
   background-position: center;
@@ -67,7 +69,8 @@ body::-webkit-scrollbar {
 
 .swipe {
   position: absolute;
-  overflow: hidden !important;
+  /* transform: translate(50px,50px) !important; */
+
 }
 
 .botonesSwipe {
@@ -228,16 +231,26 @@ body::-webkit-scrollbar {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.description-user{
+  color:black
+}
+
+.description-user{
+  max-width: 100%;
+}
+
 /* MEDIA QUERYS CARDS */
 @media screen and (max-width: 450px){
 
   .info-card{
     min-width: 80vw;
+    min-height: 70vh;
     margin-top: 1rem;
+    
   }
 
   .tarjeta {
-    min-width: 80%;
+    min-width: 100%;
   }
 
   body::-webkit-scrollbar {
@@ -247,4 +260,5 @@ body::-webkit-scrollbar {
   .ocultar {
     display: none !important;
   }
+
 }
