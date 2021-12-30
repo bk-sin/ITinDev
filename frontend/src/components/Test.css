@@ -228,18 +228,14 @@ body::-webkit-scrollbar {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-
 /* MEDIA QUERYS CARDS */
-@media screen and (max-width: 450px){
-
-
-  .info-card{
+@media screen and (max-width: 450px) {
+  .info-card {
     min-width: 80vw;
     margin-top: 1rem;
-
   }
 
-  .tarjeta{
+  .tarjeta {
     min-width: 80%;
   }
 
@@ -247,5 +243,7 @@ body::-webkit-scrollbar {
     display: none;
   }
 
-
+  .ocultar {
+    display: none !important;
+  }
 }
