@@ -24,7 +24,6 @@ const adminControllers = {
       {new: true}
     )
       .then(async (response) => {
-        console.log(response)
         const all = await User.find()
         res.json(all)
       })
@@ -59,10 +58,8 @@ const adminControllers = {
       .catch((error) => res.json({success: false, response: error}))
   },
   setBan: (req, res) => {
-    console.log(req.params)
     User.findOne({_id: req.params.id})
       .then((user) => {
-        console.log(user)
         if (user.banned) {
           User.findOneAndUpdate(
             {_id: req.params.id},

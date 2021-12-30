@@ -27,7 +27,6 @@ export default function Test(props) {
   }
 
   function match(user, idliked) {
-    console.log(user)
     if (user.matchs.some((e) => e === idliked)) {
       swal({
         title: "Are you sure?",
@@ -46,8 +45,6 @@ export default function Test(props) {
         }
       })
       props.newConver(idliked)
-    } else {
-      console.log("NO")
     }
   }
 
@@ -61,7 +58,6 @@ export default function Test(props) {
   }
 
   const outOfFrame = (name, idx) => {
-    console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
     currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
   }
 

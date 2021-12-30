@@ -1,9 +1,11 @@
 import {useRef} from "react"
 import {connect} from "react-redux"
+import {useNavigate} from "react-router-dom"
 import authAction from "../redux/actions/authActions"
 import GoogleLogin from "react-google-login"
 
 function SignIn(props) {
+  const navigate = useNavigate()
   const email = useRef()
   const password = useRef()
 
@@ -15,7 +17,6 @@ function SignIn(props) {
     )
   }
 
-  console.log(props)
   function handleSignIn(e) {
     e.preventDefault()
     props.signinUser(email.current.value, password.current.value)
@@ -63,7 +64,7 @@ function SignIn(props) {
                   Iniciá con Google
                 </button>
               )}
-              buttonText="Iniciá con Google"
+              buttonText="Iniciá con Google a ITinDev"
               onSuccess={responseGoogle}
               onFailure={responseGoogle}
               cookiePolicy={"single_host_origin"}
@@ -76,6 +77,7 @@ function SignIn(props) {
             className="custom-signUp btn-signUp"
             type="submit"
             value="Sign in"
+            onClick={() => navigate("/signup", {replace: true})}
           >
             <span>Registrate</span>
           </button>

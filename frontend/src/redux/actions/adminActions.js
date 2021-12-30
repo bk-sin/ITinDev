@@ -25,7 +25,6 @@ const adminAction = {
         }
       )
 
-      console.log(all)
       dispatch({
         type: "ALL",
         payload: all.data,
@@ -48,7 +47,6 @@ const adminAction = {
         }
       )
 
-      console.log(all)
       dispatch({
         type: "ALL",
         payload: all.data,
@@ -68,7 +66,6 @@ const adminAction = {
           },
         }
       )
-      console.log(all)
       dispatch({
         type: "ALL",
         payload: all.data,

@@ -34,7 +34,7 @@ const authAction = {
         if (response.data.success && !response.data.error) {
           localStorage.setItem("token", response.data.response.token)
           toast.success(
-            "Welcome to MyTinerary " + response.data.response.newUser.name
+            "Welcome to ITinDev " + response.data.response.newUser.name
           )
           dispatch({
             type: "USER",
@@ -60,9 +60,8 @@ const authAction = {
         )
 
         if (response.data.success) {
-          console.log(response)
           localStorage.setItem("token", response.data.response.token)
-          toast.success("Welcome to MyTinerary " + response.data.response.name)
+          toast.success("Welcome to ITinDev " + response.data.response.name)
 
           dispatch({
             type: "USER",
@@ -89,6 +88,7 @@ const authAction = {
             },
           }
         )
+
         dispatch({
           type: "USER",
           payload: response.data,
@@ -114,7 +114,6 @@ const authAction = {
   getUsers: (id) => {
     return async (dispatch, getState) => {
       let res = await axios.get("http://localhost:4000/api/user/nomatchs/" + id)
-      console.log(res)
 
       const filtrado = res.data.respuesta.filter((e) => e._id !== id)
       dispatch({
@@ -178,7 +177,6 @@ const authAction = {
         const res = await axios.post(
           "http://localhost:4000/api/conversations/" + id
         )
-        console.log(res)
       } catch (error) {
         console.error(error)
       }

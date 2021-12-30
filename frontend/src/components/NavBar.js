@@ -6,7 +6,6 @@ import {connect} from "react-redux"
 
 function NavBar(props) {
   let location = useLocation()
-  console.log(location)
   return (
     <div className="costumBg" variant="dark">
       <div

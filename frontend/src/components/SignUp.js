@@ -1,5 +1,7 @@
 import {useRef} from "react"
 import {connect} from "react-redux"
+import {useNavigate} from "react-router-dom"
+
 import authAction from "../redux/actions/authActions"
 import GoogleLogin from "react-google-login"
 
@@ -17,6 +19,7 @@ function SignUp(props) {
       true
     )
   }
+  const navigate = useNavigate()
 
   const email = useRef()
   const password = useRef()
@@ -54,7 +57,6 @@ function SignUp(props) {
     gender.current.value = ""
     description.current.value = ""
   }
-  console.log(props.user)
   return (
     <div className="cointainer-all">
       <div className="form-neon-signUp">
@@ -148,41 +150,39 @@ function SignUp(props) {
             </div>
           </div>
           <div className="container-btn-1">
-              <div className="text-area-container">
-                <label htmlFor="age">Tu descripción:</label>
-                <textarea
-                  id="description"
-                  className="inputs-btn"
-                  required
-                  ref={description}
-                ></textarea>
-              </div>
+            <div className="text-area-container">
+              <label htmlFor="age">Tu descripción:</label>
+              <textarea
+                id="description"
+                className="inputs-btn"
+                required
+                ref={description}
+              ></textarea>
+            </div>
             <div className="container-btns-signUp">
               <button
                 className="custom-signUp btn-signUp"
                 type="submit"
                 value="Sign in"
               >
-                <span>
-                  Registrate
-                </span>
+                <span>Registrate</span>
               </button>
               <GoogleLogin
-            clientId="113911854537-8j68k30a4qpl884ffcvk7hvdfmsdlfnc.apps.googleusercontent.com"
-            render={(renderProps) => (
-              <button
-                onClick={renderProps.onClick}
-                className="custom-signUp btn-signUp"
-                disabled={renderProps.disabled}
-              >
-                Registrate con Google
-              </button>
-            )}
-            buttonText="Registarse con Google"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-            cookiePolicy={"single_host_origin"}
-          />
+                clientId="113911854537-8j68k30a4qpl884ffcvk7hvdfmsdlfnc.apps.googleusercontent.com"
+                render={(renderProps) => (
+                  <button
+                    onClick={renderProps.onClick}
+                    className="custom-signUp btn-signUp"
+                    disabled={renderProps.disabled}
+                  >
+                    Registrate con Google
+                  </button>
+                )}
+                buttonText="Registarse a ITinDev con Google"
+                onSuccess={responseGoogle}
+                onFailure={responseGoogle}
+                cookiePolicy={"single_host_origin"}
+              />
             </div>
           </div>
         </form>
@@ -192,6 +192,7 @@ function SignUp(props) {
             className="custom-signIn btn-signIn"
             type="submit"
             value="Sign in"
+            onClick={() => navigate("/signin", {replace: true})}
           >
             <span>Iniciar Sesión</span>
           </button>
