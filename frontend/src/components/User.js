@@ -23,7 +23,7 @@ export default function Admin(props) {
     e.preventDefault()
     swal({
       title: "Estás seguro?",
-      text: "Una vez eliminado, no podras recuperarlo!",
+      text: "Usted va a editar el perfil de este usuario!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -39,11 +39,12 @@ export default function Admin(props) {
           gender: gender.current.value,
           description: description.current.value,
         })
-        swal("Poof! El usuario fue eliminado!", {
+        swal("El usuario ah sido cambiado!", {
           icon: "success",
         })
+        handleClose()
       } else {
-        swal("El usuario ha sido salvado!")
+        swal("El usuario no ha sido salvado!")
       }
     })
   }
