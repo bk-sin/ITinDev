@@ -639,6 +639,10 @@ button {
   border-radius: 5px;
 }
 
+.usuarios-admin:hover{
+  box-shadow: 0 5px 10px black;
+}
+
 .button-admin-conteiner{
   display: flex;
   flex-flow: row nowrap;
