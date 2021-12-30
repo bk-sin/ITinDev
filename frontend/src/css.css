@@ -644,8 +644,8 @@ button {
 }
 .usuarios-admin img{
   border-radius: 5px;
-  min-width: 80px;
-  min-height: 80px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
 }
 

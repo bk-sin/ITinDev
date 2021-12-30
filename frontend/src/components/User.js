@@ -59,7 +59,6 @@ export default function Admin(props) {
       {props.user.banned && <span style={{color: "red"}}>BANNED</span>}
       <img
         src={props.user.image}
-        style={{width: "50px", height: "50px", objectFit: "cover"}}
         alt="admin user pic"
       />
       {props.user.name} {props.user.lastName}{" "}
