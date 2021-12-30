@@ -50,6 +50,7 @@ export default function Admin(props) {
       />
       {props.user.name} {props.user.lastName}{" "}
       {props.user.admin && <span style={{color: "red"}}>ADMIN</span>}
+      {props.user.banned && <span style={{color: "red"}}>BANNED</span>}
       <button
         onClick={() => {
           swal({
@@ -170,6 +171,13 @@ export default function Admin(props) {
           <input type="submit" value="Submit" className="btn-submit" />
         </form>
       )}
+      <button
+        onClick={() => {
+          props.banPeople(props.user._id)
+        }}
+      >
+        BAN
+      </button>
     </li>
   )
 }

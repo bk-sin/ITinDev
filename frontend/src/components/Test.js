@@ -1,11 +1,14 @@
 import React, {useState, useRef, useMemo} from "react"
 import TinderCard from "react-tinder-card"
 import "./Test.css"
+import {useNavigate} from "react-router-dom"
 import {ImCross} from "react-icons/im"
 import {RiArrowGoBackFill} from "react-icons/ri"
 import {MdFavorite} from "react-icons/md"
+import swal from "sweetalert"
 
 export default function Test(props) {
+  const navigate = useNavigate()
   const [currentIndex, setCurrentIndex] = useState(props.personas.length - 1)
   const [lastDirection, setLastDirection] = useState()
   const currentIndexRef = useRef(currentIndex)
@@ -21,6 +24,31 @@ export default function Test(props) {
   const updateCurrentIndex = (val) => {
     setCurrentIndex(val)
     currentIndexRef.current = val
+  }
+
+  function match(user, idliked) {
+    console.log(user)
+    if (user.matchs.some((e) => e === idliked)) {
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      }).then((willMatch) => {
+        if (willMatch) {
+          navigate("/messenger", {replace: true})
+          swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success",
+          })
+        } else {
+          swal("Your imaginary file is safe!")
+        }
+      })
+      props.newConver(idliked)
+    } else {
+      console.log("NO")
+    }
   }
 
   let canGoBack = currentIndex < props.personas.length - 1
@@ -89,8 +117,6 @@ export default function Test(props) {
                 style={{backgroundColor: !canSwipe && "#c3c4d3"}}
                 onClick={() => {
                   swipe("left")
-                  props.newConver(props.personas[currentIndex]._id)
-                  props.match(props.user, props.personas[currentIndex]._id)
                 }}
               ></ImCross>
             </div>
@@ -110,7 +136,12 @@ export default function Test(props) {
             <div className="boton-individual-3">
               <MdFavorite
                 style={{backgroundColor: !canSwipe && "#c3c4d3"}}
-                onClick={() => swipe("right")}
+                onClick={() => {
+                  props.personas.length > 0 && swipe("right")
+
+                  props.personas.length > 0 &&
+                    match(props.user, props.personas[currentIndex]._id)
+                }}
               ></MdFavorite>
             </div>
           </div>

@@ -1,14 +1,14 @@
-const Message = require("../models/Message");
+const Message = require("../models/Message")
 
 const messageControllers = {
   addNewMessage: async (req, res) => {
-    const newMessage = new Message(req.body);
+    const newMessage = new Message(req.body)
 
     try {
-      const savedMessage = await newMessage.save().populate("sender");
-      res.status(200).json(savedMessage);
+      const savedMessage = await newMessage.save()
+      res.status(200).json(savedMessage)
     } catch (err) {
-      res.status(500).json(err);
+      res.status(500).json(err)
     }
   },
 
@@ -16,12 +16,12 @@ const messageControllers = {
     try {
       const messages = await Message.find({
         conversationId: req.params.conversationId,
-      }).populate("sender");
-      res.status(200).json(messages);
+      }).populate("sender")
+      res.status(200).json(messages)
     } catch (err) {
-      res.status(500).json(err);
+      res.status(500).json(err)
     }
   },
-};
+}
 
-module.exports = messageControllers;
+module.exports = messageControllers

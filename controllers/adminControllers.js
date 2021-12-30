@@ -59,23 +59,34 @@ const adminControllers = {
       .catch((error) => res.json({success: false, response: error}))
   },
   setBan: (req, res) => {
+    console.log(req.params)
     User.findOne({_id: req.params.id})
       .then((user) => {
-        if (user.banned === false) {
+        console.log(user)
+        if (user.banned) {
           User.findOneAndUpdate(
             {_id: req.params.id},
-            {$set: {banned: false}},
+            {banned: false},
             {new: true}
           )
-            .then((user) => res.json({success: true, response: user.banned}))
+            .then(async (user) => {
+              console.log("banned " + user)
+              const all = await User.find()
+              res.json(all)
+            })
             .catch((error) => console.log(error))
         } else {
           User.findOneAndUpdate(
             {_id: req.params.id},
-            {$set: {banned: true}},
+            {banned: true},
             {new: true}
           )
-            .then((user) => res.json({success: true, response: user.banned}))
+            .then(async (user) => {
+              console.log("banned " + user)
+
+              const all = await User.find()
+              res.json(all)
+            })
             .catch((error) => console.log(error))
         }
       })

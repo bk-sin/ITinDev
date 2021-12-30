@@ -14,7 +14,6 @@ const {newUser, logIn, tokenVerification, getUsers, getOneUser} =
 const {addNewMessage, getMessage} = messageControllers
 const {newConversation, getUserConversation, getTwoUsers} =
   conversationControllers
-
 const {matchsAndDismatchs, noMatchUsers, matchUsers} = matchsControllers
 const {deletePeople, editUser, setBan} = adminControllers
 
@@ -23,7 +22,10 @@ Router.route("/admin/deleteUser/:id").put(
   passport.authenticate("jwt", {session: false}),
   deletePeople
 )
-Router.route("/ban").put(passport.authenticate("jwt", {session: false}), setBan)
+Router.route("/admin/ban/:id").put(
+  passport.authenticate("jwt", {session: false}),
+  setBan
+)
 
 Router.route("/admin/editUser/:id").put(
   passport.authenticate("jwt", {session: false}),
@@ -47,7 +49,7 @@ Router.route("/match/:id").put(
     matchsAndDismatchs
   ),
   Router.route("/user/matchs/:id").get(matchUsers)
-Router.route("/user/nomatchs/:id").get(matchUsers)
+Router.route("/user/nomatchs/:id").get(noMatchUsers)
 
 Router.route("/messages").post(addNewMessage)
 Router.route("/messages/:conversationId").get(getMessage)

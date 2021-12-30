@@ -14,6 +14,7 @@ const userSchema = new mongoose.Schema({
   image: {type: String, required: true},
   google: {type: Boolean, default: false},
   admin: {type: Boolean, default: false},
+  banned: {type: Boolean, default: false},
 })
 
 const User = mongoose.model("user", userSchema)

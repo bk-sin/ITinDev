@@ -19,7 +19,7 @@ const Messenger = ({user}) => {
   const scrollRef = useRef()
 
   useEffect(() => {
-    socket.current = io("ws://localhost:8900")
+    socket.current = io("ws://localhost:4000")
     socket.current.on("getMessage", (data) => {
       setReceivedMessage({
         sender: data.senderId,
@@ -39,7 +39,7 @@ const Messenger = ({user}) => {
   useEffect(() => {
     socket.current.emit("addUser", user._id)
     socket.current.on("getUsers", (users) => {
-      console.log(users)
+      // console.log(users);
     })
   }, [user])
 
@@ -63,7 +63,7 @@ const Messenger = ({user}) => {
         const res = await axios.get(
           `http://localhost:4000/api/messages/${currentChat?._id}`
         )
-        console.log(currentChat)
+        //console.log(currentChat);
         setMessages(res.data)
       } catch (err) {
         console.log(err)
@@ -85,6 +85,7 @@ const Messenger = ({user}) => {
     }
 
     const receiverId = currentChat.members.find((member) => member !== user._id)
+    console.log(receiverId)
 
     socket.current.emit("sendMessage", {
       senderId: user._id,
@@ -101,12 +102,12 @@ const Messenger = ({user}) => {
       console.log(err)
     }
   }
-  console.log(messages)
+
   return (
     <div className="messenger">
       <div className="chatMenu">
         <div className="chatMenuWrapper">
-          <input placeholder="Search for friends" className="chatMenuInput" />
+          {/* <input placeholder="Search for friends" className="chatMenuInput" /> */}
           {conversations.map((conversation) => (
             <div onClick={() => setCurrentChat(conversation)}>
               <Conversation conversation={conversation} currentUser={user} />
@@ -123,7 +124,7 @@ const Messenger = ({user}) => {
                   <div ref={scrollRef}>
                     <Message
                       message={message}
-                      own={message.sender === user._id}
+                      own={message.sender._id === user._id}
                     />
                   </div>
                 ))}

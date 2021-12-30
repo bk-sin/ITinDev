@@ -71,9 +71,11 @@ const userControllers = {
             success: true,
             response: {
               name: user.name,
+              _id: user._id,
               lastname: user.lastname,
               email: user.email,
               country: user.country,
+              matchs: user.matchs,
               image: user.image,
               token,
               admin: user.admin,
@@ -124,6 +126,7 @@ const userControllers = {
       image: req.user.image,
       matchs: req.user.matchs,
       _id: req.user._id,
+      banned: req.user.banned,
     })
   },
   getOneUser: async (req, res) => {

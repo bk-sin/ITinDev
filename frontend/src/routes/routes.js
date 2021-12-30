@@ -10,35 +10,48 @@ import Footer from "../components/Footer"
 import Messenger from "../components/Messenger"
 import React from "react"
 import {Routes, Route, Navigate} from "react-router-dom"
+import Banned from "../components/Banned"
 
 function RoutesManager(props) {
   localStorage.getItem("token") && !props.user.name && props.tokenDale()
+
   return (
     <>
       <NavBar />
-      <Routes>
-        <Route
-          path="/test"
-          element={
-            props.user.name ? <TestPadre /> : <Navigate replace to="/" />
-          }
-        />
-        <Route path="/" element={<Main user={props.user} />} />
-        <Route path="/admin" element={<Admin user={props.user} />} />
-        <Route
-          path="/signin"
-          element={
-            props.user.name ? <Navigate replace to="/test" /> : <SignIn />
-          }
-        />
-        <Route
-          path="/signup"
-          element={
-            props.user.name ? <Navigate replace to="/test" /> : <SignUp />
-          }
-        />
-        <Route path="/messenger" element={<Messenger />} />
-      </Routes>
+      {props.user.banned ? (
+        <Routes>
+          <Route element={<Banned />} />
+        </Routes>
+      ) : (
+        <Routes>
+          <Route
+            path="/test"
+            element={
+              props.user.name ? <TestPadre /> : <Navigate replace to="/" />
+            }
+          />
+          <Route
+            path="/messenger"
+            element={
+              props.user.name ? <Messenger /> : <Navigate replace to="/" />
+            }
+          />
+          <Route path="/" element={<Main user={props.user} />} />
+          <Route path="/admin" element={<Admin user={props.user} />} />
+          <Route
+            path="/signin"
+            element={
+              props.user.name ? <Navigate replace to="/test" /> : <SignIn />
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              props.user.name ? <Navigate replace to="/test" /> : <SignUp />
+            }
+          />
+        </Routes>
+      )}
       <Footer />
     </>
   )

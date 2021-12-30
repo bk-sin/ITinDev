@@ -16,12 +16,17 @@ function NavBar(props) {
       <div className="dropdown-nav">
         <div className="menu-options">
           <Nav.Link as={Link} className="link-nav" to="/">
-              Home
+            Home
           </Nav.Link>
           {props.user.name && (
-            <Nav.Link as={Link} className="link-nav" to="/test">
-              buscar
-            </Nav.Link>
+            <>
+              <Nav.Link as={Link} className="link-nav" to="/test">
+                LOVE
+              </Nav.Link>
+              <Nav.Link as={Link} className="link-nav" to="/messenger">
+                MESSENGER
+              </Nav.Link>
+            </>
           )}
         </div>
         {props.user.name ? (

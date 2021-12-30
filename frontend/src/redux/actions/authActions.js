@@ -114,9 +114,12 @@ const authAction = {
   getUsers: (id) => {
     return async (dispatch, getState) => {
       let res = await axios.get("http://localhost:4000/api/user/nomatchs/" + id)
+      console.log(res)
+
+      const filtrado = res.data.respuesta.filter((e) => e._id !== id)
       dispatch({
         type: "ALL",
-        payload: res.data.respuesta ? res.data.respuesta : null,
+        payload: res.data.respuesta ? filtrado : null,
       })
     }
   },
@@ -132,17 +135,7 @@ const authAction = {
       })
     }
   },
-  match: (user, idliked) => {
-    return async (dispatch, getState) => {
-      console.log(user)
-      console.log(idliked)
-      if (user.matchs.some((e) => e === idliked)) {
-        console.log("Hola")
-      } else {
-        console.log("no")
-      }
-    }
-  },
+
   matchsAndDismatchs: (id) => {
     return async (dispatch, getState) => {
       const token = localStorage.getItem("token")
