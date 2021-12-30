@@ -37,7 +37,6 @@ const mapDispatchToProps = {
   getConversation: authAction.getConversation,
 }
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     user: state.authReducer.user,
     test: state.authReducer.test,

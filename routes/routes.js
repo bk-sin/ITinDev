@@ -15,7 +15,8 @@ const {addNewMessage, getMessage} = messageControllers
 const {newConversation, getUserConversation, getTwoUsers} =
   conversationControllers
 const {matchsAndDismatchs, noMatchUsers, matchUsers} = matchsControllers
-const {deletePeople, editUser, setBan} = adminControllers
+const {deletePeople, editUser, setBan, assignAdminAndDeletedAdmin} =
+  adminControllers
 
 Router.route("/users").get(getUsers)
 Router.route("/admin/deleteUser/:id").put(
@@ -25,6 +26,10 @@ Router.route("/admin/deleteUser/:id").put(
 Router.route("/admin/ban/:id").put(
   passport.authenticate("jwt", {session: false}),
   setBan
+)
+Router.route("/admin/giveRemoveAdmin/:id").put(
+  passport.authenticate("jwt", {session: false}),
+  assignAdminAndDeletedAdmin
 )
 
 Router.route("/admin/editUser/:id").put(

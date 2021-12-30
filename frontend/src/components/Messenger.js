@@ -8,7 +8,6 @@ import Message from "./Message"
 import "./messenger.css"
 
 const Messenger = ({user}) => {
-  console.log(user)
   const [conversations, setConversations] = useState([])
   const [currentChat, setCurrentChat] = useState(null)
   const [messages, setMessages] = useState([])
@@ -27,7 +26,6 @@ const Messenger = ({user}) => {
         createdAt: Date.now(),
       })
     })
-    console.log(user)
   }, [])
 
   useEffect(() => {
@@ -38,16 +36,14 @@ const Messenger = ({user}) => {
 
   useEffect(() => {
     socket.current.emit("addUser", user._id)
-    socket.current.on("getUsers", (users) => {
-      // console.log(users);
-    })
+    socket.current.on("getUsers", (users) => {})
   }, [user])
 
   useEffect(() => {
     const getConversations = async () => {
       try {
         let res = await axios.get(
-          "http://localhost:4000/api/conversations/" + user._id
+          "https://itindev-mindhub.herokuapp.com/api/conversations/" + user._id
         )
         setConversations(res.data)
       } catch (err) {
@@ -61,9 +57,8 @@ const Messenger = ({user}) => {
     const getMessages = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:4000/api/messages/${currentChat?._id}`
+          `https://itindev-mindhub.herokuapp.com/api/messages/${currentChat?._id}`
         )
-        //console.log(currentChat);
         setMessages(res.data)
       } catch (err) {
         console.log(err)
@@ -85,7 +80,6 @@ const Messenger = ({user}) => {
     }
 
     const receiverId = currentChat.members.find((member) => member !== user._id)
-    console.log(receiverId)
 
     socket.current.emit("sendMessage", {
       senderId: user._id,
@@ -94,7 +88,7 @@ const Messenger = ({user}) => {
     })
     try {
       const res = await axios.post(
-        "http://localhost:4000/api/messages",
+        "https://itindev-mindhub.herokuapp.com/api/messages",
         message
       )
       setMessages([...messages, res.data])

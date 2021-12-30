@@ -24,7 +24,6 @@ const adminControllers = {
       {new: true}
     )
       .then(async (response) => {
-        console.log(response)
         const all = await User.find()
         res.json(all)
       })
@@ -34,16 +33,21 @@ const adminControllers = {
   },
 
   assignAdminAndDeletedAdmin: (req, res) => {
+    console.log("hola")
+    console.log(req.params)
     User.findOne({_id: req.params.id})
       .then((user) => {
-        if (req.user._id === " ") {
-          if (user.admin === true) {
+        if (req.user.admin) {
+          if (user.admin) {
             User.findOneAndUpdate(
               {_id: req.params.id},
               {$set: {admin: false}},
               {new: true}
             )
-              .then((user) => res.json({success: true, response: user.admin}))
+              .then(async () => {
+                const all = await User.find()
+                res.json(all)
+              })
               .catch((error) => console.log(error))
           } else {
             User.findOneAndUpdate(
@@ -51,7 +55,10 @@ const adminControllers = {
               {$set: {admin: true}},
               {new: true}
             )
-              .then((user) => res.json({success: true, response: user.admin}))
+              .then(async () => {
+                const all = await User.find()
+                res.json(all)
+              })
               .catch((error) => console.log(error))
           }
         }
@@ -59,10 +66,8 @@ const adminControllers = {
       .catch((error) => res.json({success: false, response: error}))
   },
   setBan: (req, res) => {
-    console.log(req.params)
     User.findOne({_id: req.params.id})
       .then((user) => {
-        console.log(user)
         if (user.banned) {
           User.findOneAndUpdate(
             {_id: req.params.id},

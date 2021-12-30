@@ -1,15 +1,14 @@
 import swal from "sweetalert"
-import {useState, useRef} from "react";
-import { Modal } from 'react-bootstrap'
+import {useState, useRef} from "react"
+import {Modal} from "react-bootstrap"
 
 export default function Admin(props) {
   const [edit, setEdit] = useState(false)
 
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(false)
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
+  const handleClose = () => setShow(false)
+  const handleShow = () => setShow(true)
 
   const email = useRef()
   const name = useRef()
@@ -24,7 +23,7 @@ export default function Admin(props) {
     e.preventDefault()
     swal({
       title: "Estás seguro?",
-      text: "Una vez eliminado, no podras recuperarlo!",
+      text: "Usted va a editar el perfil de este usuario!",
       icon: "warning",
       buttons: true,
       dangerMode: true,
@@ -40,29 +39,24 @@ export default function Admin(props) {
           gender: gender.current.value,
           description: description.current.value,
         })
-        swal("Poof! El usuario fue eliminado!", {
+        swal("El usuario ah sido cambiado!", {
           icon: "success",
         })
+        handleClose()
       } else {
-        swal("El usuario ha sido salvado!")
+        swal("El usuario no ha sido salvado!")
       }
     })
   }
 
-  
-
-
   return (
     <>
-    <div key={props.index} className="usuarios-admin">
-      {props.user.admin && <span style={{color: "red"}}>ADMIN</span>}
-      {props.user.banned && <span style={{color: "red"}}>BANNED</span>}
-      <img
-        src={props.user.image}
-        alt="admin user pic"
-      />
-      {props.user.name} {props.user.lastName}{" "}
-      <div className="button-admin-conteiner">
+      <div key={props.index} className="usuarios-admin">
+        {props.user.admin && <span style={{color: "red"}}>ADMIN</span>}
+        {props.user.banned && <span style={{color: "red"}}>BANNED</span>}
+        <img src={props.user.image} alt="admin user pic" />
+        {props.user.name} {props.user.lastName}{" "}
+        <div className="button-admin-conteiner">
           <button
             onClick={() => {
               swal({
@@ -89,7 +83,7 @@ export default function Admin(props) {
             onClick={() => {
               setEdit(!edit)
               handleShow()
-            }} 
+            }}
           >
             🖊️
           </button>
@@ -100,8 +94,15 @@ export default function Admin(props) {
           >
             ⛔
           </button>
-          </div>
-    </div>
+          <button
+            onClick={() => {
+              props.giveRemoveAdmin(props.user._id)
+            }}
+          >
+            🔰
+          </button>
+        </div>
+      </div>
       <Modal
         show={show}
         onHide={handleClose}
@@ -109,13 +110,10 @@ export default function Admin(props) {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>
-            Editar el perfil de {props.user.name}:
-          </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
+          <Modal.Title>Editar el perfil de {props.user.name}:</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
           <div className="form-admin-conteiner">
-          {edit && (
             <form onSubmit={handleEdit}>
               <label htmlFor="name">Name</label>
               <input
@@ -204,13 +202,12 @@ export default function Admin(props) {
                 ref={description}
               ></textarea>
               <Modal.Footer>
-              <input type="submit" value="Editar" className="btn-submit" />
+                <input type="submit" value="Editar" className="btn-submit" />
               </Modal.Footer>
             </form>
-          )}
-    </div>
-    </Modal.Body>
-    </Modal>
+          </div>
+        </Modal.Body>
+      </Modal>
     </>
   )
 }

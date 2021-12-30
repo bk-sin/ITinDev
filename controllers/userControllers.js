@@ -24,7 +24,7 @@ const userControllers = {
       if (userExists) {
         res.json({
           success: false,
-          error: "Email already exist",
+          error: "El email ya existe!",
           response: null,
         })
       } else {
@@ -87,14 +87,14 @@ const userControllers = {
           res.json({
             success: false,
             response: null,
-            error: "Password is incorrect!",
+            error: "La contraseña es incorrecta",
           })
         }
       } else {
         res.json({
           success: false,
           response: null,
-          error: "Email doesnt exist!",
+          error: "El email no existe",
         })
       }
     } catch (error) {
@@ -117,9 +117,6 @@ const userControllers = {
     }
   },
   tokenVerification: (req, res) => {
-    req.user.admin
-      ? console.log(`Verified Admin: ${req.user.name}`)
-      : console.log(`Verified User: ${req.user.name}`)
     res.json({
       name: req.user.name,
       admin: req.user.admin,
@@ -131,7 +128,6 @@ const userControllers = {
   },
   getOneUser: async (req, res) => {
     try {
-      console.log(req.params.id)
       let user = await User.findById(req.params.id)
       res.json({res: user})
     } catch (err) {

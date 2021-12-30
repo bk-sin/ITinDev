@@ -23,48 +23,40 @@ function Admin(props) {
   }, [props.personas])
 
   return (
-      <>
+    <>
       {!props.user.name ? (
         <h1>Loading...</h1>
       ) : !props.user.admin ? (
         navigate("/", {replace: true})
       ) : (
         <div className="contenedor-admin-page">
-            <div className="usuarios-admin-filters">
-              <h3>Hola {props.user.name}! 👋</h3>
-              <h2>Administrador de usuarios:</h2>
-              <div className="filter-conteiner">
-                <button
-                  onClick={() => {
-                    props.setPersonas(ascdes)
-                    props.filterPeople()
-                    setascdes(ascdes === "ASC" ? "DES" : "ASC")
-                  }}
-                >
-                  Ordenar alfabéticamente
-                </button>
-                <input
-                  className="SearchInput"
-                  onChange={(e) => props.filterPeople(e.target.value)}
-                  type="text"
-                  placeholder="Busca un usuario"
+          <div className="usuarios-admin-filters">
+            <h3>Hola {props.user.name}! 👋</h3>
+            <h2>Administrador de usuarios:</h2>
+            <div className="filter-conteiner">
+              <input
+                className="SearchInput"
+                onChange={(e) => props.filterPeople(e.target.value)}
+                type="text"
+                placeholder="Busca un usuario"
+              />
+            </div>
+          </div>
+          <div className="usuarios-admin-conteiner">
+            {props.personas !== "Oops!error" &&
+              props.auxiliar.map((character, index) => (
+                <User
+                  key={index}
+                  index={index}
+                  user={character}
+                  deletePeople={props.deletePeople}
+                  editPeople={props.editPeople}
+                  getAllUsers={props.getAllUsers}
+                  banPeople={props.banPeople}
+                  giveRemoveAdmin={props.giveRemoveAdmin}
                 />
-              </div>
-            </div>
-            <div className="usuarios-admin-conteiner">
-              {props.personas !== "Oops!error" &&
-                props.auxiliar.map((character, index) => (
-                  <User
-                    key={index}
-                    index={index}
-                    user={character}
-                    deletePeople={props.deletePeople}
-                    editPeople={props.editPeople}
-                    getAllUsers={props.getAllUsers}
-                    banPeople={props.banPeople}
-                  />
-                ))}
-            </div>
+              ))}
+          </div>
         </div>
       )}
     </>
@@ -76,6 +68,7 @@ const mapDispatchToProps = {
   deletePeople: adminAction.deletePeople,
   editPeople: adminAction.editPeople,
   banPeople: adminAction.banPeople,
+  giveRemoveAdmin: adminAction.giveRemoveAdmin,
   filterPeople: adminAction.filterPeople,
 }
 const mapStateToProps = (state) => {

@@ -3,10 +3,8 @@ const User = require("../models/user")
 const matchsControllers = {
   noMatchUsers: async (req, res) => {
     const matchsId = req.params.id
-    console.log(req.params)
     try {
       const matchsList = await User.find({matchs: {$ne: matchsId}})
-      console.log(matchsList)
 
       if (matchsList.length != 0) {
         res.json({success: true, respuesta: matchsList})

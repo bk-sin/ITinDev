@@ -27,27 +27,18 @@ export default function Test(props) {
   }
 
   function match(user, idliked) {
-    console.log(user)
     if (user.matchs.some((e) => e === idliked)) {
       swal({
-        title: "Are you sure?",
-        text: "Once deleted, you will not be able to recover this imaginary file!",
-        icon: "warning",
+        title: `Acabas de matchear`,
+        text: "Quieres ir a escribirle algo para romper el hielo?",
+        imageUrl:
+          "https://purepng.com/public/uploads/large/purepng.com-red-heartheartoxygen-and-nutrientshumanclipart-1421526551485ppgdd.png",
         buttons: true,
         dangerMode: true,
       }).then((willMatch) => {
-        if (willMatch) {
-          navigate("/messenger", {replace: true})
-          swal("Poof! Your imaginary file has been deleted!", {
-            icon: "success",
-          })
-        } else {
-          swal("Your imaginary file is safe!")
-        }
+        navigate("/messenger", {replace: true})
       })
       props.newConver(idliked)
-    } else {
-      console.log("NO")
     }
   }
 
@@ -61,7 +52,6 @@ export default function Test(props) {
   }
 
   const outOfFrame = (name, idx) => {
-    console.log(`${name} (${idx}) left the screen!`, currentIndexRef.current)
     currentIndexRef.current >= idx && childRefs[idx].current.restoreCard()
   }
 

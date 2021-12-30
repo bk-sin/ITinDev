@@ -16,7 +16,7 @@ const adminAction = {
       const token = localStorage.getItem("token")
 
       const all = await axios.put(
-        "http://localhost:4000/api/admin/deleteUser/" + id,
+        "https://itindev-mindhub.herokuapp.com/api/admin/deleteUser/" + id,
         {type},
         {
           headers: {
@@ -25,7 +25,6 @@ const adminAction = {
         }
       )
 
-      console.log(all)
       dispatch({
         type: "ALL",
         payload: all.data,
@@ -37,7 +36,7 @@ const adminAction = {
       const token = localStorage.getItem("token")
 
       const all = await axios.put(
-        "http://localhost:4000/api/admin/editUser/" + id,
+        "https://itindev-mindhub.herokuapp.com/api/admin/editUser/" + id,
         {
           ...edit,
         },
@@ -48,19 +47,38 @@ const adminAction = {
         }
       )
 
-      console.log(all)
       dispatch({
         type: "ALL",
         payload: all.data,
       })
     }
   },
+
   banPeople: (id) => {
     return async (dispatch, getState) => {
       const token = localStorage.getItem("token")
 
       const all = await axios.put(
-        "http://localhost:4000/api/admin/ban/" + id,
+        "https://itindev-mindhub.herokuapp.com/api/admin/ban/" + id,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
+      dispatch({
+        type: "ALL",
+        payload: all.data,
+      })
+    }
+  },
+  giveRemoveAdmin: (id) => {
+    return async (dispatch, getState) => {
+      const token = localStorage.getItem("token")
+
+      const all = await axios.put(
+        "https://itindev-mindhub.herokuapp.com/api/admin/giveRemoveAdmin/" + id,
         {},
         {
           headers: {
